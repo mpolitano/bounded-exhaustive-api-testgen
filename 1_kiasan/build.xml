@@ -1,4 +1,4 @@
-<project xmlns:jacoco="antlib:org.jacoco.ant" name="builders" default="compile" basedir=".">
+<project xmlns:jacoco="antlib:org.jacoco.ant" name="1_kiasan" default="compile" basedir=".">
 
 
   <property name="max.heap"                value="8g"/>
@@ -24,8 +24,6 @@
   <property name="source.resources"        value="src/main/resources"/>
   <property name="test.resources"          value="src/test/resources"/>
   <property name="test.report.dir"         value="${build.home}/test-report"/>
-  <property name="evosuite.java"           value="evosuite-tests"/>
-  <property name="randoop.java"            value="randoop-tests"/>
   <property name="be.java"                 value="be-tests"/>
 
   <property name="lib.dir"                 value="../lib/"/>
@@ -38,16 +36,16 @@
 
 
   <path id="korat.lib">
-      <pathelement location="${build.home}/korat.jar" />
+      <pathelement location="../lib/korat.jar" />
   </path>  
 
   <!-- The dependency libraries -->
-  <path id="source.lib">
+ <!--  <path id="source.lib">
       <fileset dir="../lib">
          <include name="**/*.jar"/>
       </fileset>
   </path>
-
+ -->
   <!-- The dependency libraries for running/compiling tests -->
   <path id="test.lib">
       <fileset dir="test-lib">
@@ -107,7 +105,7 @@
           optimize="${compile.optimize}"
           encoding="${compile.encoding}"
        includeantruntime="false">
-          <classpath refid="source.lib" />
+          <!-- <classpath refid="source.lib" /> -->
           <classpath refid="korat.lib"/>
     </javac>
     <copy todir="${build.classes}">
