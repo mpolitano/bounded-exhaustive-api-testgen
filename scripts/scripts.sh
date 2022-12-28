@@ -10,11 +10,16 @@ function run_identify_builders(){
     ant
     mkdir -p "$BE_EXP_SRC/src/" && cp -r $BE_EXP_SRC/$project/src/main/java/* $BE_EXP_SRC/src/
     mkdir -p "$BE_EXP_SRC/build/classes" && cp -r $BE_EXP_SRC/$project/build/classes/* $BE_EXP_SRC/build/classes/
-    popd
     rm -r $BE_EXP_SRC/tmp/$casestudy/*
+    popd
+    pushd $BE_EXP_SRC
     SECONDS=0
-    cmd="java -cp ./lib/identificationBuilders.jar:lib/korat.jar:$project/build/classes/ main.Builders $casestudy"
-    echo "$cmd"
+    echo "aca"
+    echo $(pwd)
+    cmd="java -cp lib/:lib/korat.jar:$project/build/classes/ main.Builders $casestudy"
+    popd
+
+    echo "$cmd" 
     bash -c "$cmd"
     cp builders.txt tmp/$casestudy/
     cp class-list.txt tmp/$casestudy/
@@ -197,10 +202,14 @@ function run_No_Opt() {
 
 function process_results_optimizations() {
     resultsdir=./results-begen/
-    tmpfile="$resultsdir/processresults.csv.tmp"
+    techniques="beapi/graph/builders beapi/graph/no-builders beapi/no-matching/builders beapi/no-matching/no-builders"
+
+    tmpfile="$resultsdir/results_optimizations.csv"
     tmpfilebuilders="builders.txt"
     [[ -f $tmpfile ]] && rm $tmpfile
     [[ -f $tmpfilebuilders ]] && rm $tmpfilebuilders
+    echo "Project,Class,Technique,Budget,Time,Structures,Explored" > $tmpfile
+
     projects=$(ls $resultsdir)
     [[ $projects == "" ]] && echo "No proyects found in $currdir" && exit -1;
     for project in $projects

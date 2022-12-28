@@ -48,6 +48,7 @@ scriptsdir=$projectsdir/scripts
 source $scriptsdir/common.sh
 
 maxheap=$BE_EXP_MAXHEAP
+maxheap=16g
 
 project=$1
 class=$2

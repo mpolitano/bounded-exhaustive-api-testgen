@@ -12,9 +12,9 @@
 
 # Getting Started
 
-Clone the repository and
+Clone the repository:
 
-Move to the recently created folder
+Move to the recently created folder:
 ```
 cd bounded-exhaustive-api-testgen
 ```
@@ -26,13 +26,9 @@ cd bounded-exhaustive-api-testgen
 # Folder structure
 
 The `0_korat` folder contains data structures implementations source from Korat.
-
 The `1_kiasan` folder contains data structures implementations source from Kiasan.
-
 The `2_roops` folder contains data structures implementations source from Roops.
-
 The `3_fajita` folder contains data structures implementations source from Fajita.
-
 The `4_real_world` folder contains data structures implementations from real worlds like Java.Utils and Apache commons.
 
 
@@ -43,20 +39,22 @@ The `scripts` folders contains the scripts for reproduce the results in the pape
 
 # Reproducing the experiments
 
-## RQ1
+## Running a single experiment
+
+###RQ1
 
 To easily run a single technique over a case study we provide the `beapi-vs-korat-single-case.sh` script. It takes the following arguments:
 ```
 bash beapi-vs-korat-single-case.sh <project_folder> <cases> <technique> <budget>
 ```
 
-For example, to analyze `SinglyLinkedList`'s using `korat`, with up to a scope of `4`execute: 
+For example, to analyze `SinglyLinkedList`'s using `korat`, with a scope of `5`execute: 
 ```
-bash beapi-vs-korat-single-case.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList 4 korat
+bash beapi-vs-korat-single-case.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList korat 4
 ```
 To analyze using `beapi`
 ```
-bash beapi-vs-korat-single-case.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList 4 beapi
+bash beapi-vs-korat-single-case.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList beapi 4
 ```
 
 The results are shown on the screen, and stored in CSV format in file: ```scripts/results-begen/results_beapi_vs_korat.csv ```.
@@ -69,6 +67,24 @@ bash beapi-vs-korat.sh 0_korat
 
 ......
 .....
+###RQ2
 
-***RQ2***
+We run four different configurations of BEAPI in all case studies for increasingly large scopes. We call SM/BLD to BEAPI with state matching (SM) and builder identification (BLD) enabled; SM to BEAPI with only state matching (SM) enabled ; BLD to BEAPI with only builders (BLD) identification enabled; NoOPT has both optimizations disabled. 
+To run a one case study with 4 optimizations, we provide the `beapi-optimizations-single-case.sh` script. It takes the following arguments:
 
+```
+bash beapi-optimizations-single-case.sh <project_folder> <cases> <technique> <budget>
+```
+
+For example, to analyze `SinglyLinkedList`'s using all optimizations for `beapi`, with a scope of `3`execute: 
+```
+bash beapi-optimizations-single-case.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList beapi 3
+```
+
+The results are shown on the screen, and stored in CSV format in file: ```scripts/results-begen/results_optimizations.csv ```.
+
+To reproduce all the optimizations for a specific bencharmark study we provide the following scripts: 
+
+```
+bash beapi-optimizations.sh 0_korat
+```
