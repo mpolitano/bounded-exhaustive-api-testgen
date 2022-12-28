@@ -12,9 +12,9 @@
 
 # Getting Started
 
-Clone the repository:
+Clone the repository and
 
-Move to the recently created folder:
+Move to the recently created folder
 ```
 cd bounded-exhaustive-api-testgen
 ```
@@ -26,9 +26,13 @@ cd bounded-exhaustive-api-testgen
 # Folder structure
 
 The `0_korat` folder contains data structures implementations source from Korat.
+
 The `1_kiasan` folder contains data structures implementations source from Kiasan.
+
 The `2_roops` folder contains data structures implementations source from Roops.
+
 The `3_fajita` folder contains data structures implementations source from Fajita.
+
 The `4_real_world` folder contains data structures implementations from real worlds like Java.Utils and Apache commons.
 
 
