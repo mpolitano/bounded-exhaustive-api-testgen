@@ -3,12 +3,10 @@
 projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
 source $scriptsdir/scripts.sh
-
+clean_results_folders
 #To run one package
 projects="$1"
-echo "$projects"
 if [[ $projects == "0_korat" ]]; then 
-	echo "aca"
     cases="korat.examples.singlylinkedlist.SinglyLinkedList korat.examples.binheap.BinomialHeap korat.examples.redblacktree.RedBlackTree korat.examples.doublylinkedlist.DoublyLinkedList korat.examples.searchtree.SearchTree korat.examples.fibheap.FibonacciHeap"
 fi
 if [[ $projects == "3_fajita" ]]; then 
@@ -22,6 +20,6 @@ if [[ $projects == "1_kiasan" ]]; then
 fi
 
 budgets="3 4 5"
-techniques="beapi korat"
+techniques="korat beapi/graph/builders"
 run_beapi_korat;
-process_results_beapi_vs_korat;
+process_results_beapi_vs_korat ;
