@@ -45,7 +45,7 @@ The `scripts` folders contains the scripts for reproduce the results in the pape
 
 ## Running a single experiment
 
-###RQ1
+***RQ1***
 
 To easily run a single technique over a case study we provide the `beapi-vs-korat-single-case.sh` script. It takes the following arguments:
 ```
@@ -71,5 +71,6 @@ bash beapi-vs-korat.sh 0_korat
 
 ......
 .....
-###RQ2
+
+***RQ2***
 
