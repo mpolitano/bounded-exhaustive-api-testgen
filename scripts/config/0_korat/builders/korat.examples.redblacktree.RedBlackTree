@@ -1,0 +1,3 @@
+korat.examples.redblacktree.RedBlackTree.<init>\(\)
+korat.examples.redblacktree.RedBlackTree.add\(int\)
+korat.examples.redblacktree.RedBlackTree.remove\(int\)

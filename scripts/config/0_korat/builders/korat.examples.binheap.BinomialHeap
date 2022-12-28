@@ -1,0 +1,3 @@
+korat.examples.binheap.BinomialHeap.<init>\(\)
+korat.examples.binheap.BinomialHeap.extractMin\(\)
+korat.examples.binheap.BinomialHeap.insert\(int\)

@@ -1,0 +1,3 @@
+disjointSet.fast.DisjSetsFast.<init>\(int\)
+disjointSet.fast.DisjSetsFast.union\(int,int\)
+disjointSet.fast.DisjSetsFast.Find\(int\)

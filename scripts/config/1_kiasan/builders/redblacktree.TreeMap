@@ -1,0 +1,3 @@
+redblacktree.TreeMap.<init>\(\)
+redblacktree.TreeMap.remove\(int\)
+redblacktree.TreeMap.put\(int,java.lang.Object\)

@@ -1,0 +1,3 @@
+avl1.AvlTree.<init>\(\)
+avl1.AvlTree.insert\(int\)
+avl1.AvlTree.makeEmpty()

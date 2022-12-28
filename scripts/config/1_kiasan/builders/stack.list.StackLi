@@ -1,0 +1,4 @@
+stack.list.StackLi.<init>\(\)
+stack.list.StackLi.push\(java.lang.Object\)
+stack.array.StackAr.pop\(\)
+stack.array.StackAr.makeEmpty\(\)

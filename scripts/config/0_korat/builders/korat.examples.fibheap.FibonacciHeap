@@ -1,0 +1,3 @@
+korat.examples.fibheap.FibonacciHeap.<init>\(\)
+korat.examples.fibheap.FibonacciHeap.insert\(int\)
+korat.examples.fibheap.FibonacciHeap.removeMin\(\)

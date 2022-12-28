@@ -1,0 +1,3 @@
+cList.NodeCachingLinkedList.<init>\(\)
+cList.NodeCachingLinkedList.addLast\(java.lang.Object\)
+cList.NodeCachingLinkedList.removeIndex\(int\)

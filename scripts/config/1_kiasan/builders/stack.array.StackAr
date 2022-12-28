@@ -1,0 +1,3 @@
+stack.array.StackAr.<init>\(int\)
+stack.array.StackAr.push\(java.lang.Object\)
+stack.array.StackAr.makeEmpty\(\)
