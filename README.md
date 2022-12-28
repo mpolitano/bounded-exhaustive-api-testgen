@@ -52,7 +52,7 @@ To easily run a single technique over a case study we provide the `beapi-vs-kora
 bash beapi-vs-korat-single-case.sh <project_folder> <cases> <technique> <budget>
 ```
 
-For example, to analyze `SinglyLinkedList`'s using `korat`, with up to a scope of `5`execute: 
+For example, to analyze `SinglyLinkedList`'s using `korat`, with up to a scope of `4`execute: 
 ```
 bash beapi-vs-korat-single-case.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList 4 korat
 ```
