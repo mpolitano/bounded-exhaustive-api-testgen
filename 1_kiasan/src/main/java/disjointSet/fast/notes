@@ -1,0 +1,50 @@
+Fast disjoint set union-found algorithm is taken from Mark Weiss algorithm book.
+
+Check union(int,int) method,
+k=1,
+Total #Pre:0 #POST: 0
+Method {|fast.DisjSetsFast.goodValues()Z|}: Total num of branches is 10 covered is 10 branch coverage is 1.0 Total num of location is 51 num of covered location is 51
+Method {|fast.DisjSetsFast.acyclic()Z|}: Total num of branches is 12 covered is 6 branch coverage is 0.5 Total num of location is 89 num of covered location is 51
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 11 num of covered location is 10
+Method {|fast.DisjSetsFast.union$Top(II)V|}: Total num of branches is 24 covered is 14 branch coverage is 0.5833333333333334 Total num of location is 87 num of covered location is 44
+k=2,
+Total #Pre:2 #POST: 6
+Method {|fast.DisjSetsFast.goodValues()Z|}: Total num of branches is 10 covered is 10 branch coverage is 1.0 Total num of location is 51 num of covered location is 51
+Method {|fast.DisjSetsFast.acyclic()Z|}: Total num of branches is 12 covered is 10 branch coverage is 0.8333333333333334 Total num of location is 89 num of covered location is 88
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 11 num of covered location is 11
+Method {|fast.DisjSetsFast.spex_M_union(II)V|}: Total num of branches is 4 covered is 4 branch coverage is 1.0 Total num of location is 40 num of covered location is 40
+Method {|fast.DisjSetsFast.union$Top(II)V|}: Total num of branches is 24 covered is 22 branch coverage is 0.9166666666666666 Total num of location is 87 num of covered location is 83
+Method {|fast.DisjSetsFast.find(I)I|}: Total num of branches is 2 covered is 2 branch coverage is 1.0 Total num of location is 22 num of covered location is 22
+k=3,
+Total #Pre:20 #POST: 60
+Method {|fast.DisjSetsFast.goodValues()Z|}: Total num of branches is 10 covered is 10 branch coverage is 1.0 Total num of location is 51 num of covered location is 51
+Method {|fast.DisjSetsFast.acyclic()Z|}: Total num of branches is 12 covered is 11 branch coverage is 0.9166666666666666 Total num of location is 89 num of covered location is 88
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 11 num of covered location is 11
+Method {|fast.DisjSetsFast.spex_M_union(II)V|}: Total num of branches is 4 covered is 4 branch coverage is 1.0 Total num of location is 40 num of covered location is 40
+Method {|fast.DisjSetsFast.union$Top(II)V|}: Total num of branches is 24 covered is 22 branch coverage is 0.9166666666666666 Total num of location is 87 num of covered location is 83
+Method {|fast.DisjSetsFast.find(I)I|}: Total num of branches is 2 covered is 2 branch coverage is 1.0 Total num of location is 22 num of covered location is 22
+
+Check find(int) method,
+k=1,
+Total #Pre:1 #POST: 1
+Method {|fast.DisjSetsFast.goodValues()Z|}: Total num of branches is 10 covered is 10 branch coverage is 1.0 Total num of location is 51 num of covered location is 51
+Method {|fast.DisjSetsFast.acyclic()Z|}: Total num of branches is 12 covered is 6 branch coverage is 0.5 Total num of location is 89 num of covered location is 51
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 9 num of covered location is 9
+Method {|fast.DisjSetsFast.spex_M_find(I)I|}: Total num of branches is 2 covered is 1 branch coverage is 0.5 Total num of location is 22 num of covered location is 8
+Method {|fast.DisjSetsFast.find$Top(I)I|}: Total num of branches is 14 covered is 11 branch coverage is 0.7857142857142857 Total num of location is 58 num of covered location is 54
+k=2,
+Total #Pre:4 #POST: 7
+Method {|fast.DisjSetsFast.goodValues()Z|}: Total num of branches is 10 covered is 10 branch coverage is 1.0 Total num of location is 51 num of covered location is 51
+Method {|fast.DisjSetsFast.acyclic()Z|}: Total num of branches is 12 covered is 10 branch coverage is 0.8333333333333334 Total num of location is 89 num of covered location is 88
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 9 num of covered location is 9
+Method {|fast.DisjSetsFast.spex_M_find(I)I|}: Total num of branches is 2 covered is 2 branch coverage is 1.0 Total num of location is 22 num of covered location is 22
+Method {|fast.DisjSetsFast.find$Top(I)I|}: Total num of branches is 14 covered is 12 branch coverage is 0.8571428571428571 Total num of location is 58 num of covered location is 54
+Method {|fast.DisjSetsFast.find(I)I|}: Total num of branches is 14 covered is 8 branch coverage is 0.5714285714285714 Total num of location is 58 num of covered location is 54
+k=3,
+Total #Pre:20 #POST: 61
+Method {|fast.DisjSetsFast.goodValues()Z|}: Total num of branches is 10 covered is 10 branch coverage is 1.0 Total num of location is 51 num of covered location is 51
+Method {|fast.DisjSetsFast.acyclic()Z|}: Total num of branches is 12 covered is 11 branch coverage is 0.9166666666666666 Total num of location is 89 num of covered location is 88
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 9 num of covered location is 9
+Method {|fast.DisjSetsFast.spex_M_find(I)I|}: Total num of branches is 2 covered is 2 branch coverage is 1.0 Total num of location is 22 num of covered location is 22
+Method {|fast.DisjSetsFast.find$Top(I)I|}: Total num of branches is 14 covered is 12 branch coverage is 0.8571428571428571 Total num of location is 58 num of covered location is 54
+Method {|fast.DisjSetsFast.find(I)I|}: Total num of branches is 14 covered is 8 branch coverage is 0.5714285714285714 Total num of location is 58 num of covered location is 54

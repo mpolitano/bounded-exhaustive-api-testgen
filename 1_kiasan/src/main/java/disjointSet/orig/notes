@@ -1,0 +1,45 @@
+Original disjoint-set union-find algorithm is taken from Mark Weiss' algorithm 
+book.
+
+Check union method,
+k=1,
+Total #Pre:0 #POST: 0
+Method {|orig.DisjSets.goodValues()Z|}: Total num of branches is 8 covered is 8 branch coverage is 1.0 Total num of location is 41 num of covered location is 41
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 11 num of covered location is 10
+Method {|orig.DisjSets.acyclic()Z|}: Total num of branches is 12 covered is 6 branch coverage is 0.5 Total num of location is 90 num of covered location is 52
+Method {|orig.DisjSets.union$Top(II)V|}: Total num of branches is 24 covered is 14 branch coverage is 0.5833333333333334 Total num of location is 89 num of covered location is 44
+
+k=2,
+Total #Pre:2 #POST: 2
+Method {|orig.DisjSets.spex_M_union(II)V|}: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 6 num of covered location is 6
+Method {|orig.DisjSets.goodValues()Z|}: Total num of branches is 8 covered is 8 branch coverage is 1.0 Total num of location is 41 num of covered location is 41
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 11 num of covered location is 11
+Method {|orig.DisjSets.find(I)I|}: Total num of branches is 2 covered is 2 branch coverage is 1.0 Total num of location is 17 num of covered location is 17
+Method {|orig.DisjSets.acyclic()Z|}: Total num of branches is 12 covered is 10 branch coverage is 0.8333333333333334 Total num of location is 90 num of covered location is 89
+Method {|orig.DisjSets.union$Top(II)V|}: Total num of branches is 24 covered is 22 branch coverage is 0.9166666666666666 Total num of location is 89 num of covered location is 85
+
+k=3,
+Total #Pre:20 #POST: 20
+Method {|orig.DisjSets.spex_M_union(II)V|}: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 6 num of covered location is 6
+Method {|orig.DisjSets.goodValues()Z|}: Total num of branches is 8 covered is 8 branch coverage is 1.0 Total num of location is 41 num of covered location is 41
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 11 num of covered location is 11
+Method {|orig.DisjSets.find(I)I|}: Total num of branches is 2 covered is 2 branch coverage is 1.0 Total num of location is 17 num of covered location is 17
+Method {|orig.DisjSets.acyclic()Z|}: Total num of branches is 12 covered is 11 branch coverage is 0.9166666666666666 Total num of location is 90 num of covered location is 89
+Method {|orig.DisjSets.union$Top(II)V|}: Total num of branches is 24 covered is 22 branch coverage is 0.9166666666666666 Total num of location is 89 num of covered location is 85
+
+Check find method,
+k=1,
+Total #Pre:1 #POST: 1
+Method {|orig.DisjSets.find$Top(I)I|}: Total num of branches is 14 covered is 11 branch coverage is 0.7857142857142857 Total num of location is 58 num of covered location is 54
+Method {|orig.DisjSets.goodValues()Z|}: Total num of branches is 8 covered is 8 branch coverage is 1.0 Total num of location is 41 num of covered location is 41
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 9 num of covered location is 9
+Method {|orig.DisjSets.spex_M_find(I)I|}: Total num of branches is 2 covered is 1 branch coverage is 0.5 Total num of location is 17 num of covered location is 8
+Method {|orig.DisjSets.acyclic()Z|}: Total num of branches is 12 covered is 6 branch coverage is 0.5 Total num of location is 90 num of covered location is 52
+k=2,
+Total #Pre:4 #POST: 7
+Method {|orig.DisjSets.goodValues()Z|}: Total num of branches is 8 covered is 8 branch coverage is 1.0 Total num of location is 41 num of covered location is 41
+Method {|orig.DisjSets.find$Top(I)I|}: Total num of branches is 14 covered is 12 branch coverage is 0.8571428571428571 Total num of location is 58 num of covered location is 54
+Method MAIN: Total num of branches is 0 covered is 0 branch coverage is NaN Total num of location is 9 num of covered location is 9
+Method {|orig.DisjSets.spex_M_find(I)I|}: Total num of branches is 2 covered is 2 branch coverage is 1.0 Total num of location is 17 num of covered location is 17
+Method {|orig.DisjSets.find(I)I|}: Total num of branches is 14 covered is 8 branch coverage is 0.5714285714285714 Total num of location is 58 num of covered location is 54
+Method {|orig.DisjSets.acyclic()Z|}: Total num of branches is 12 covered is 10 branch coverage is 0.8333333333333334 Total num of location is 90 num of covered location is 89
