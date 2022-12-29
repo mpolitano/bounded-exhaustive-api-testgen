@@ -12,18 +12,26 @@ Follow the instructions in `INSTALL.md`.
 
 # Folder structure
 
-The `0_korat` folder contains data structures implementations source from Korat.
-The `1_kiasan` folder contains data structures implementations source from Kiasan.
-The `2_roops` folder contains data structures implementations source from Roops.
-The `3_fajita` folder contains data structures implementations source from Fajita.
-The `4_real_world` folder contains data structures implementations from real worlds like Java.Utils and Apache commons.
+The following folders contain the source code of the case studies considered in the paper:
 
-The `lib` folder contains neccesary libs jars for run the experiments.
+- `0_korat/src/main/java` contains the source code of the data structures implementations for the `Korat`'s benchmark.
+- `1_kiasan/src/main/java` contains the source code of the data structures implementations for the `Kiasan`'s benchmark.
+- `2_roops/src/main/java` contains the source code of the data structures implementations for the `ROOPS`' benchmark.
+- `3_fajita/src/main/java` contains the source code of the data structures implementations for the `FAJITA`'s benchmark.
+- `4_real_world/src/main/java` contains the source code of data structures implementations from the real world, drawn from the  
+**java.util** and **Apache Commons Collections** libraries.
 
-The `scripts` folders contains the scripts for reproduce the results in the paper.
+Tool's binaries:
+
+- `lib` contains the binaries for the tools and libraries required to run the experiments as .jar files.
+- `lib\BEAPI.JAR` PONER EL CORRECTO binaries for the current `BEAPI` implementation. 
+
+Scripts:
+
+- `scripts` provided scripts to facilitate the execution of `BEAPI`, and to easily reproduce the results in the paper.
 
 
-# Reproducing the experiments
+# Reproducing the paper's experiments 
 
 ## Running a single experiment
 
