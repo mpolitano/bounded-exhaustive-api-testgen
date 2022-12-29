@@ -63,7 +63,7 @@ maxBEit=$((scope + scope + scope)) # Up to XX iterations in the first stage of B
 maxsize=$((maxBEit + maxBEit + maxBEit)) # Up to XX methods in a JUnit test
 
 literals="$scriptsdir/literals/literals${scope}.txt"
-bejar="../lib/be.jar"
+bejar="../lib/beapi.jar"
 regexmethod=$method
 
  if [ $project == "7_kiasan" ] && [ $class == "stack.array.StackAr" ]; then
