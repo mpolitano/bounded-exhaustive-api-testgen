@@ -6,7 +6,6 @@
   <property name="build.home"              value="build"/>
   <property name="build.classes"           value="${build.home}/classes"/>
   <property name="build.tests"             value="${build.home}/tests"/>
-  <property name="build.randoop"           value="${build.home}/randoop"/>
   <property name="build.be"                value="${build.home}/be"/>
   
   <!-- Javac -->
@@ -24,21 +23,12 @@
   <property name="source.resources"        value="src/main/resources"/>
   <property name="test.resources"          value="src/test/resources"/>
   <property name="test.report.dir"         value="${build.home}/test-report"/>
-  <property name="evosuite.java"           value="evosuite-tests"/>
-  <property name="randoop.java"            value="randoop-tests"/>
   <property name="be.java"                 value="be-tests"/>
 
   <property name="lib.dir"                 value="../lib/"/>
 
-  <path id="jacoco.lib">
-      <pathelement location="${lib.dir}/jacocoant.jar" />
-      <pathelement location="${lib.dir}/jacocoagent.jar" />
-      <pathelement location="${lib.dir}/jacocoreport.jar" />
-  </path>  
-
-
   <path id="korat.lib">
-      <pathelement location="${build.home}/korat.jar" />
+      <pathelement location="${lib.dir}/korat.jar" />
   </path>  
 
   <!-- The dependency libraries -->

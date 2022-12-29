@@ -9,7 +9,7 @@ scope=$3
 pushd $projectsdir/$project > /dev/null
 outdir=./korat-tests
 
-KORAT_CP=../lib/korat.jar:./build/classes/:../lib/
+KORAT_CP=./build/classes/:../lib/:../lib/korat.jar
 java -cp $KORAT_CP korat.Korat --class $class --args $scope --serialize $outdir/objects.ser
 #--visualize \
 #--printCandVects \

@@ -74,7 +74,7 @@ fi
 pushd $projectsdir/$1 > /dev/null
 
 set_config_options
-cp=./build/classes:./lib/*.jar:../lib/korat/korat.jar
+cp=./build/classes:../lib/korat.jar
 outdir=./beapi-tests
 
 #omitfile=$scriptsdir/config/$project/omitmethods/$class

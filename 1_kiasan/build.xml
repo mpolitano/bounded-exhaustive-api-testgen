@@ -17,7 +17,6 @@
   <property name="compile.target"          value="1.5"/>
   <property name="compile.encoding"        value="iso-8859-1"/>
   
-  
   <!-- The base directories for sources -->
   <property name="source.java"             value="src/main/java"/>
   <property name="test.java"               value="src/test/java"/>
@@ -58,7 +57,6 @@
   <path id="be.lib">
       <pathelement location="${lib.dir}/be.jar" />
   </path>  
-
 
 
 <!-- ====================================================================== -->
@@ -113,14 +111,6 @@
         <fileset dir="${source.resources}" includes="**"/>
     </copy>
   </target>
-
-  <target name="jacoco-instrument" depends="compile">
-    <!--  Step 2: Instrument class files  -->
-    <jacoco:instrument destdir="${build.jacoco.instr}">
-      <fileset dir="${build.classes}"/>
-    </jacoco:instrument>
-  </target>
-
 <!-- ====================================================================== -->
   
   <target name="compile-tests" depends="compile"

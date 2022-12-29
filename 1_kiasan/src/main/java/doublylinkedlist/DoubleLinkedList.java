@@ -1,4 +1,4 @@
-package doublelinkedlist;
+package doublylinkedlist;
 import java.util.*;
 import korat.finitization.IBooleanSet;
 import korat.finitization.IClassDomain;

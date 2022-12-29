@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-// import korat.finitization.IClassDomain;
-// import korat.finitization.IFinitization;
-// import korat.finitization.IIntSet;
-// import korat.finitization.IObjSet;
-// import korat.finitization.impl.FinitizationFactory;
+import korat.finitization.IClassDomain;
+import korat.finitization.IFinitization;
+import korat.finitization.IIntSet;
+import korat.finitization.IObjSet;
+import korat.finitization.impl.FinitizationFactory;
 
 /**
  * SinglyLinkedList: singly linked list implementation took from Korat. 
@@ -131,36 +131,36 @@ public class SinglyLinkedList implements Serializable {
         return res + ")";
     }
     
-    // public static IFinitization finSinglyLinkedList(int size) {
-    //     return finSinglyLinkedList(size, size, size, size);
-    // }
+    public static IFinitization finSinglyLinkedList(int size) {
+        return finSinglyLinkedList(size, size, size, size);
+    }
             
-    // public static IFinitization finSinglyLinkedList(int minSize, int maxSize,
-    //         int numEntries, int numElems) {
+    public static IFinitization finSinglyLinkedList(int minSize, int maxSize,
+            int numEntries, int numElems) {
 
-    //     IFinitization f = FinitizationFactory.create(SinglyLinkedList.class);
+        IFinitization f = FinitizationFactory.create(SinglyLinkedList.class);
 
-    //     IObjSet entries = f.createObjSet(Entry.class);
-    //     entries.setNullAllowed(true);
-    //     entries.addClassDomain(f.createClassDomain(Entry.class, numEntries));
+        IObjSet entries = f.createObjSet(Entry.class);
+        entries.setNullAllowed(true);
+        entries.addClassDomain(f.createClassDomain(Entry.class, numEntries));
 
-    //     IObjSet elems = f.createObjSet(Integer.class);
-    //     IClassDomain elemsClassDomain = f.createClassDomain(Integer.class);
-    //     elemsClassDomain.includeInIsomorphismCheck(false);
-    //     for (int i = 0; i < numElems; i++)
-    //         elemsClassDomain.addObject(new Integer(i));
-    //     elems.addClassDomain(elemsClassDomain);
-    //     elems.setNullAllowed(true);
+        IObjSet elems = f.createObjSet(Integer.class);
+        IClassDomain elemsClassDomain = f.createClassDomain(Integer.class);
+        elemsClassDomain.includeInIsomorphismCheck(false);
+        for (int i = 0; i < numElems; i++)
+            elemsClassDomain.addObject(new Integer(i));
+        elems.addClassDomain(elemsClassDomain);
+        elems.setNullAllowed(true);
 
-    //     IIntSet sizes = f.createIntSet(0, maxSize);
+        IIntSet sizes = f.createIntSet(0, maxSize);
 
-    //     f.set("header", entries);
-    //     f.set("size", sizes);
-    //     f.set("Entry.element", elems);
-    //     f.set("Entry.next", entries);
+        f.set("header", entries);
+        f.set("size", sizes);
+        f.set("Entry.element", elems);
+        f.set("Entry.next", entries);
 
-    //     return f;
+        return f;
 
-    // }
+    }
 
 }

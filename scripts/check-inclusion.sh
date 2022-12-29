@@ -22,7 +22,7 @@ popd > /dev/null
 
 pushd $scriptsdir > /dev/null
 
-cp=../$project/build/classes:../lib/structures-inclusion.jar:../lib/korat/korat.jar
+cp=../$project/build/classes:../lib/structures-inclusion.jar:../lib/korat.jar
 
 cmd="java -Xmx$maxheap -ea -cp $cp inclusion.main.CheckInclusion \"$strs\" \"$targetstrs\" \"$canconfig\" \"$notinclstrs\""
 echo "> Executing: $cmd" 
