@@ -3,27 +3,6 @@ source $scriptsdir/common.sh
 
 TO=60m
 
-function run_identify_builders(){
-    project=$1
-    casestudy=$2
-    ant
-    mkdir -p "$BE_EXP_SRC/src/" && cp -r $BE_EXP_SRC/$project/src/main/java/* $BE_EXP_SRC/src/
-    mkdir -p "$BE_EXP_SRC/build/classes" && cp -r $BE_EXP_SRC/$project/build/classes/* $BE_EXP_SRC/build/classes/
-    rm -r $BE_EXP_SRC/tmp/$casestudy/*
-    popd
-    pushd $BE_EXP_SRC
-    SECONDS=0
-    echo "aca"
-    echo $(pwd)
-    cmd="java -cp lib/:lib/korat.jar:$project/build/classes/ main.Builders $casestudy"
-    popd
-
-    echo "$cmd" 
-    bash -c "$cmd"
-    cp builders.txt tmp/$casestudy/
-    cp class-list.txt tmp/$casestudy/
-}
-
 function process_results_beapi_vs_korat() {
     techniques="korat beapi/graph/builders"
 
@@ -133,6 +112,35 @@ function process_results_optimizations() {
         done
     done
 }
+
+function process_results_builders() {
+
+    resultsdir=../tmp/
+    tmpfile="results_builders/results_builders.csv"    
+    [[ -f $tmpfile ]] && rm $tmpfile
+    mkdir -p results_builders
+    echo "case study ; builders ; time ; nMethods" > $tmpfile
+    
+    cases=$(ls $resultsdir)
+    [[ $cases == "" ]] && echo "No Cases found in $currdir" && exit -1;
+    for casestudy in $cases
+    do
+            testline=""
+            currdir=$resultsdir/$casestudy
+            logFile="$currdir/log.txt"
+
+            numCLass=$(cat $logFile| grep "Amount of class"|cut -d':' -f2)
+
+            builders=$(cat $logFile|sed -n -e '/Start All Methods:/,/End All Methods/ p'| sed -e '1d;$d') 
+            nMethods=$(cat $logFile|grep "SIZE :"|cut -d':' -f2)
+            nMethodsAll=$(cat $logFile|grep "Number of methods is:"|cut -d':' -f2)
+            time=$(cat $logFile|grep "TOTAL Time"|cut -d':' -f2)
+
+            echo "$casestudy ; $builders ; $time ; $nMethods"  >> $tmpfile
+    done    
+
+}
+
 
 function clean_results_folders() {
    rm -r ./results-begen/

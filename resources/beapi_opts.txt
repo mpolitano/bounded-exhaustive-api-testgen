@@ -1,0 +1,15 @@
+--literals-level=ALL
+--literals_file=resources/literals.txt
+--usethreads=false
+--only-test-public-members=true
+--instance-object-integer
+--instance-generics-integer
+--disable-contracts
+--all-sequences=false
+--BEmaxsize=15
+--filtering=BEALL
+--canonicalizer-cfg=resources/scope.canonicalizer.properties
+--dont-output-tests
+--exit-no-new-sequences=280000
+--max-BE-iterations=15
+--keep-only-builder-seqs
