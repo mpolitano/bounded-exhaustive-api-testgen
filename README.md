@@ -52,16 +52,19 @@ where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita` (i.e.
 
 For example, to generate inputs for `SinglyLinkedList` from the `0_korat` benchmark using `BEAPI` with a scope of `4` execute: 
 ```
-bash run-testgen-benchmarks.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList beapi 4
+./run-testgen-benchmarks.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList beapi 4
 ```
+
+ACA HAY QUE ACLARAR SI ESTO GENERA TESTS/OBJETOS O AMBOS, Y DONDE ESTA CADA OUTPUT
 
 To perform generation for the same case study and the same scope using `Korat` execute:
 ```
-bash run-testgen-benchmarks.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList korat 4
+./run-testgen-benchmarks.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList korat 4
 ```
 
-The results are shown on the screen, and stored in CSV format in file: ```scripts/results-begen/results_testgen_benchmarks.csv ```. NO SE ENTIENDE. Hay que poner qué resultados hay en el CSV y explicarlos brevemente.
+ACA HAY QUE ACLARAR DONDE DEJA KORAT LOS OBJETOS
 
+The results are shown on the screen, and stored in CSV format in file: ```scripts/results-begen/results_testgen_benchmarks.csv ```. NO SE ENTIENDE. Hay que poner qué resultados hay en el CSV, explicarlos brevemente, y relacionarlos con la tabla correspondiente del paper.
 
 ### Available case studies
 
@@ -75,7 +78,7 @@ The results are shown on the screen, and stored in CSV format in file: ```script
 ...
 COMPLETAR!!
 
-### Running all the experiments for a single benchmark (slow)
+### Running all experiments from a single benchmark (slow)
 
 To reproduce all the experiments for a specific bencharmark study with both techniques (korat and beapi) and for all scopes within XXX and YYY COMPLETAR! pick and run one of following commands: 
 
@@ -97,36 +100,77 @@ To reproduce all the experiments for this research question run:
 
 Note: Running this script might take a few days or longer depending on your hardware
 
-###RQ2
+## Assessing the impact of `BEAPI`'s optimizations (RQ2 in Section 4.2 of the paper)
 
-We run four different configurations of BEAPI in all case studies for increasingly large scopes. We call SM/BLD to BEAPI with state matching (SM) and builder identification (BLD) enabled; SM to BEAPI with only state matching (SM) enabled ; BLD to BEAPI with only builders (BLD) identification enabled; NoOPT has both optimizations disabled. 
+In this section, we assess the impact of `BEAPI`'s optimizations in its performance. We provide four different ways to execute `BEAPI`: DEFAULT (SM/BLD in the paper) is `BEAPI` with state matching enabled (SM) and using identified builders (BLD); SM is `BEAPI` with only state matching (SM) enabled; BLD is `BEAPI` using identified builders (BLD); and NoOpt is `BEAPI` with both optimizations disabled. 
 
-To run a one case study with 4 optimizations, we provide the `beapi-optimizations.sh` script. It takes the following arguments:
+### Running a single experiment
 
-```
-bash beapi-optimizations.sh <project_folder> <case> <budget>
-```
-
-For example, to analyze `SinglyLinkedList`'s using all optimizations for `beapi`, with a scope of `3`execute: 
-```
-bash beapi-optimizations.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList 3
-```
-
-To reproduce all the optimizations for a specific bencharmark study we provide the following scripts: 
+To generate inputs using `BEAPI` with a given configuration run the following script:
 
 ```
-bash beapi-optimizations.sh 0_korat
+./run-testgen-beapi-optimizations.sh <benchmark> <case study> <scope> <config>
 ```
+
+where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`, `4_real_world`; `<case study>` is one of the case studies of `<benchmark>` (see below for the available cases for each benchmark); `<scope>` is the maximum number of nodes and the number of integers (from 0 to scope-1) available for generation, and `<config>` is one of the four aformentioned `BEAPI` configurations: `DEFAULT`, `SM`, `BLD`, `NoOpt`.
+
+For example, to generate inputs for `SinglyLinkedList` from the `0_korat` benchmark using `BEAPI`'s DEFAULT configuration with a scope of `4` execute: 
 ```
-bash beapi-optimizations-0_korat.sh
-bash beapi-optimizations-1_kiasan.sh
-bash beapi-optimizations-2_roops.sh
-bash beapi-optimizations-3_fajita.sh
-bash beapi-optimizations-real-world.sh
+./run-testgen-beapi-optimizations.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList 4 DEFAULT
 
 ```
 
-For run with with all cases studies you must be run:
+FALTA DECIR SI ESTO GENERA SUITES/OBJETOS, Y DONDE SE GUARDAN
+
+FALTA EXPLICAR COMO LEER EL OUTPUT, Y COMO SE RELACIONA CON LOS DATOS EN LAS TABLAS CORRESPONDIENTES DEL PAPER
+
+### Available case studies
+
+- `0_korat`
+  - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList
+  - XXX
+  ...
+- `1_kiasan`
+  -
+  -
+...
+COMPLETAR!!
+
+
+### Running all experiments from a single benchmark (slow)
+
+To reproduce all the experiments for a specific benchmark using all of `BEAPI` configurations, for all scopes within XXX and YYY COMPLETAR! pick and run one of following commands: 
+
 ```
-bash beapi-optimizations-all.sh
+./run-testgen-beapi-optimizations-0_korat.sh
+./run-testgen-beapi-optimizations-1_kiasan.sh
+./run-testgen-beapi-optimizations-2_roops.sh
+./run-testgen-beapi-optimizations-3_fajita.sh
+./run-testgen-beapi-optimizations-real-world.sh
 ```
+
+Note: Running one of the above scripts might take a day or longer depending on your hardware
+
+### Running all the experiments (very slow)
+
+To reproduce all the experiments for this research question run:
+```
+./run-testgen-beapi-optimizations-all.sh
+```
+
+Note: Running this script might take a few days or longer depending on your hardware
+
+
+
+
+## Running automated builders identification (Last paragraph of Section 4.2)
+
+COMPLETAR!
+
+
+
+# Running `BEAPI` on your own case study
+
+COMPLETAR!
+
+
