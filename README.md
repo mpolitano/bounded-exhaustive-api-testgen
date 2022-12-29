@@ -77,21 +77,33 @@ The results are shown on the screen, and stored in CSV format in file: ```script
 ###RQ2
 
 We run four different configurations of BEAPI in all case studies for increasingly large scopes. We call SM/BLD to BEAPI with state matching (SM) and builder identification (BLD) enabled; SM to BEAPI with only state matching (SM) enabled ; BLD to BEAPI with only builders (BLD) identification enabled; NoOPT has both optimizations disabled. 
-To run a one case study with 4 optimizations, we provide the `beapi-optimizations-single-case.sh` script. It takes the following arguments:
+
+To run a one case study with 4 optimizations, we provide the `beapi-optimizations.sh` script. It takes the following arguments:
 
 ```
-bash beapi-optimizations-single-case.sh <project_folder> <cases> <technique> <budget>
+bash beapi-optimizations.sh <project_folder> <case> <budget>
 ```
 
 For example, to analyze `SinglyLinkedList`'s using all optimizations for `beapi`, with a scope of `3`execute: 
 ```
-bash beapi-optimizations-single-case.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList beapi 3
+bash beapi-optimizations.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList 3
 ```
-
-The results are shown on the screen, and stored in CSV format in file: ```scripts/results-begen/results_optimizations.csv ```.
 
 To reproduce all the optimizations for a specific bencharmark study we provide the following scripts: 
 
 ```
 bash beapi-optimizations.sh 0_korat
+```
+```
+bash beapi-optimizations-0_korat.sh
+bash beapi-optimizations-1_kiasan.sh
+bash beapi-optimizations-2_roops.sh
+bash beapi-optimizations-3_fajita.sh
+bash beapi-optimizations-real-world.sh
+
+```
+
+For run with with all cases studies you must be run:
+```
+bash beapi-optimizations-all.sh
 ```

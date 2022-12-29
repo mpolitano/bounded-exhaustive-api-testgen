@@ -77,107 +77,9 @@ function process_results_beapi_vs_korat() {
         done
     done
 }
-
-function run_SM_BLD() {
-    for project in $projects
-    do
-        for casestudy in $cases 
-        do
-            for technique in $techniques 
-            do
-                for budget in $budgets
-                do
-                    cmd="timeout $TO ./run-begen-experiment.sh $project $casestudy $technique $budget graph builders"
-                    echo "************"
-                    echo ">> Executing: $cmd"
-                    bash -c "$cmd"
-                    if [ $? -eq 124 ]; then 
-                        echo ">> Execution timed out"
-                        # break;
-                        break 3;
-                    fi
-                done
-            done
-        done
-    done
-}
-
-function run_SM() {
-    for project in $projects
-    do
-        for casestudy in $cases 
-        do
-            for technique in $techniques 
-            do
-                for budget in $budgets
-                do
-                    cmd="timeout $TO ./run-begen-experiment.sh $project $casestudy $technique $budget graph no-builders"
-                    echo "************"
-                    echo ">> Executing: $cmd"
-                    bash -c "$cmd"
-                    if [ $? -eq 124 ]; then 
-                        echo ">> Execution timed out"
-                        # break;
-                        break 3;
-
-                    fi
-                done
-            done
-        done
-    done
-}
-
-function run_BLD() {
-    for project in $projects
-    do
-        for casestudy in $cases 
-        do
-            for technique in $techniques 
-            do
-                for budget in $budgets
-                do
-                    cmd="timeout $TO ./run-begen-experiment.sh $project $casestudy $technique $budget no-matching builders"
-                    echo "************"
-                    echo ">> Executing: $cmd"
-                    bash -c "$cmd"
-                    if [ $? -eq 124 ]; then 
-                        echo ">> Execution timed out"
-                        # break;
-                        break 3;
-                    fi
-                done
-            done
-        done
-    done
-}
-
-
-function run_No_Opt() {
-    for project in $projects
-    do
-        for casestudy in $cases 
-        do
-            for technique in $techniques 
-            do
-                for budget in $budgets
-                do
-                    cmd="timeout $TO ./run-begen-experiment.sh $project $casestudy $technique $budget no-matching no-builders"
-                    echo "************"
-                    echo ">> Executing: $cmd"
-                    bash -c "$cmd"
-                    if [ $? -eq 124 ]; then 
-                        echo ">> Execution timed out"
-                        # break;
-                        break 3;
-                    fi
-                done
-            done
-        done
-    done
-}
-
+    
 function process_results_optimizations() {
-    resultsdir=./results-begen/
+    resultsdir=./results-optimizations/
     techniques="beapi/graph/builders beapi/graph/no-builders beapi/no-matching/builders beapi/no-matching/no-builders"
 
     tmpfile="$resultsdir/results_optimizations.csv"
@@ -185,7 +87,7 @@ function process_results_optimizations() {
     [[ -f $tmpfile ]] && rm $tmpfile
     [[ -f $tmpfilebuilders ]] && rm $tmpfilebuilders
     echo "Project,Class,Technique,Budget,Time,Structures,Explored" > $tmpfile
-
+    echo $resultsdir
     projects=$(ls $resultsdir)
     [[ $projects == "" ]] && echo "No proyects found in $currdir" && exit -1;
     for project in $projects
@@ -218,16 +120,11 @@ function process_results_optimizations() {
                     structures=""
                     explored=""
 
-                    if [[ $technique == "korat" ]]; then
-                        gentime=$(grep "Overall time" $logfile | cut -d' ' -f3)
-                        structures=$(grep "New found" $logfile | cut -d':' -f2)
-                        explored=$(grep "Total explored" $logfile | cut -d':' -f2)
-                    else
-                        gentime=$(grep "Bounded exhaustive generation time" $logfile | cut -d' ' -f5)
-                        # gentime=$(echo "result = (${gentime}/1000); scale=2; result / 1" | bc -l)
-                        structures=$(grep "Number of builder sequences" $logfile | cut -d' ' -f5)
-                        explored=$(grep "Number of sequences explored" $logfile | cut -d' ' -f5)
-                    fi
+                    gentime=$(grep "Bounded exhaustive generation time" $logfile | cut -d' ' -f5)
+                    # gentime=$(echo "result = (${gentime}/1000); scale=2; result / 1" | bc -l)
+                    structures=$(grep "Number of builder sequences" $logfile | cut -d' ' -f5)
+                    explored=$(grep "Number of sequences explored" $logfile | cut -d' ' -f5)
+                  
                     echo $gentime >> $tmpfilebuilders
                     echo "$project,$casestudy,$technique,$budget,$gentime,$structures,$explored" >> $tmpfile
 
