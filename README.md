@@ -25,48 +25,77 @@ Tool's binaries:
 
 - `lib` contains the binaries for the tools and libraries required to run the experiments as .jar files.
 - `lib\BEAPI.JAR` PONER EL CORRECTO binaries for the current `BEAPI` implementation. 
+- `lib\korat.jar` binaries for the last `Korat` version. 
 
 Scripts:
 
-- `scripts` provided scripts to facilitate the execution of `BEAPI`, and to easily reproduce the results in the paper.
+- `scripts` provided scripts to facilitate the execution of `BEAPI`, and to easily reproduce the experiments in the paper.
 
 
 # Reproducing the paper's experiments 
 
-## Running a single experiment
+## Comparison of `BEAPI` against `Korat` in benchmarks from the literature (RQ1 in Section 4.1 of the paper)
 
-###RQ1
+### Running a single experiment
 
-To easily run a single technique over a case study we provide the `run-testgen-benchmarks.sh` script. It takes the following arguments:
+To easily run either `BEAPI` or `Korat` in benchmarks from the literature we provide `run-testgen-benchmarks.sh` in the `scripts` folder. First, move to the scripts folder.
+
 ```
-bash `run-testgen-benchmarks.sh <project_folder> <cases> <technique> <budget>
+cd scripts
 ```
 
-For example, to analyze `SinglyLinkedList` from 0_korat benchmark using `korat`, with a scope of `4`execute: 
+`run-testgen-benchmarks.sh` takes the following arguments:
 ```
-bash run-testgen-benchmarks.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList korat 4
+./run-testgen-benchmarks.sh <benchmark> <case study> <technique> <scope>
 ```
-To analyze using `beapi`
+where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita` (i.e., the name of the folder of the corresponding benchmark); `<case study>` is one of the case studies of `<benchmark>` (see below for a description of the available cases for each benchmark);  `<technique>` is either `beapi` or `korat`; and `<scope>` is the maximum number of nodes and the number of integers (from 0 to scope-1) available for generation.
+
+For example, to generate inputs for `SinglyLinkedList` from the `0_korat` benchmark using `BEAPI` with a scope of `4` execute: 
 ```
 bash run-testgen-benchmarks.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList beapi 4
 ```
 
-To reproduce all the experiments for a specific bencharmark study with both techniques (korat and beapi) we provide the following scripts: 
-
+To perform generation for the same case study and the same scope using `Korat` execute:
 ```
-bash run-testgen-benchmarks-0_korat.sh
-bash run-testgen-benchmarks-1_kiasan.sh
-bash run-testgen-benchmarks-2_roops.sh
-bash run-testgen-benchmarks-3_fajita.sh
+bash run-testgen-benchmarks.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList korat 4
 ```
 
-To reproduce all the experiments for all cases study, you can run the following scripts:
+The results are shown on the screen, and stored in CSV format in file: ```scripts/results-begen/results_testgen_benchmarks.csv ```. NO SE ENTIENDE. Hay que poner qué resultados hay en el CSV y explicarlos brevemente.
+
+
+### Available case studies
+
+- `0_korat`
+  - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList
+  - XXX
+  ...
+- `1_kiasan`
+  -
+  -
+...
+COMPLETAR!!
+
+### Running all the experiments for a single benchmark (slow)
+
+To reproduce all the experiments for a specific bencharmark study with both techniques (korat and beapi) and for all scopes within XXX and YYY COMPLETAR! pick and run one of following commands: 
+
 ```
-bash run-testgen-benchmarks-all.sh
+./run-testgen-benchmarks-0_korat.sh
+./run-testgen-benchmarks-1_kiasan.sh
+./run-testgen-benchmarks-2_roops.sh
+./run-testgen-benchmarks-3_fajita.sh
 ```
 
-The results are shown on the screen, and stored in CSV format in file: ```scripts/results-begen/results_testgen_benchmarks.csv ```.
+Note: Running one of the above scripts might take a day or longer depending on your hardware
 
+### Running all the experiments (very slow)
+
+To reproduce all the experiments for this research question run:
+```
+./run-testgen-benchmarks-all.sh
+```
+
+Note: Running this script might take a few days or longer depending on your hardware
 
 ###RQ2
 
