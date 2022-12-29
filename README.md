@@ -55,6 +55,8 @@ For example, to generate inputs for `SinglyLinkedList` from the `0_korat` benchm
 ./run-testgen-benchmarks.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList beapi 4
 ```
 
+
+
 ACA HAY QUE ACLARAR SI ESTO GENERA TESTS/OBJETOS O AMBOS, Y DONDE ESTA CADA OUTPUT
 
 To perform generation for the same case study and the same scope using `Korat` execute:
@@ -64,19 +66,53 @@ To perform generation for the same case study and the same scope using `Korat` e
 
 ACA HAY QUE ACLARAR DONDE DEJA KORAT LOS OBJETOS
 
-The results are shown on the screen, and stored in CSV format in file: ```scripts/results-begen/results_testgen_benchmarks.csv ```. NO SE ENTIENDE. Hay que poner qué resultados hay en el CSV, explicarlos brevemente, y relacionarlos con la tabla correspondiente del paper.
+
+The screen shows a summary of the results obtained, as well as the path to the log file that each `<technique>` throws as[ ](url)output. Also, the results are stored in a CSV format file (```results_testgen_benchmarks.csv```) located in ```script/results-begen``` folder.  
+
+
+The information tabulated in the csv file correspond to:
+
+- Case study information: project benchmark and case study
+- Running technique (BEAPI or Korat)
+- Time spent for generation (In second)
+- Number of structures generated
+- Number of structures visited during generation
+ 
+
+LINKEAR DE ALGUNA MANERA CON LA INFO QUE ESTA EN LA TABLA 1
+
 
 ### Available case studies
 
 - `0_korat`
-  - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList
-  - XXX
-  ...
+  - `DoublyLinkedList`: korat.examples.doublylinkedlist.DoublyLinkedList (`DDList`)
+  - `FibonacciHeap`: korat.examples.fibheap.FibonacciHeap (`FibHeap`)
+  -	`BinomialHeap`: korat.examples.binheap.BinomialHeap (`BinHeap`)
+  - `SearchTree`:korat.examples.searchtree.SearchTree (`BST`)
+  - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList (`SLList`)
+  - `RedBlackTree`: korat.examples.redblacktree.RedBlackTree (`RBT`)
+
 - `1_kiasan`
-  -
-  -
-...
-COMPLETAR!!
+  - `BinarySearchTree`: binarysearchtree.BinarySearchTree (`BST`)
+  - `DoubleLinkedList`: doublylinkedlist.DoubleLinkedList (`DDL`)
+  - `DisjSetsFast`: disjointSet.fast.DisjSetsFast (`DisjSetFast`)
+  - `StackLi`: stack.list.StackLi (`StackList`)
+  - `BinaryHeap`: binaryheap.BinaryHeap (`BHeap`)
+  - `TreeMap`: redblacktree.TreeMap (`TreeMap`)	
+
+- `2_roops`
+
+  - `AvlTree`: avl.AvlTree (`AVL`)
+  - `NodeCachingLinkedList`: ncl.NodeCachingLinkedList (`NCL`)
+  - `BinTree`: bintree.BinTree (`BinTree`)
+  - `LinkedList`: linkedlist.LinkedList (`LList`)
+  - `TreeSet`: rbt.TreeSet (`RBT`)
+  - `FibHeap`: fibheap.FibHeap (`FibHeap`)
+  - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
+
+COMPLETAR!
+
+Note: COMPLETAR
 
 ### Running all experiments from a single benchmark (slow)
 
