@@ -3,26 +3,9 @@
 
 `BEAPI` is an efficient approach that employs routines from the API of the software under test to perform BE input generation. This repository includes the `BEAPI` artifact for the paper "Efficient Bounded Exhaustive Input Generation from Program APIs", accepted for publication in FASE 2023.
 
-# Requirements
+# Installation
 
-- Java 1.8
-- Ant
-
-
-# Getting Started
-
-Clone the repository:
-
-Move to the recently created folder:
-```
-cd bounded-exhaustive-api-testgen
-```
-
-# Install
-
-- Must set environment variable BE_EXP_SRC to the current directory before running the experiments. For example: 
-```export BE_EXP_SRC=$(pwd)```
-....
+Follow the instructions in `INSTALL.md`.
 
 # Folder structure
 
