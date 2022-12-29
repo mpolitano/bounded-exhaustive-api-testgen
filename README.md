@@ -1,9 +1,12 @@
-# Efficient Bounded Exhaustive Input Generation from Program APIs
-# BEAPI
+# BEAPI Tool: Efficient Bounded Exhaustive Input Generation from Program APIs
 
-`BEAPI` is an efficient approach that employs routines from the API of the software under test to perform BE input generation. This repository includes the `BEAPI` artifact for the paper "Efficient Bounded Exhaustive Input Generation from Program APIs", accepted for publication in FASE 2023.
+`BEAPI` is an efficient approach that employs routines from the API of the software under test to perform bounded exhaustive input generation. This repository includes an artifact for `BEAPI`'s paper, cited below, including an implementation of `BEAPI` and scripts to run and replicate the experiments in the paper.
 
-# Installation
+- M. Politano, V. Bengolea, F. Molina, N. Aguirre, M. Frias, P. Ponzio, *Efficient Bounded Exhaustive Input Generation from Program APIs*, accepted for publication in Fundamental Approaches to Software Engineering, FASE 2023.
+
+Note: At this point only binaries are provided for `BEAPI`'s implementation, we plan to release `BEAPI`'s source code as open source in the coming months.
+
+# Installing BEAPI's Artifact 
 
 Follow the instructions in `INSTALL.md`.
 
