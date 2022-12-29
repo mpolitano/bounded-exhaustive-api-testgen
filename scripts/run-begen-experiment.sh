@@ -34,16 +34,6 @@ echo ""
 echo "> Generating tests: $cmd"
 bash -c "$cmd" 
 
-# if [[ $opt2 == "discover" ]]; then
-#     cp builders.txt $resultsdir
-# fi
-
-#if [[ $technique == "beapi"* ]]; then
-#    cmd="cp -r $projectdir/$technique-tests $resultsdir"
-#    echo ""
-#    echo "> Saving tests: $cmd"
-#    bash -c "$cmd" 
-#fi
 
 popd > /dev/null
 

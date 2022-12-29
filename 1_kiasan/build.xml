@@ -6,7 +6,6 @@
   <property name="build.home"              value="build"/>
   <property name="build.classes"           value="${build.home}/classes"/>
   <property name="build.tests"             value="${build.home}/tests"/>
-  <property name="build.randoop"           value="${build.home}/randoop"/>
   <property name="build.be"                value="${build.home}/be"/>
   
   <!-- Javac -->
@@ -38,13 +37,6 @@
       <pathelement location="../lib/korat.jar" />
   </path>  
 
-  <!-- The dependency libraries -->
- <!--  <path id="source.lib">
-      <fileset dir="../lib">
-         <include name="**/*.jar"/>
-      </fileset>
-  </path>
- -->
   <!-- The dependency libraries for running/compiling tests -->
   <path id="test.lib">
       <fileset dir="test-lib">
@@ -71,8 +63,6 @@
   <target name="clean-auto-tests"
           description="Clean automatically generated tests">
     <delete dir="${be.java}"/>
-    <delete dir="${randoop.java}"/>
-    <delete dir="${evosuite.java}"/>
   </target>
 
 <!-- ====================================================================== -->
@@ -103,7 +93,6 @@
           optimize="${compile.optimize}"
           encoding="${compile.encoding}"
        includeantruntime="false">
-          <!-- <classpath refid="source.lib" /> -->
           <classpath refid="korat.lib"/>
     </javac>
     <copy todir="${build.classes}">

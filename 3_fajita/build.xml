@@ -1,4 +1,4 @@
-<project xmlns:jacoco="antlib:org.jacoco.ant" name="builders" default="compile" basedir=".">
+<project xmlns:jacoco="antlib:org.jacoco.ant" name="3_fajita" default="compile" basedir=".">
 
 
   <property name="max.heap"                value="8g"/>
@@ -6,7 +6,6 @@
   <property name="build.home"              value="build"/>
   <property name="build.classes"           value="${build.home}/classes"/>
   <property name="build.tests"             value="${build.home}/tests"/>
-  <property name="build.randoop"           value="${build.home}/randoop"/>
   <property name="build.be"                value="${build.home}/be"/>
   
   <!-- Javac -->
@@ -17,15 +16,12 @@
   <property name="compile.target"          value="1.5"/>
   <property name="compile.encoding"        value="iso-8859-1"/>
   
-  
   <!-- The base directories for sources -->
   <property name="source.java"             value="src/main/java"/>
   <property name="test.java"               value="src/test/java"/>
   <property name="source.resources"        value="src/main/resources"/>
   <property name="test.resources"          value="src/test/resources"/>
   <property name="test.report.dir"         value="${build.home}/test-report"/>
-  <property name="evosuite.java"           value="evosuite-tests"/>
-  <property name="randoop.java"            value="randoop-tests"/>
   <property name="be.java"                 value="be-tests"/>
 
   <property name="lib.dir"                 value="../lib/"/>
@@ -38,15 +34,8 @@
 
 
   <path id="korat.lib">
-      <pathelement location="${build.home}/korat.jar" />
+      <pathelement location="../lib/korat.jar" />
   </path>  
-
-  <!-- The dependency libraries -->
-  <path id="source.lib">
-      <fileset dir="../lib">
-         <include name="**/*.jar"/>
-      </fileset>
-  </path>
 
   <!-- The dependency libraries for running/compiling tests -->
   <path id="test.lib">
@@ -62,7 +51,6 @@
   </path>  
 
 
-
 <!-- ====================================================================== -->
 <!-- ========== Executable Targets ======================================== -->
 <!-- ====================================================================== -->
@@ -75,8 +63,6 @@
   <target name="clean-auto-tests"
           description="Clean automatically generated tests">
     <delete dir="${be.java}"/>
-    <delete dir="${randoop.java}"/>
-    <delete dir="${evosuite.java}"/>
   </target>
 
 <!-- ====================================================================== -->
@@ -107,7 +93,6 @@
           optimize="${compile.optimize}"
           encoding="${compile.encoding}"
        includeantruntime="false">
-          <classpath refid="source.lib" />
           <classpath refid="korat.lib"/>
     </javac>
     <copy todir="${build.classes}">
@@ -115,14 +100,6 @@
         <fileset dir="${source.resources}" includes="**"/>
     </copy>
   </target>
-
-  <target name="jacoco-instrument" depends="compile">
-    <!--  Step 2: Instrument class files  -->
-    <jacoco:instrument destdir="${build.jacoco.instr}">
-      <fileset dir="${build.classes}"/>
-    </jacoco:instrument>
-  </target>
-
 <!-- ====================================================================== -->
   
   <target name="compile-tests" depends="compile"
@@ -192,6 +169,3 @@
 
 
 </project>
-
-
-    

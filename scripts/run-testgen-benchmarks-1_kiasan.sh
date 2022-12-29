@@ -4,7 +4,7 @@ projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
 source $scriptsdir/scripts.sh
 
-cases="korat.examples.singlylinkedlist.SinglyLinkedList korat.examples.binheap.BinomialHeap korat.examples.redblacktree.RedBlackTree korat.examples.doublylinkedlist.DoublyLinkedList korat.examples.searchtree.SearchTree korat.examples.fibheap.FibonacciHeap"
+cases="redblacktree.TreeMap doublylinkedlist.DoubleLinkedList binarysearchtree.BinarySearchTree disjointSet.orig.DisjSets disjointSet.fast.DisjSetsFast stack.list.StackLi stack.array.StackAr binaryheap.BinaryHeap"
 techniques="beapi korat"
 budgets="3"
 
@@ -15,7 +15,7 @@ do
     do
         for budget in $budgets
         do
-            cmd="timeout $TO ./run-testgen-benchmarks.sh 0_korat $casestudy $technique $budget"
+            cmd="timeout $TO ./run-testgen-benchmarks.sh 1_kiasan $casestudy $technique $budget"
             bash -c "$cmd"
             if [ $? -eq 124 ]; then 
                 echo ">> Execution timed out"

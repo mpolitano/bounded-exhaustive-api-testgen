@@ -6,7 +6,6 @@ TO=60m
 function run_identify_builders(){
     project=$1
     casestudy=$2
-    pushd $BE_EXP_SRC/$project
     ant
     mkdir -p "$BE_EXP_SRC/src/" && cp -r $BE_EXP_SRC/$project/src/main/java/* $BE_EXP_SRC/src/
     mkdir -p "$BE_EXP_SRC/build/classes" && cp -r $BE_EXP_SRC/$project/build/classes/* $BE_EXP_SRC/build/classes/
@@ -25,34 +24,11 @@ function run_identify_builders(){
     cp class-list.txt tmp/$casestudy/
 }
 
-function run_beapi_korat() {
-    for project in $projects
-    do
-        for casestudy in $cases 
-        do
-            for technique in $techniques 
-            do
-                for budget in $budgets
-                do
-                    cmd="timeout $TO ./run-begen-experiment.sh $project $casestudy $technique $budget graph builders"
-                    echo "************"
-                    echo ">> Executing: $cmd"
-                    bash -c "$cmd"
-                    if [ $? -eq 124 ]; then 
-                        echo ">> Execution timed out"
-                        break;
-                    fi
-                done
-            done
-        done
-    done
-}
-
 function process_results_beapi_vs_korat() {
     techniques="korat beapi/graph/builders"
 
     resultsdir=./results-begen/
-    tmpfile="$resultsdir/results_beapi_vs_korat.csv"
+    tmpfile="$resultsdir/results_testgen_benchmarks.csv"
 
     [[ -f $tmpfile ]] && rm $tmpfile
     echo "Project,Class,Technique,Budget,Time,Structures,Explored" > $tmpfile
