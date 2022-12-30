@@ -18,8 +18,7 @@ The following folders contain the source code of the case studies considered in 
 - `1_kiasan/src/main/java` contains the source code of the data structures implementations for the `Kiasan`'s benchmark.
 - `2_roops/src/main/java` contains the source code of the data structures implementations for the `ROOPS`' benchmark.
 - `3_fajita/src/main/java` contains the source code of the data structures implementations for the `FAJITA`'s benchmark.
-- `4_real_world/src/main/java` contains the source code of data structures implementations from the real world, drawn from the  
-**java.util** and **Apache Commons Collections** libraries.
+- `4_real_world/src/main/java` contains the source code of data structures implementations from the real world, drawn from the  **java.util** and **Apache Commons Collections** libraries.
 
 Tool's binaries:
 
@@ -62,21 +61,21 @@ To perform generation for the same case study and the same scope using `Korat` e
 ./run-testgen-benchmarks.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList korat 4
 ```
 
-
-ACA HAY QUE ACLARAR DONDE DEJA KORAT LOS OBJETOS
+Note: For this experiment, we do not serialize to disk the objects that `Korat` builds during generation.
 
 
 The screen shows a summary of the results obtained, as well as the path to the log file that each `<technique>` throws as output. Also, the results are stored in a CSV format file (```results_testgen_benchmarks.csv```) located in ```script/results-begen``` folder.  
 
 
-The information tabulated in the csv file correspond to:
+The information tabulated in the CSV file correspond to:
 
-- Case study information: project benchmark and case study
+- Case study information: project benchmark and case study class
 - Running technique (BEAPI or Korat)
 - Time spent for generation (In second)
 - Number of structures generated
 - Number of structures visited during generation
  
+
 
 LINKEAR DE ALGUNA MANERA CON LA INFO QUE ESTA EN LA TABLA 1
 
@@ -117,11 +116,11 @@ LINKEAR DE ALGUNA MANERA CON LA INFO QUE ESTA EN LA TABLA 1
   - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
 
 
-Note: COMPLETAR
+Note: The text that is inside parentheses in each case, corresponds to the short names used in **Table 1** of **Section 4.1** of the paper, to identify each case study.
 
 ### Running all experiments from a single benchmark (slow)
 
-To reproduce all the experiments for a specific bencharmark study with both techniques (korat and beapi) and for all scopes within XXX and YYY COMPLETAR! pick and run one of following commands: 
+To reproduce all the experiments for a specific benchrmark study with both techniques (korat and beapi) and for all scopes within XXX and YYY COMPLETAR! pick and run one of following commands: 
 
 ```
 ./run-testgen-benchmarks-0_korat.sh
