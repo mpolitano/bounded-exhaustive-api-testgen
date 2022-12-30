@@ -95,7 +95,7 @@ Besides the order of presentation, the relationship between these data and those
   - `DisjSetsFast`: disjointSet.fast.DisjSetsFast (`DisjSetFast`)
   - `StackLi`: stack.list.StackLi (`StackList`)
   - `BinaryHeap`: binaryheap.BinaryHeap (`BHeap`)
-  - `TreeMap`: redblacktree.TreeMap (`TreeMap`)	
+  - `TreeMap`: redblacktree.TreeMap (`TreeMap`)
 
 - `2_roops`
 
@@ -201,10 +201,42 @@ Note: Running this script might take a few days or longer depending on your hard
 
 
 
-
 ## Running automated builders identification (Last paragraph of Section 4.2)
 
 COMPLETAR!
+
+
+## Analysis of Specification using `BEAPI` (RQ3 in Section 4.3 of the paper)
+
+In this section..., COMPLETAR!
+
+### Running a single experiment
+
+COMPLETAR!
+
+### Available case studies
+
+- `0_korat`
+  - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList
+  - XXX
+  ...
+- `1_kiasan`
+  -
+  -
+...
+COMPLETAR!!
+
+
+### Running all experiments from a single benchmark (slow)
+
+To reproduce all the experiments for a specific benchmark ... COMPLETAR
+
+### Running all the experiments (very slow)
+
+To reproduce all the experiments for this research question run:
+
+COMPLETAR
+Note: Running this script might take a few days or longer depending on your hardware
 
 
 
