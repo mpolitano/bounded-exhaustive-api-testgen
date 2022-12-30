@@ -69,16 +69,15 @@ The screen shows a summary of the results obtained, as well as the path to the l
 
 The information tabulated in the CSV file correspond to:
 
-- Case study information: project benchmark and case study class
-- Running technique (BEAPI or Korat)
-- Time spent for generation (In second)
-- Number of structures generated
-- Number of structures visited during generation
+- Case study information: **project** benchmark and case study **class**
+- Running **technique** (BEAPI or Korat)
+- **Budget** (scope) used for input generation
+- **Time** spent for input generation (In second)
+- Number of **structures** generated
+- Number of structures visited (**explored**) during generation
  
 
-
-LINKEAR DE ALGUNA MANERA CON LA INFO QUE ESTA EN LA TABLA 1
-
+Besides the order of presentation, the relationship between these data and those presented in **Table 1** of **Section 4.1** of the paper for each case study (see below, list of case studies, each with its corresponding short name), is completely straightforward.
 
 ### Available case studies
 
