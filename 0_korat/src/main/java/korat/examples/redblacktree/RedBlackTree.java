@@ -26,7 +26,9 @@ public class RedBlackTree implements Serializable {
     private static final int BLACK = 1;
  
 
-   public static class Node  {
+   public static class Node  implements Serializable  {
+
+		private static final long serialVersionUID = 1L;
 
         int key;
 

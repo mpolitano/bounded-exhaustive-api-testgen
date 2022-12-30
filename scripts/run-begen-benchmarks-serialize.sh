@@ -7,70 +7,79 @@ source $scriptsdir/common.sh
 
 TO=60m
 
-function run_many() {
+function run_serialize() {
 for technique in $techniques; do
-for ((budget=$minscope;budget<=$maxscope;budget++)); do
-cmd="timeout $TO ./run-begen-serialize-experiment.sh $project $casestudy $technique $budget graph builders"
-echo "************"
-echo ">> Executing: $cmd"
-bash -c "$cmd"
-if [ $? -eq 124 ]; then
-echo ">> Execution timed out"
-break;
-fi
-done
+	for ((budget=$minscope;budget<=$maxscope;budget++)); do
+	cmd="timeout $TO ./run-begen-serialize-experiment.sh $project $casestudy $technique $budget graph builders"
+	echo "************"
+	echo ">> Executing: $cmd"
+	bash -c "$cmd"
+	if [ $? -eq 124 ]; then
+		echo ">> Execution timed out"
+	break;
+	fi
+	done
 done
 }
 
 function run_korat_inclusion() {
 # Check inclusion
 for ((budget=$minscope;budget<=$maxscope;budget++)); do
-koratdir=results-begen-serialize/$project/$casestudy/korat/$budget
-koratstrs=$koratdir/korat-tests/objects.ser
-for ((inclbudget=$budget;inclbudget<=$maxscope;inclbudget++)); do
-bestrs=results-begen-serialize/$project/$casestudy/beapi/graph/builders/$inclbudget/beapi-tests/objects.ser
-config=properties/scope$budget.all.canonicalizer.properties
-reslog=$koratdir/inclusion-results-$inclbudget.txt
-diff=$koratdir/structures-not-included-$inclbudget.txt
-echo "************"
-cmd="./check-inclusion.sh $project $koratstrs $bestrs $config $diff > $reslog"
-echo ">> Executing: $cmd"
-bash -c "$cmd"
-done
+	koratdir=results-begen-serialize/$project/$casestudy/korat/$budget
+	koratstrs=$koratdir/korat-tests/objects.ser
+	for ((inclbudget=$budget;inclbudget<=$maxscope;inclbudget++)); do
+		bestrs=results-begen-serialize/$project/$casestudy/beapi/graph/builders/$inclbudget/beapi-tests/objects.ser
+		config=properties/scope$budget.all.canonicalizer.properties
+		reslog=$koratdir/inclusion-results-$inclbudget.txt
+		diff=$koratdir/structures-not-included-$inclbudget.txt
+		echo "************"
+		cmd="./check-inclusion.sh $project $koratstrs $bestrs $config $diff > $reslog"
+		echo ">> Executing: $cmd"
+		bash -c "$cmd"
+	done
 done
 }
 
 function run_beapi_inclusion() {
 # Check inclusion
 for ((budget=$minscope;budget<=$maxscope;budget++)); do
-beapidir=results-begen-serialize/$project/$casestudy/beapi/graph/builders/$budget
-beapistrs=$beapidir/beapi-tests/objects.ser
-for ((inclbudget=$budget;inclbudget<=$maxscope;inclbudget++)); do
-koratstrs=results-begen-serialize/$project/$casestudy/korat/$inclbudget/korat-tests/objects.ser
-config=properties/scope$budget.all.canonicalizer.properties
-reslog=$beapidir/inclusion-results-$inclbudget.txt
-diff=$beapidir/structures-not-included-$inclbudget.txt
-echo "************"
-cmd="./check-inclusion.sh $project $beapistrs $koratstrs $config $diff > $reslog"
-echo ">> Executing: $cmd"
-bash -c "$cmd"
-done
+	beapidir=results-begen-serialize/$project/$casestudy/beapi/graph/builders/$budget
+	beapistrs=$beapidir/beapi-tests/objects.ser
+	for ((inclbudget=$budget;inclbudget<=$maxscope;inclbudget++)); do
+		koratstrs=results-begen-serialize/$project/$casestudy/korat/$inclbudget/korat-tests/objects.ser
+		config=properties/scope$budget.all.canonicalizer.properties
+		reslog=$beapidir/inclusion-results-$inclbudget.txt
+		diff=$beapidir/structures-not-included-$inclbudget.txt
+		echo "************"
+		cmd="./check-inclusion.sh $project $beapistrs $koratstrs $config $diff > $reslog"
+		echo ">> Executing: $cmd"
+		bash -c "$cmd"
+	done
 done
 }
 
+######korat###############
+project="$1"
+casestudy="$2"
+techniques="beapi korat"
+minscope=$3
+# maxscope=13
+maxscope=$4
+run_serialize ;  
+run_korat_inclusion ; run_beapi_inclusion
 
 ######korat###############
-project="0_korat"
-# casestudy="korat.examples.redblacktree.RedBlackTree"
-casestudy="korat.examples.singlylinkedlist.SinglyLinkedList"
+# project="0_korat"
+# # casestudy="korat.examples.redblacktree.RedBlackTree"
+# casestudy="korat.examples.singlylinkedlist.SinglyLinkedList"
 
-techniques="beapi korat"
-minscope=3
-# maxscope=13
-maxscope=6
+# techniques="beapi korat"
+# minscope=3
+# # maxscope=13
+# maxscope=6
 
-run_many ;  
-run_korat_inclusion ; run_beapi_inclusion
+# run_many ;  
+# run_korat_inclusion ; run_beapi_inclusion
 
 # project="0_korat"
 # casestudy="korat.examples.binheap.BinomialHeap"

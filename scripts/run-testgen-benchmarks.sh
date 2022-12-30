@@ -20,5 +20,7 @@ if [ $? -eq 124 ]; then
     break;
 fi
 
-process_results_beapi_vs_korat;
-
+echo "************"
+echo "Report"
+process_results_beapi_vs_korat_display $project $case $technique $budget ;
+echo "************"

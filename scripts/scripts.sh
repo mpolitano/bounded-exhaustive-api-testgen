@@ -56,6 +56,42 @@ function process_results_beapi_vs_korat() {
         done
     done
 }
+
+function process_results_beapi_vs_korat_display() {
+    
+    project=$1
+    casestudy=$2
+    technique=$3
+    budget=$4
+
+    if [[ $technique == "beapi"* ]]; then
+        resultsdir=results-begen/$project/$casestudy/$technique/graph/builders/$budget/
+    else
+        resultsdir=results-begen/$project/$casestudy/$technique/$budget/
+    fi
+    echo "Project,Class,Technique,Budget,Time,Structures,Explored"
+
+
+    logfile=$resultsdir/log.txt
+
+    gentime=""
+    structures=""
+    explored=""
+
+    if [[ $technique == "korat" ]]; then
+        gentime=$(grep "Overall time" $logfile | cut -d' ' -f3)
+        structures=$(grep "New found" $logfile | cut -d':' -f2)
+        explored=$(grep "Total explored" $logfile | cut -d':' -f2)
+    else
+        gentime=$(grep "Bounded exhaustive generation time" $logfile | cut -d' ' -f5)
+        gentime=$(echo "result = (${gentime%??}/1000); scale=2; result / 1" | bc -l)
+        structures=$(grep "Number of builder sequences" $logfile | cut -d' ' -f5)
+        explored=$(grep "Number of sequences explored" $logfile | cut -d' ' -f5)
+    fi
+
+    echo "$project,$casestudy,$technique,$budget,$gentime,$structures,$explored"
+
+}
     
 function process_results_optimizations() {
     resultsdir=./results-optimizations/

@@ -7,7 +7,6 @@ source $scriptsdir/scripts.sh
 #Korat
 projects="$1"
 cases="$2"
-run_many ;
 
 TO=60m
 function run_identification(){
@@ -30,20 +29,23 @@ function run_identify_builders(){
     pushd $BE_EXP_SRC/$project
     ant
     popd
-    mkdir -p "$BE_EXP_SRC/src/" && cp -r $BE_EXP_SRC/$project/src/main/java/* $BE_EXP_SRC/src/
-    mkdir -p "$BE_EXP_SRC/build/classes" && cp -r $BE_EXP_SRC/$project/build/classes/* $BE_EXP_SRC/build/classes/
+    mkdir -p "$BE_EXP_SRC/src/" && cp -r $BE_EXP_SRC/$project/src/main/java/* $BE_EXP_SRC/src
+    mkdir -p "$BE_EXP_SRC/build/classes" && cp -r $BE_EXP_SRC/$project/build/classes/* $BE_EXP_SRC/build/classes
     rm -r $BE_EXP_SRC/tmp/$casestudy/*
     
     pushd $BE_EXP_SRC
 
     SECONDS=0
 
-    cmd="java -cp lib/identificationBuilders.jar:$project/build/classes/:lib/korat.jar main.Builders $casestudy"
+    cmd="java -cp $project/build/classes/:lib/korat.jar:lib/identificationBuilders.jar main.Builders $casestudy"
     
     echo ">> Executing: $cmd"
     echo "$cmd" 
     bash -c "$cmd"
     cp builders.txt tmp/$casestudy/
+
+    #debo borrar las folders. TODO
+    rm -r $BE_EXP_SRC/
 
     rm -r $BE_EXP_SRC/src/
     rm -r $BE_EXP_SRC/build/classes
