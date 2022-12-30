@@ -110,7 +110,13 @@ LINKEAR DE ALGUNA MANERA CON LA INFO QUE ESTA EN LA TABLA 1
   - `FibHeap`: fibheap.FibHeap (`FibHeap`)
   - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
 
-COMPLETAR!
+
+- `3_fajita`
+  - `BinTree `: bintree1.BinTree (`BinTree`)
+  - `AvlTree`: avl1.AvlTree (`AVL`)
+  - `TreeSet`: rbt.TreeSet (`RBT`)
+  - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
+
 
 Note: COMPLETAR
 
