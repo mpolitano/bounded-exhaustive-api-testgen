@@ -121,7 +121,7 @@ Besides the order of presentation, the relationship between these data and those
   - `DoubleLinkedList`: cdlist.LinkedList (`DLList`)
   - `NodeCachingLinkedList`: cList.NodeCachingLinkedList (`NCL`)
 
-Note: The text that is inside parentheses in each case, corresponds to the short names used in **Table 1** of **Section 4.1** of the paper, to identify each case study. Furthemore, it is worth mentioning that some of the case studies may not be present in the aforementioned table of the paper but in replication package that accompanies the paper.
+Note: The text that is inside parentheses in each case, corresponds to the short names used in **Table 1** of **Section 4.1** of the paper, to identify each case study. Furthemore, it is worth mentioning that some of the case studies may not be present in the aforementioned table of the paper (space reasons) but in replication package that accompanies the paper.
 
 ### Running all experiments from a single benchmark (slow)
 
@@ -212,7 +212,7 @@ FALTA EXPLICAR COMO LEER EL OUTPUT, Y COMO SE RELACIONA CON LOS DATOS EN LAS TAB
   - `DoubleLinkedList`: cdlist.LinkedList (`DLList`)
   - `NodeCachingLinkedList`: cList.NodeCachingLinkedList (`NCL`)
 
-- `real_world`
+- `4_real_world`
  
   - `NodeCachingLinkedList `: org.apache.commons.collections4.list.NodeCachingLinkedList (`NCL`)
   - `TreeSet`: java2.util2.treeset.TreeSet (`TSet`)
@@ -221,6 +221,8 @@ FALTA EXPLICAR COMO LEER EL OUTPUT, Y COMO SE RELACIONA CON LOS DATOS EN LAS TAB
   - `HashMap`: java2.util2.hashmap.HashMap (`HMap`)
   - `Schedule`: builders.Schedule (`Schedule`)  
 
+
+Note: The text that is inside parentheses in each case, corresponds to the short names used in **Table 2** of **Section 4.2** of the paper, to identify each case study. For space reasons, the aforementioned paper table shows only results from the `2_roops` and `4_real-world` benchmarks, while the others were included in the replication package that accompanies the paper.
 
 
 ### Running all experiments from a single benchmark (slow)
