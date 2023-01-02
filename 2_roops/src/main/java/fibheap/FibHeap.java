@@ -344,86 +344,86 @@ public class FibHeap implements java.io.Serializable{
     //*************************************************************************
     //************** From now on repOK()  *************************************
     //*************************************************************************
-//Este es el repOK original de roops 
-public boolean repOK() {
-	Set allNodes = new HashSet();
-	List parent_headers_to_visit = new LinkedList();
+    //Original from Roops
+    public boolean repOK() {
+    	Set allNodes = new HashSet();
+    	List parent_headers_to_visit = new LinkedList();
 
-	if (min != null) {
-	    //System.out.println(min.toString());
-		// check first level 
-		{
-			int child_cound = 0;
-			/* @ nullable */ FibHeapNode curr = new FibHeapNode();
-			curr =  min;
-            //System.out.println(curr.toString());
-
-			do  {
-				//Esto lo tuve que corregir porque sino tengo null pointer en la generación con korat
-				//left y right no pueden ser null (es una lista circular)			
-				if(curr.left==null || curr.right ==null)
-					return false;
-				
-				if (n != 0 && curr.left.right != curr)
-					return false;
+    	if (min != null) {
+    	    //System.out.println(min.toString());
+    		// check first level 
+    		{
+    			int child_cound = 0;
+    			/* @ nullable */ FibHeapNode curr = new FibHeapNode();
+    			curr =  min;
                 //System.out.println(curr.toString());
 
-				if (curr.parent != null)
-					return false;
-				
-				if (curr.child != null)
-					parent_headers_to_visit.add(curr);
+    			do  {
+    				//Esto lo tuve que corregir porque sino tengo null pointer en la generación con korat
+    				//left y right no pueden ser null (es una lista circular)			
+    				if(curr.left==null || curr.right ==null)
+    					return false;
+    				
+    				if (n != 0 && curr.left.right != curr)
+    					return false;
+                    //System.out.println(curr.toString());
 
-				if (!allNodes.add(curr))
-					return false;// repeated node
-				
-				curr = curr.left;
-				child_cound++;
-			
-			} while (curr!=min);
-			
-		}
+    				if (curr.parent != null)
+    					return false;
+    				
+    				if (curr.child != null)
+    					parent_headers_to_visit.add(curr);
 
-		while (!parent_headers_to_visit.isEmpty()) {
+    				if (!allNodes.add(curr))
+    					return false;// repeated node
+    				
+    				curr = curr.left;
+    				child_cound++;
+    			
+    			} while (curr!=min);
+    			
+    		}
 
-			// check other levels 
+    		while (!parent_headers_to_visit.isEmpty()) {
 
-			FibHeapNode node = (FibHeapNode) parent_headers_to_visit.get(0);
-			parent_headers_to_visit.remove(0);
+    			// check other levels 
 
-			int node_count = 0;
-			FibHeapNode curr_node = node.child;
-			do {
-				//Esto lo tuve que corregir porque sino tengo null pointer en la generación con korat
-				//left y right no pueden ser null (es una lista circular)			
-				if(curr_node.left==null || curr_node.right ==null)
-					return false;
-				
-				if (curr_node.left.right != curr_node)
-					return false;
+    			FibHeapNode node = (FibHeapNode) parent_headers_to_visit.get(0);
+    			parent_headers_to_visit.remove(0);
 
-				if (curr_node.parent != null)
-					return false;
+    			int node_count = 0;
+    			FibHeapNode curr_node = node.child;
+    			do {
+    				//Esto lo tuve que corregir porque sino tengo null pointer en la generación con korat
+    				//left y right no pueden ser null (es una lista circular)			
+    				if(curr_node.left==null || curr_node.right ==null)
+    					return false;
+    				
+    				if (curr_node.left.right != curr_node)
+    					return false;
 
-				if (curr_node.child != null)
-					parent_headers_to_visit.add(curr_node);
+    				if (curr_node.parent != null)
+    					return false;
 
-				if (curr_node.key>node.key)
-					return false;
-				
-				if (!allNodes.add(curr_node))
-					return false; // repeated node
-				
-				
-				curr_node = curr_node.left;
-				node_count++;
-				
-			} while (curr_node != node.child);
+    				if (curr_node.child != null)
+    					parent_headers_to_visit.add(curr_node);
 
-			if (node_count != node.degree)
-				return false;
+    				if (curr_node.key>node.key)
+    					return false;
+    				
+    				if (!allNodes.add(curr_node))
+    					return false; // repeated node
+    				
+    				
+    				curr_node = curr_node.left;
+    				node_count++;
+    				
+    			} while (curr_node != node.child);
 
-		}
+    			if (node_count != node.degree)
+    				return false;
+
+    		}
 
 	}
 	
@@ -568,7 +568,7 @@ public boolean repOK() {
         IFieldDomain sizes = f.createIntSet(0, size);
 
         f.set("n", sizes);
-        //        f.set("Nodes", heaps);
+        //f.set("Nodes", heaps);
         f.set("min", heaps);
         f.set(FibHeapNode.class, "parent", heaps);
         f.set(FibHeapNode.class, "right", heaps);

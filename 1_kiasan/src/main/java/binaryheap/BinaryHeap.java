@@ -89,13 +89,16 @@ public class BinaryHeap  implements java.io.Serializable{
     }
     boolean wellFormed() {
 
-        if(array==null) {//array!=null
+        if(array==null) {
             return false;
         }
-        //This is not part of the original repOK
-        //primera posición del arreglo debeser zero siempre
-        //if(array.length >0 && array[0]!=0) return false;
 
+        //BUG FIX:this is no part of original repOK() from korat
+        //if(array!=null) {//array!=null
+        //  return false;
+        //}
+        //if(array.length >0 && array[0]!=0)
+        //return false;
         
         
         /*****/

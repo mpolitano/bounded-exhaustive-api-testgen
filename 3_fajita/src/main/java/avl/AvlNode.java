@@ -1,4 +1,4 @@
-package avlfix;
+package avl;
 import java.util.HashSet;
 import java.util.Set;
 

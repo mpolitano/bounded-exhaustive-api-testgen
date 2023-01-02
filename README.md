@@ -113,8 +113,8 @@ Besides the order of presentation, the relationship between these data and those
 
 
 - `3_fajita`
-  - `BinTree `: bintree1.BinTree (`BinTree`)
-  - `AvlTree`: avl1.AvlTree (`AVL`)
+  - `BinTree `: bintree.BinTree (`BinTree`)
+  - `AvlTree`: avl.AvlTree (`AVL`)
   - `TreeSet`: rbt.TreeSet (`RBT`)
   - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
   - `SinglyLinkedList`: list.SinglyLinkedList (`SLList`) 

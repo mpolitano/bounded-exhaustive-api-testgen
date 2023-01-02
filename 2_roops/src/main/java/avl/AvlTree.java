@@ -362,6 +362,8 @@ public class AvlTree implements java.io.Serializable{
 
 	
 	
+    //if (root.color == RED)
+    //   return false;    
 
 	//*************************************************************************
 	//************** From now on repOk()  *************************************
@@ -382,20 +384,24 @@ public class AvlTree implements java.io.Serializable{
 		if (!allNodes.add(node))
 			return false; // Not acyclic.
 
+    //BUG FIX:this is no part of original repOK() from Roops
+    //BUG in repOK:// Repeated data.;
 		if (!allData.add(node.element))
-			return false; // Repeated data.
+			return false; 
 
 		// check balance           
 		int l_Height;
                     if (node.left == null)
-                    // BUG in repOK: height of null should be -1;
-                    // l_Height = -1 ;
+                    //BUG FIX:this is no part of original repOK() from Roops
+                    //BUG in repOK: height of null should be -1;
+                    //l_Height = -1 ;
                       l_Height = 0 ;
                     else
                       l_Height = node.left.height;
 
 		int r_Height;
                     if (node.right == null)
+                    //BUG FIX:this is no part of original repOK() from Roops
                     // BUG in repOK: height of null should be -1;
                     // r_Height = -1 ;
                       r_Height = 0 ;
@@ -415,7 +421,7 @@ public class AvlTree implements java.io.Serializable{
 		if (node.height != 1 + max)
 			return false; // Wrong height.
 
-                    // visit descendants
+    // visit descendants
 		if (node.left != null)
 			stack.push(node.left);
 
@@ -481,10 +487,10 @@ public class AvlTree implements java.io.Serializable{
     	}
 
     	/**To generate AvlTrees that have a given number of nodes, the Korat
-    search algorithm uses the finitization method.
-    In this method we specify bounds on the number of objects to be used to 
-    construct instances of the data structure, as well as possible values 
-    stored in the fields of those objects.
+      search algorithm uses the finitization method.
+      In this method we specify bounds on the number of objects to be used to 
+      construct instances of the data structure, as well as possible values 
+      stored in the fields of those objects.
     	 */
     	public static IFinitization finAvlTree(int numAvlNode, int minKey, int maxKey) {
 

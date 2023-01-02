@@ -1,4 +1,4 @@
-package avlfix;
+package avl;
 import java.util.HashSet;
 import java.util.LinkedList;
 //import java.util.LinkedList;
@@ -65,7 +65,8 @@ public class AvlTree implements java.io.Serializable {
 		queue.add(root);
         while (!queue.isEmpty()) {
             AvlNode current = (AvlNode) queue.removeFirst();
-            // BUG in repOK: height of null should be -1;
+            //BUG FIX:this is no part of original repOK() from fajita
+            //height of null should be -1;
             //int l_Height = current.left == null ? 0 : current.left.height;
             //int r_Height = current.right == null ? 0 : current.right.height;
 			int l_Height = current.left == null ? -1 : current.left.height;
