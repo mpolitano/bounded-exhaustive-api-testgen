@@ -192,7 +192,6 @@ The data stored in this CSV file corresponds to that displayed in **Table 2** of
 
 ### Available case studies
 
-
 - `0_korat`
   - `DoublyLinkedList`: korat.examples.doublylinkedlist.DoublyLinkedList (`DDList`)
   - `FibonacciHeap`: korat.examples.fibheap.FibonacciHeap (`FibHeap`)
@@ -273,8 +272,16 @@ Note: Running this script might take a few days or longer depending on your hard
 
 ## Running automated builders identification (Last paragraph of Section 4.2)
 
-COMPLETAR!
+In this section, we assess the cost of builder identification. For space reasons the result of builder identification are not show in the paper but on the paper website.
 
+### Running a single experiment
+
+To identify builders methods for a given  case study, run the following script:
+
+```
+./run-builder-identification.sh <benchmark> <case study>
+```
+where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`, `4_real_world`; and `<case study>` is one of the case studies of `<benchmark>` ( The list of case studies is the same as the `Available case studies` section for previous  section ([Available case studies](#available-case-studies))
 
 ## Analysis of Specification using `BEAPI` (RQ3 in Section 4.3 of the paper)
 
