@@ -8,7 +8,7 @@ scope=$3
 
 pushd $projectsdir/$project > /dev/null
 
-KORAT_CP=../lib/korat.jar:./build/classes/:../lib/
+KORAT_CP=./build/classes/:../lib/korat.jar:../lib/
 java -cp $KORAT_CP korat.Korat --class $class --args $scope
 #--serialize objects.ser
 #--visualize \
