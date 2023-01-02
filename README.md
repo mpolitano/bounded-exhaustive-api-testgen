@@ -88,7 +88,7 @@ Besides the order of presentation, the relationship between these data and those
   - `SearchTree`:korat.examples.searchtree.SearchTree (`BST`)
   - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList (`SLList`)
   - `RedBlackTree`: korat.examples.redblacktree.RedBlackTree (`RBT`)
-  - `SortedList`: korat.examples.sortedlist.SortedList (`SortedList`) *
+  - `SortedList`: korat.examples.sortedlist.SortedList (`SortedList`) 
 
 - `1_kiasan`
   - `BinarySearchTree`: binarysearchtree.BinarySearchTree (`BST`)
@@ -179,7 +179,7 @@ FALTA EXPLICAR COMO LEER EL OUTPUT, Y COMO SE RELACIONA CON LOS DATOS EN LAS TAB
   - `SearchTree`:korat.examples.searchtree.SearchTree (`BST`)
   - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList (`SLList`)
   - `RedBlackTree`: korat.examples.redblacktree.RedBlackTree (`RBT`)
-  - `SortedList`: korat.examples.sortedlist.SortedList (`SortedList`) *
+  - `SortedList`: korat.examples.sortedlist.SortedList (`SortedList`) 
 
 - `1_kiasan`
   - `BinarySearchTree`: binarysearchtree.BinarySearchTree (`BST`)
@@ -204,7 +204,7 @@ FALTA EXPLICAR COMO LEER EL OUTPUT, Y COMO SE RELACIONA CON LOS DATOS EN LAS TAB
 
 
 - `3_fajita`
-  - `BinTree `: bintree1.BinTree (`BinTree`)
+  - `BinTree`: bintree1.BinTree (`BinTree`)
   - `AvlTree`: avl1.AvlTree (`AVL`)
   - `TreeSet`: rbt.TreeSet (`RBT`)
   - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
@@ -213,7 +213,13 @@ FALTA EXPLICAR COMO LEER EL OUTPUT, Y COMO SE RELACIONA CON LOS DATOS EN LAS TAB
   - `NodeCachingLinkedList`: cList.NodeCachingLinkedList (`NCL`)
 
 - `real_world`
-
+ 
+  - `NodeCachingLinkedList `: org.apache.commons.collections4.list.NodeCachingLinkedList (`NCL`)
+  - `TreeSet`: java2.util2.treeset.TreeSet (`TSet`)
+  - `TreeMap`: java2.util2.treemap.TreeMap (`TMap`)
+  - `LinkedList`: java2.util2.linkedlist.LinkedList (`LList`)
+  - `HashMap`: java2.util2.hashmap.HashMap (`HMap`)
+  - `Schedule`: builders.Schedule (`Schedule`)  
 
 
 
