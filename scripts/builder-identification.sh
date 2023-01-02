@@ -45,7 +45,7 @@ function run_identify_builders(){
     cp builders.txt tmp/$casestudy/
 
     #debo borrar las folders. TODO
-    rm -r $BE_EXP_SRC/
+    #rm -r $BE_EXP_SRC/
 
     rm -r $BE_EXP_SRC/src/
     rm -r $BE_EXP_SRC/build/classes
