@@ -172,7 +172,6 @@ FALTA EXPLICAR COMO LEER EL OUTPUT, Y COMO SE RELACIONA CON LOS DATOS EN LAS TAB
 ### Available case studies
 
 
-
 - `0_korat`
   - `DoublyLinkedList`: korat.examples.doublylinkedlist.DoublyLinkedList (`DDList`)
   - `FibonacciHeap`: korat.examples.fibheap.FibonacciHeap (`FibHeap`)
@@ -180,14 +179,18 @@ FALTA EXPLICAR COMO LEER EL OUTPUT, Y COMO SE RELACIONA CON LOS DATOS EN LAS TAB
   - `SearchTree`:korat.examples.searchtree.SearchTree (`BST`)
   - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList (`SLList`)
   - `RedBlackTree`: korat.examples.redblacktree.RedBlackTree (`RBT`)
+  - `SortedList`: korat.examples.sortedlist.SortedList (`SortedList`) *
 
 - `1_kiasan`
   - `BinarySearchTree`: binarysearchtree.BinarySearchTree (`BST`)
   - `DoubleLinkedList`: doublylinkedlist.DoubleLinkedList (`DDL`)
+  - `TreeSet`: redblacktree.TreeSet(`RBT`) UBICAR LOS FUENTES DONDE CORRESPONDE con el nombre correcto
   - `DisjSetsFast`: disjointSet.fast.DisjSetsFast (`DisjSetFast`)
   - `StackLi`: stack.list.StackLi (`StackList`)
   - `BinaryHeap`: binaryheap.BinaryHeap (`BHeap`)
   - `TreeMap`: redblacktree.TreeMap (`TreeMap`)
+  - `DisjSet`: disjointSet.orig.DisjSets (`DisjSet`) 
+  - `StackAr`: stack.array.StackAr (`StackAr`)
 
 - `2_roops`
 
@@ -205,6 +208,13 @@ FALTA EXPLICAR COMO LEER EL OUTPUT, Y COMO SE RELACIONA CON LOS DATOS EN LAS TAB
   - `AvlTree`: avl1.AvlTree (`AVL`)
   - `TreeSet`: rbt.TreeSet (`RBT`)
   - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
+  - `SinglyLinkedList`: list.SinglyLinkedList (`SLList`) 
+  - `DoubleLinkedList`: cdlist.LinkedList (`DLList`)
+  - `NodeCachingLinkedList`: cList.NodeCachingLinkedList (`NCL`)
+
+- `real_world`
+
+
 
 
 ### Running all experiments from a single benchmark (slow)
