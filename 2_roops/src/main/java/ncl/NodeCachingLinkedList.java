@@ -439,6 +439,9 @@ public class NodeCachingLinkedList implements java.io.Serializable {
 	        if (this.header.next == null)
 	          return false;
 
+		// BUG FIX:this is no part of original repOK() from roops
+		// if (this.header.value != null)
+                //  return false;
 	        if (this.header.previous == null)
 	          return false;
 

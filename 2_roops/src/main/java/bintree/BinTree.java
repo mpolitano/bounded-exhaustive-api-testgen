@@ -283,7 +283,7 @@ public boolean repOK() {
     List workList = new LinkedList();
     workList.add(root);
       
-    //this is no part of original repOK() from roops
+    //BUG FIX:this is no part of original repOK() from roops
     //if(root.parent!=null) {
     //	return false;
     //}

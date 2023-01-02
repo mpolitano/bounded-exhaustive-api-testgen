@@ -496,6 +496,11 @@ public class RedBlackTree implements Serializable {
     public boolean repOK() {
         if (root == null)
             return size == 0;
+
+	//BUG FIX:this is no part of original repOK() from korat
+	//if (root.color == RED)
+	//   return false;		
+
         // RootHasNoParent
         if (root.parent != null)
             return debug("RootHasNoParent");

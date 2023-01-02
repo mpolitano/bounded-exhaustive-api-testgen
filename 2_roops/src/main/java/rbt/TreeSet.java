@@ -606,6 +606,10 @@ public class TreeSet implements java.io.Serializable {
 		if (root == null)
 			return size == 0;
 
+		//BUG FIX: this is no part of original repOK() from roops
+		//if (root.color == RED)
+		//   return false;
+
 		if (root.parent != null)
 			return false;
 
