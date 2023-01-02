@@ -283,6 +283,44 @@ To identify builders methods for a given  case study, run the following script:
 ```
 where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`, `4_real_world`; and `<case study>` is one of the case studies of `<benchmark>` ( The list of case studies is the same as the `Available case studies` section for previous  section ([Available case studies](#available-case-studies))
 
+For example, to identify builders methods  for `SinglyLinkedList` from the `0_korat` benchmark, execute: 
+
+```
+./run-builder-identification.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList
+
+```
+COMPLETAR: EXPLICAR QUE GENERA Y COMO LEER EL OUTPUT
+
+### Running all experiments from a single benchmark
+
+DEBO MARCARLO COMO SLOW??
+
+To identify builders for all case studies for a specific benchmark, pick and run one of following commands: 
+
+```
+./run-builder-identification-0_korat.sh
+./run-builder-identification-1_kiasan.sh
+./run-builder-identification-2_roops.sh
+./run-builder-identification-3_fajita.sh
+./run-builder-identification-4-real-world.sh
+```
+
+Note: Running one of these  scripts might take COMPLETAR! or longer depending on your hardware
+
+
+### Running all the experiments 
+
+DEBO MARCARLO COMO VERY SLOW??
+
+To identify builders methods  for all [available case studies](#available-case-studies) run:
+
+```
+./run-testgen-beapi-optimizations-all.sh
+```
+
+Note: Running this script might take COMPLETAR! or longer depending on your hardware
+
+
 ## Analysis of Specification using `BEAPI` (RQ3 in Section 4.3 of the paper)
 
 In this section..., COMPLETAR!
