@@ -88,14 +88,18 @@ Besides the order of presentation, the relationship between these data and those
   - `SearchTree`:korat.examples.searchtree.SearchTree (`BST`)
   - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList (`SLList`)
   - `RedBlackTree`: korat.examples.redblacktree.RedBlackTree (`RBT`)
+  - `SortedList`: korat.examples.sortedlist.SortedList (`SortedList`) *
 
 - `1_kiasan`
   - `BinarySearchTree`: binarysearchtree.BinarySearchTree (`BST`)
   - `DoubleLinkedList`: doublylinkedlist.DoubleLinkedList (`DDL`)
+  - `TreeSet`: redblacktree.TreeSet(`RBT`) UBICAR LOS FUENTES DONDE CORRESPONDE con el nombre correcto
   - `DisjSetsFast`: disjointSet.fast.DisjSetsFast (`DisjSetFast`)
   - `StackLi`: stack.list.StackLi (`StackList`)
   - `BinaryHeap`: binaryheap.BinaryHeap (`BHeap`)
   - `TreeMap`: redblacktree.TreeMap (`TreeMap`)
+  - `DisjSet`: disjointSet.orig.DisjSets (`DisjSet`) 
+  - `StackAr`: stack.array.StackAr (`StackAr`)
 
 - `2_roops`
 
@@ -113,9 +117,11 @@ Besides the order of presentation, the relationship between these data and those
   - `AvlTree`: avl1.AvlTree (`AVL`)
   - `TreeSet`: rbt.TreeSet (`RBT`)
   - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
+  - `SinglyLinkedList`: list.SinglyLinkedList (`SLList`) 
+  - `DoubleLinkedList`: cdlist.LinkedList (`DLList`)
+  - `NodeCachingLinkedList`: cList.NodeCachingLinkedList (`NCL`)
 
-
-Note: The text that is inside parentheses in each case, corresponds to the short names used in **Table 1** of **Section 4.1** of the paper, to identify each case study.
+Note: The text that is inside parentheses in each case, corresponds to the short names used in **Table 1** of **Section 4.1** of the paper, to identify each case study. Furthemore, it is worth mentioning that some of the case studies may not be present in the aforementioned table of the paper but in replication package that accompanies the paper.
 
 ### Running all experiments from a single benchmark (slow)
 
@@ -165,15 +171,40 @@ FALTA EXPLICAR COMO LEER EL OUTPUT, Y COMO SE RELACIONA CON LOS DATOS EN LAS TAB
 
 ### Available case studies
 
+
+
 - `0_korat`
-  - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList
-  - XXX
-  ...
+  - `DoublyLinkedList`: korat.examples.doublylinkedlist.DoublyLinkedList (`DDList`)
+  - `FibonacciHeap`: korat.examples.fibheap.FibonacciHeap (`FibHeap`)
+  -	`BinomialHeap`: korat.examples.binheap.BinomialHeap (`BinHeap`)
+  - `SearchTree`:korat.examples.searchtree.SearchTree (`BST`)
+  - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList (`SLList`)
+  - `RedBlackTree`: korat.examples.redblacktree.RedBlackTree (`RBT`)
+
 - `1_kiasan`
-  -
-  -
-...
-COMPLETAR!!
+  - `BinarySearchTree`: binarysearchtree.BinarySearchTree (`BST`)
+  - `DoubleLinkedList`: doublylinkedlist.DoubleLinkedList (`DDL`)
+  - `DisjSetsFast`: disjointSet.fast.DisjSetsFast (`DisjSetFast`)
+  - `StackLi`: stack.list.StackLi (`StackList`)
+  - `BinaryHeap`: binaryheap.BinaryHeap (`BHeap`)
+  - `TreeMap`: redblacktree.TreeMap (`TreeMap`)
+
+- `2_roops`
+
+  - `AvlTree`: avl.AvlTree (`AVL`)
+  - `NodeCachingLinkedList`: ncl.NodeCachingLinkedList (`NCL`)
+  - `BinTree`: bintree.BinTree (`BinTree`)
+  - `LinkedList`: linkedlist.LinkedList (`LList`)
+  - `TreeSet`: rbt.TreeSet (`RBT`)
+  - `FibHeap`: fibheap.FibHeap (`FibHeap`)
+  - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
+
+
+- `3_fajita`
+  - `BinTree `: bintree1.BinTree (`BinTree`)
+  - `AvlTree`: avl1.AvlTree (`AVL`)
+  - `TreeSet`: rbt.TreeSet (`RBT`)
+  - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
 
 
 ### Running all experiments from a single benchmark (slow)
