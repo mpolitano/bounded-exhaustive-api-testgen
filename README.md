@@ -8,7 +8,7 @@ Note: At this point only binaries are provided for `BEAPI`'s implementation, we 
 
 # Installing BEAPI's Artifact 
 
-Follow the instructions in `INSTALL.md`.
+Follow the instructions in [INSTALL.md](INSTALL.md).
 
 # Folder structure
 
