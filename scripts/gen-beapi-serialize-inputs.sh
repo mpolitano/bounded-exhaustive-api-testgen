@@ -2,7 +2,7 @@
 
 set_config_options() {
     beopts=""
-    if [[ $matching == "graph" ]]
+    if [[ $matching == "matching" ]]
     then
         beopts=" --filtering=BEALL --canonicalizer-cfg=$scriptsdir/properties/scope${scope}.all.canonicalizer.properties"
 

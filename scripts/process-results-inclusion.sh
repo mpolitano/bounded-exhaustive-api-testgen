@@ -52,7 +52,7 @@ function process_results() {
 
 echo "Project,Class,Technique,Budget,Other Bdgt,Structures,Other Strs,Not Included,Not Incl %"
 
-techniques="korat beapi/graph/builders"
+techniques="korat beapi/discover/builders"
 process_results
 
 cat $tmpfile | sort -V

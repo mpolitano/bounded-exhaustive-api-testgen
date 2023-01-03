@@ -4,9 +4,9 @@ projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
 source $scriptsdir/scripts.sh
 
-cases="korat.examples.singlylinkedlist.SinglyLinkedList korat.examples.binheap.BinomialHeap korat.examples.redblacktree.RedBlackTree korat.examples.doublylinkedlist.DoublyLinkedList korat.examples.searchtree.SearchTree korat.examples.fibheap.FibonacciHeap"
+cases="korat.examples.singlylinkedlist.SinglyLinkedList korat.examples.sortedlist.SortedList korat.examples.binheap.BinomialHeap korat.examples.redblacktree.RedBlackTree korat.examples.doublylinkedlist.DoublyLinkedList korat.examples.searchtree.SearchTree korat.examples.fibheap.FibonacciHeap"
 techniques="beapi korat"
-budgets="3"
+budgets="3 4 5 6 7 8 9 10"
 
 
 for casestudy in $cases 

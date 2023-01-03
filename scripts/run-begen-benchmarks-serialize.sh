@@ -10,7 +10,7 @@ TO=60m
 function run_serialize() {
 for technique in $techniques; do
 	for ((budget=$minscope;budget<=$maxscope;budget++)); do
-	cmd="timeout $TO ./run-begen-serialize-experiment.sh $project $casestudy $technique $budget graph builders"
+	cmd="timeout $TO ./run-begen-serialize-experiment.sh $project $casestudy $technique $budget discover builders"
 	echo "************"
 	echo ">> Executing: $cmd"
 	bash -c "$cmd"
@@ -28,7 +28,7 @@ for ((budget=$minscope;budget<=$maxscope;budget++)); do
 	koratdir=results-begen-serialize/$project/$casestudy/korat/$budget
 	koratstrs=$koratdir/korat-tests/objects.ser
 	for ((inclbudget=$budget;inclbudget<=$maxscope;inclbudget++)); do
-		bestrs=results-begen-serialize/$project/$casestudy/beapi/graph/builders/$inclbudget/beapi-tests/objects.ser
+		bestrs=results-begen-serialize/$project/$casestudy/beapi/discover/builders/$inclbudget/beapi-tests/objects.ser
 		config=properties/scope$budget.all.canonicalizer.properties
 		reslog=$koratdir/inclusion-results-$inclbudget.txt
 		diff=$koratdir/structures-not-included-$inclbudget.txt
@@ -43,7 +43,7 @@ done
 function run_beapi_inclusion() {
 # Check inclusion
 for ((budget=$minscope;budget<=$maxscope;budget++)); do
-	beapidir=results-begen-serialize/$project/$casestudy/beapi/graph/builders/$budget
+	beapidir=results-begen-serialize/$project/$casestudy/beapi/discover/builders/$budget
 	beapistrs=$beapidir/beapi-tests/objects.ser
 	for ((inclbudget=$budget;inclbudget<=$maxscope;inclbudget++)); do
 		koratstrs=results-begen-serialize/$project/$casestudy/korat/$inclbudget/korat-tests/objects.ser

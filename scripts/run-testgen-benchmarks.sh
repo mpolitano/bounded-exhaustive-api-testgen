@@ -11,7 +11,7 @@ technique="$3"
 budget="$4"
 TO=60m
 
-cmd="timeout $TO ./run-begen-experiment.sh $project $case $technique $budget graph builders"
+cmd="timeout $TO ./run-begen-experiment.sh $project $case $technique $budget discover builders"
 echo "************"
 echo ">> Executing: $cmd"
 bash -c "$cmd"

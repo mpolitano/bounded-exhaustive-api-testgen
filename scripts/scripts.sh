@@ -4,7 +4,7 @@ source $scriptsdir/common.sh
 TO=60m
 
 function process_results_beapi_vs_korat() {
-    techniques="korat beapi/graph/builders"
+    techniques="korat beapi/discover/builders"
 
     resultsdir=./results-begen/
     tmpfile="$resultsdir/results_testgen_benchmarks.csv"
@@ -65,7 +65,7 @@ function process_results_beapi_vs_korat_display() {
     budget=$4
 
     if [[ $technique == "beapi"* ]]; then
-        resultsdir=results-begen/$project/$casestudy/$technique/graph/builders/$budget/
+        resultsdir=results-begen/$project/$casestudy/$technique/discover/builders/$budget/
     else
         resultsdir=results-begen/$project/$casestudy/$technique/$budget/
     fi
@@ -95,7 +95,7 @@ function process_results_beapi_vs_korat_display() {
     
 function process_results_optimizations() {
     resultsdir=./results-optimizations/
-    techniques="beapi/graph/builders beapi/graph/no-builders beapi/no-matching/builders beapi/no-matching/no-builders"
+    techniques="beapi/matching/builders beapi/matching/no-builders beapi/no-matching/builders beapi/no-matching/no-builders"
 
     tmpfile="$resultsdir/results_optimizations.csv"
     tmpfilebuilders="builders.txt"
@@ -119,7 +119,7 @@ function process_results_optimizations() {
                 [[ ! -d $currdir ]] && continue;
                 budgets=$(ls $currdir)
 
-                if [[ $technique == "beapi/graph/discover" ]]; then
+                if [[ $technique == "beapi/discover/discover" ]]; then
                     echo "$casestudy" >> $tmpfilebuilders
                     cat "$currdir/builders.txt" >> $tmpfilebuilders
                 fi
