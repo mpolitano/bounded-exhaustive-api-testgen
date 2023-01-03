@@ -340,26 +340,75 @@ To identify builders methods  for all [available case studies](#available-case-s
 ./run-testgen-beapi-optimizations-all.sh
 ```
 
-
 ## Analysis of Specification using `BEAPI` (RQ3 in Section 4.3 of the paper)
 
-In this section..., COMPLETAR!
+In this section, we analize the `repOKs` provided with the benchmarks, with the help of  `BEAPI`. 
 
 ### Running a single experiment
 
-COMPLETAR!
+To evaluate a single case study for a benchmark run the following script:
+
+```
+./run-repOk-evaluation.sh <benchmark> <case study>
+ 
+```
+
+where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`; and `<case study>` is one of the case studies of `<benchmark>` listed in the subsection below.
+
+For example, to evaluate `repOk` for `RedBlackTree` from the `0_korat` benchmark, execute: 
+
+```
+./run-repOk-evaluation.sh korat_0 korat.examples.redblacktree.RedBlackTree
+
+```
+COMPLETAR INDICANDO DONDE DEJA LOS OBJETOS SERALIZADOS PARA AMBAS TECNICAS . 
+COMO SE VE LA SALIDA Y UNA EXPLICACION DE COMO LEERLA
+DONDE ESTA EL REPOK , EN ESTE CASO. QUIZAS GNERALIZANDO A EL RESTO DE LOS CASOS DE ESTUDIO.
+
+
 
 ### Available case studies
 
 - `0_korat`
-  - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList
-  - XXX
-  ...
+  - `DoublyLinkedList`: korat.examples.doublylinkedlist.DoublyLinkedList (`DDList`)
+  - `FibonacciHeap`: korat.examples.fibheap.FibonacciHeap (`FibHeap`)
+  -	`BinomialHeap`: korat.examples.binheap.BinomialHeap (`BinHeap`)
+  - `SearchTree`:korat.examples.searchtree.SearchTree (`BST`)
+  - `SinglyLinkedList`: korat.examples.singlylinkedlist.SinglyLinkedList (`SLList`)
+  - `RedBlackTree`: korat.examples.redblacktree.RedBlackTree (`RBT`)
+  - `SortedList`: korat.examples.sortedlist.SortedList (`SortedList`) 
+
 - `1_kiasan`
-  -
-  -
-...
-COMPLETAR!!
+  - `BinarySearchTree`: binarysearchtree.BinarySearchTree (`BST`)
+  - `DoubleLinkedList`: doublylinkedlist.DoubleLinkedList (`DDL`)
+  - `TreeSet`: redblacktree.TreeSet(`RBT`) UBICAR LOS FUENTES DONDE CORRESPONDE con el nombre correcto
+  - `DisjSetsFast`: disjointSet.fast.DisjSetsFast (`DisjSetFast`)
+  - `StackLi`: stack.list.StackLi (`StackList`)
+  - `BinaryHeap`: binaryheap.BinaryHeap (`BHeap`)
+  - `TreeMap`: redblacktree.TreeMap (`TreeMap`)
+  - `DisjSet`: disjointSet.orig.DisjSets (`DisjSet`) 
+  - `StackAr`: stack.array.StackAr (`StackAr`)
+
+- `2_roops`
+
+  - `AvlTree`: avl.AvlTree (`AVL`)
+  - `NodeCachingLinkedList`: ncl.NodeCachingLinkedList (`NCL`)
+  - `BinTree`: bintree.BinTree (`BinTree`)
+  - `LinkedList`: linkedlist.LinkedList (`LList`)
+  - `TreeSet`: rbt.TreeSet (`RBT`)
+  - `FibHeap`: fibheap.FibHeap (`FibHeap`)
+  - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
+
+
+- `3_fajita`
+  - `BinTree`: bintree1.BinTree (`BinTree`)
+  - `AvlTree`: avl1.AvlTree (`AVL`)
+  - `TreeSet`: rbt.TreeSet (`RBT`)
+  - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
+  - `SinglyLinkedList`: list.SinglyLinkedList (`SLList`) 
+  - `DoubleLinkedList`: cdlist.LinkedList (`DLList`)
+  - `NodeCachingLinkedList`: cList.NodeCachingLinkedList (`NCL`)
+
 
 
 ### Running all experiments from a single benchmark (slow)
