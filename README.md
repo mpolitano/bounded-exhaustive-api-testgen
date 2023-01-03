@@ -72,7 +72,7 @@ The information tabulated in the CSV file correspond to:
 - Case study information: **project** benchmark and case study **class**
 - Running **technique** (BEAPI or Korat)
 - **Budget** (scope) used for input generation
-- **Time** spent for input generation (In second)
+- **Time** spent for input generation (In seconds)
 - Number of **structures** generated
 - Number of structures visited (**explored**) during generation
  
@@ -178,7 +178,7 @@ The information tabulated in the CSV file correspond to:
 - Case study information: **Project** benchmark and case study **Class**
 - Running **Technique** Configuration (See below for a description)
 - **Budget** (scope) used for input generation
-- **Time** spent for input generation (In millisecond)
+- **Time** spent for input generation (In milliseconds)
 - Number of **Structures** generated
 - Number of structures visited (**Explored**) during generation
  
@@ -286,7 +286,7 @@ To identify builders methods for a given  case study, run the following script:
 ```
 ./run-builder-identification.sh <benchmark> <case study>
 ```
-where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`, `4_real_world`; and `<case study>` is one of the case studies of `<benchmark>` ( The list of case studies is the same as the `Available case studies` section for previous  section ([Available case studies](#available-case-studies))
+where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`, `4_real_world`; and `<case study>` is one of the case studies of `<benchmark>` ( case studies are the same as the available case studies listed on previous  section ([Available case studies](#available-case-studies))
 
 For example, to identify builders methods  for `SinglyLinkedList` from the `0_korat` benchmark, execute: 
 
@@ -294,7 +294,28 @@ For example, to identify builders methods  for `SinglyLinkedList` from the `0_ko
 ./run-builder-identification.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList
 
 ```
-COMPLETAR: EXPLICAR QUE GENERA Y COMO LEER EL OUTPUT
+
+
+CHEQUEAR QUE ESTO SEA ASI
+
+The screen shows a summary of the results obtained, as well as the path to the log file that builder computation throws as output. Also, the results are stored, in a more readable way, as a CSV format file (```results_builders.csv```) located in ```script/results-builders``` folder.  
+
+
+The information tabulated in the CSV file correspond to:
+
+- Case study information: **project** benchmark and **case study**
+- Identified builder methods (**builders**)
+- **Time** spent for builder identification process (In seconds)
+- Number of total public methods declared by the specified case study class
+
+GENERA UN LOG FILE COMO DIGO? AHI ESTAN LOS BUILDERS? 
+
+For the example given above, the identified builders methods are the following:
+
+
+ - Parameterless SinglyLinkedList Constructor: `korat.examples.singlylinkedlist.SinglyLinkedList.<init>\(\)`
+ - Method to append a given object to the list: `korat.examples.singlylinkedlist.SinglyLinkedList.add\(java.lang.Object\)`
+
 
 ### Running all experiments from a single benchmark
 
