@@ -34,15 +34,16 @@ function run_identify_builders(){
   
     #Log for builders tools.
 
-    rm -r $BE_EXP_SRC/tmp/$casestudy/*
-    mkdir $BE_EXP_SRC/tmp/$casestudy/*
-    log=$BE_EXP_SRC/tmp/$casestudy/console.log
 
-    mkdir 
-    log=$BE_EXP_SRC/tmp/$casestudy/console.log
     popd
     pushd $BE_EXP_SRC
-
+    rm -r $tmp/$casestudy/*
+    mkdir -f $tmp/$casestudy/
+    log=$tmp/$casestudy/console.log
+    log=$BE_EXP_SRC/tmp/$casestudy/console.log
+    if [ -h log ] && [ ! -f log ]; then
+        rm log
+    fi
     SECONDS=0
     cmd="java -cp $project/build/classes/:lib/korat.jar:lib/identificationBuilders.jar main.Builders $casestudy > $log"
     
