@@ -2,7 +2,7 @@
 
 projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
-source $scriptsdir/scripts.sh
+source $scriptsdir/process-results.sh
 
 projects="$1"
 casestudy="$2"
@@ -34,11 +34,12 @@ function run_identify_builders(){
   
     #Log for builders tools.
     rm -r $BE_EXP_SRC/tmp/$casestudy/*
+
     popd
     pushd $BE_EXP_SRC
 
     SECONDS=0
-    cmd="java -cp $project/build/classes/:lib/korat.jar:lib/identificationBuilders.jar main.Builders $casestudy > tmp/$casestudy/console.dat"
+    cmd="java -cp $project/build/classes/:lib/korat.jar:lib/identificationBuilders.jar main.Builders $casestudy"
     
     echo ">> Executing: $cmd"
     echo "$cmd" 
@@ -52,7 +53,10 @@ function run_identify_builders(){
     folder=${casestudy%%.*}
     rm -r $BE_EXP_SRC/$folder
     rm -r $BE_EXP_SRC/src/
-    rm -r $BE_EXP_SRC/build/classes
+    rm -r $BE_EXP_SRC/inferFiles
+    rm -r $BE_EXP_SRC/build/
+
+
 
     popd
 }

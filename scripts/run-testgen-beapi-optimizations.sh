@@ -2,7 +2,7 @@
 
 projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
-source $scriptsdir/scripts.sh
+source $scriptsdir/process-results.sh
 
 #To run a single case
 project="$1"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 projectsdir=$BE_EXP_SRC
-scriptsdir=$projectsdir/scripts
+scriptsdir=$projectsdir/process-results.sh
 source $scriptsdir/common.sh
 maxheap=$BE_EXP_MAXHEAP
 

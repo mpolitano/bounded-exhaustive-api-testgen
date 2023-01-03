@@ -2,7 +2,7 @@
 
 projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
-source $scriptsdir/scripts.sh
+source $scriptsdir/process-results.sh
 
 clean_results_folders
 

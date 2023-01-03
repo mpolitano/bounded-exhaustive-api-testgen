@@ -2,7 +2,7 @@
 
 projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
-source $scriptsdir/scripts.sh
+source $scriptsdir/process-results.sh
 
 cases="korat.examples.singlylinkedlist.SinglyLinkedList korat.examples.sortedlist.SortedList korat.examples.binheap.BinomialHeap korat.examples.redblacktree.RedBlackTree korat.examples.doublylinkedlist.DoublyLinkedList korat.examples.searchtree.SearchTree korat.examples.fibheap.FibonacciHeap"
 

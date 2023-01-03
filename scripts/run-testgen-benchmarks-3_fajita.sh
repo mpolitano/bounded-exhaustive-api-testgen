@@ -2,7 +2,7 @@
 
 projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
-source $scriptsdir/scripts.sh
+source $scriptsdir/process-results.sh
 
 cases="bheapkorat.BinomialHeap bheap.BinomialHeap avlfix.AvlTree avl1.AvlTree rbt.TreeSet rbtkiasan.TreeSet bintree1.BinTree list.SinglyLinkedList cdlist.LinkedList cList.NodeCachingLinkedList"
 techniques="beapi korat"

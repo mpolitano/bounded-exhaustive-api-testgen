@@ -1,6 +1,5 @@
 #!/bin/bash
 projectsdir=$BE_EXP_SRC
-scriptsdir=$projectsdir/scripts
 
 project=$1
 class=$2
