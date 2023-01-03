@@ -298,7 +298,6 @@ COMPLETAR: EXPLICAR QUE GENERA Y COMO LEER EL OUTPUT
 
 ### Running all experiments from a single benchmark
 
-DEBO MARCARLO COMO SLOW??
 
 To identify builders for all case studies for a specific benchmark, pick and run one of following commands: 
 
@@ -310,20 +309,15 @@ To identify builders for all case studies for a specific benchmark, pick and run
 ./run-builder-identification-4-real-world.sh
 ```
 
-Note: Running one of these  scripts might take COMPLETAR! or longer depending on your hardware
-
 
 ### Running all the experiments 
 
-DEBO MARCARLO COMO VERY SLOW??
 
 To identify builders methods  for all [available case studies](#available-case-studies) run:
 
 ```
 ./run-testgen-beapi-optimizations-all.sh
 ```
-
-Note: Running this script might take COMPLETAR! or longer depending on your hardware
 
 
 ## Analysis of Specification using `BEAPI` (RQ3 in Section 4.3 of the paper)
