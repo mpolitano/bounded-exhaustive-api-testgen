@@ -33,7 +33,12 @@ function run_identify_builders(){
     mkdir -p "$BE_EXP_SRC/build/classes" && cp -r build/classes/* $BE_EXP_SRC/build/classes
   
     #Log for builders tools.
+
     rm -r $BE_EXP_SRC/tmp/$casestudy/*
+    mkdir $BE_EXP_SRC/tmp/$casestudy/*
+    log=$BE_EXP_SRC/tmp/$casestudy/console.log
+
+    mkdir 
     log=$BE_EXP_SRC/tmp/$casestudy/console.log
     popd
     pushd $BE_EXP_SRC
