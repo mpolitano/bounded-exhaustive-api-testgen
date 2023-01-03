@@ -77,7 +77,9 @@ The information tabulated in the CSV file correspond to:
 - Number of structures visited (**explored**) during generation
  
 
-Besides the order of presentation, the relationship between these data and those presented in **Table 1** of **Section 4.1** of the paper for each case study (see below, list of case studies, each with its corresponding short name), is completely straightforward.
+Besides the order of presentation, the relationship between these data and those presented in **Table 1** of **Section 4.1** of the paper for each case study (see below, list of case studies, each with its corresponding short name), is completely straightforward. The precomputed builder methods used to run the experiments reported in the mentioned table are stored in `scripts/config/<benchmark>/builder/<case study>` file,  for each `<benchmark>` and `<case study>`.
+
+
 
 ### Available case studies
 
@@ -187,7 +189,10 @@ Regarding **Technique Configurations**, the description corresponds to:
 - `beapi/no-matching/builders` &rarr;  `BLD` configuration
 - `beapi/no-matching/no-builders` &rarr;  `NoOpt` configuration 
 
-The data stored in this CSV file corresponds to that displayed in **Table 2** of **Section 4.2** of the paper. This paper table only shows, for certain scopes (**s**), the times spent on generation for each configuration, for the case studies mentioned in the section below. It is important to note that the times in the paper table are shown in seconds, while in the CSV report they are displayed in milliseconds.  Finally, when the CSV report does not show data for a certain case study, it means that  the time limit has been  exceeded (timeout set to 1 hour).
+The data stored in this CSV file corresponds to that displayed in **Table 2** of **Section 4.2** of the paper. This paper table only shows, for certain scopes (**s**), the times spent on generation for each configuration, for the case studies mentioned in the section below. It is important to note that the times in the paper table are shown in seconds, while in the CSV report they are displayed in milliseconds.  Furthermore, when the CSV report does not show data for a certain case study, it means that  the time limit has been  exceeded (timeout set to 1 hour). 
+
+Note: The precomputed builder methods used to run the experiments reported in **Table 2** of **Section 4.2** of the paper, when `DEFAULT` and `BLD` configurations are used, are stored in `scripts/config/<benchmark>/builder/<case study>` file,  for each `<benchmark>` and `<case study>`.
+
 
 
 ### Available case studies
