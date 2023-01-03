@@ -22,12 +22,17 @@ export BE_EXP_SRC=$(pwd)
 
 ```
 cd dependencies
-dpkg -i openjdk-8-jdk_8u352-ga-1~22.04_amd64.deb
-dpkg -i ant_1.10.12-1_all.deb 
+
+sudo dpkg -i openjdk-8-jre-headless_8u352-ga-1~22.04_amd64.deb
+sudo dpkg -i openjdk-8-jre_8u352-ga-1~22.04_amd64.deb
+sudo dpkg -i openjdk-8-jdk-headless_8u352-ga-1~22.04_amd64.deb
+sudo dpkg -i openjdk-8-jdk_8u352-ga-1~22.04_amd64.deb
+
+sudo dpkg -i ant_1.10.12-1_all.deb 
 ```
 AGREGAR instrucciones de INFER
 
 
-Note: To configurate `java 8` in your system you can run `sudo update-alternative --config javac` and choose `java 8` option,  then run  
-`sudo update-alternative-alternatives --config java` and choose, one more time, `java 8` option.
+Note: To configurate `java 8` in your system you can run `sudo update-alternatives --config javac` and choose  option 3 (`/usr/lib/jvm/java-8-openjdk-amd64/bin/javac`),  then run  
+`sudo update-alternatives --config java` and choose, one more time, option 3 (`/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java`).
 
