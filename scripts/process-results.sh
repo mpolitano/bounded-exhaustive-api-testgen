@@ -64,11 +64,19 @@ function process_results_beapi_vs_korat_display() {
     technique=$3
     budget=$4
 
+    resultsdir=./results-begen/
+    tmpfile="$resultsdir/results_testgen_benchmarks.csv"
+
     if [[ $technique == "beapi"* ]]; then
         resultsdir=results-begen/$project/$casestudy/$technique/matching/builders/$budget/
     else
         resultsdir=results-begen/$project/$casestudy/$technique/$budget/
     fi
+
+    if [[ ! -f $tmpfile ]] ; then
+        echo "Project,Class,Technique,Budget,Time,Structures,Explored" > $tmpfile
+    fi
+
     echo "Project,Class,Technique,Budget,Time,Structures,Explored"
 
 
@@ -90,6 +98,7 @@ function process_results_beapi_vs_korat_display() {
     fi
 
     echo "$project,$casestudy,$technique,$budget,$gentime,$structures,$explored"
+    echo "$project,$casestudy,$technique,$budget,$gentime,$structures,$explored" > $tmpfile
 
 }
     
@@ -156,10 +165,14 @@ function process_results_optimizations_display() {
     budget=$4
 
     resultsdir=./results-optimizations/
-    tmpfilebuilders="builders.txt"
-    [[ -f $tmpfile ]] && rm $tmpfile
-    [[ -f $tmpfilebuilders ]] && rm $tmpfilebuilders
+    tmpfile="$resultsdir/results_optimizations.csv"
 
+    tmpfilebuilders="builders.txt"
+    # [[ -f $tmpfile ]] && rm $tmpfile
+    [[ -f $tmpfilebuilders ]] && rm $tmpfilebuilders
+    if [[ ! -f $tmpfile ]] ; then
+        echo "Project,Class,Technique,Budget,Time,Structures,Explored" > $tmpfile
+    fi
     echo "Project,Class,Technique,Budget,Time,Structures,Explored"
     projects=$(ls $resultsdir)
     [[ $projects == "" ]] && echo "No proyects found in $currdir" && exit -1;
@@ -178,6 +191,8 @@ function process_results_optimizations_display() {
   
     echo $gentime >> $tmpfilebuilders
     echo "$project,$casestudy,$technique,$budget,$gentime,$structures,$explored"
+    echo "$project,$casestudy,$technique,$budget,$gentime,$structures,$explored" >> $tmpfile
+
 }
 
 function process_results_builders() {
@@ -213,8 +228,13 @@ function process_results_builders_display() {
     project=$1
     casestudy=$2
     resultsdir=../tmp/
+    tmpfile="results_builders/results_builders.csv"    
+
     echo "case study ; builders ; time ; nMethods" 
-      
+    
+    if [[ ! -f $tmpfile ]] ; then
+        echo "case study ; builders ; time ; nMethods" > $tmpfile
+    fi
     testline=""
     currdir=$resultsdir/$casestudy
     logFile="$currdir/log.txt"
@@ -227,5 +247,60 @@ function process_results_builders_display() {
     time=$(cat $logFile|grep "TOTAL Time"|cut -d':' -f2)
 
     echo "$project $casestudy ; $builders ; $time ; $nMethods"
+    echo "$project $casestudy ; $builders ; $time ; $nMethods" >> $tmpfile
+
+}
+
+
+function process-results-inclusion() {
+    techniques=$1
+
+    resultsdir=./results-begen-serialize/
+    tmpfile="$resultsdir/processresults.csv"
+    # [[ -f $tmpfile ]] && rm $tmpfile
+    echo "Project,Class,Technique,Budget,Other Bdgt,Structures,Other Strs,Not Included,Not Incl %" > $tmpfile
+    echo "Project,Class,Technique,Budget,Other Bdgt,Structures,Other Strs,Not Included,Not Incl %"
+    projects=$(ls $resultsdir)
+    [[ $projects == "" ]] && echo "No proyects found in $currdir" && exit -1;
+    for project in $projects
+    do
+        currdir=$resultsdir/$project
+        cases=$(ls $currdir)
+        [[ $cases == "" ]] && echo "No case studies found in $currdir" && continue;
+        for casestudy in $cases 
+        do
+            currdir=$resultsdir/$project/$casestudy
+            for technique in $techniques 
+            do
+                currdir=$resultsdir/$project/$casestudy/$technique
+                [[ ! -d $currdir ]] && continue;
+                budgets=$(ls $currdir)
+                [[ $budgets == "" ]] && echo "No budgets found in $currdir" && continue;
+                for budget in $budgets
+                do
+                    currdir=$resultsdir/$project/$casestudy/$technique/$budget/
+                    [[ ! -d $currdir ]] && continue;
+                    for inclfile in $(ls $currdir/inclusion-res* | sort -V)
+                    do
+                        otherbudget=${inclfile##*-}
+                        otherbudget=${otherbudget%.txt}
+
+                        structures=$(grep "Structures:" $inclfile | cut -d" " -f2)
+                        otherstrs=$(grep "Target structures" $inclfile | cut -d" " -f3)
+                        notincluded=$(grep "Structures not in target" $inclfile | cut -d" " -f5)
+                        notinclpct=$(echo "result = ($notincluded/$structures) * 100; scale=1 ; result/1 " | bc -l)
+
+                        # repeatedstrs=$(grep "Structures repeated in target" $inclfile | cut -d" " -f5)
+                        # [[ ! $repeatedstrs == "0" ]] && echo ">> WARNING: Repeated structures in target. See: $inclfile"
+
+                        echo "$project,$casestudy,$technique,$budget,$otherbudget,$structures,$otherstrs,$notincluded,$notinclpct" >> $tmpfile
+                        echo "$project,$casestudy,$technique,$budget,$otherbudget,$structures,$otherstrs,$notincluded,$notinclpct"
+
+                    done
+                done
+            done
+        done
+    done
+    # cat $tmpfile | sort -V
 
 }

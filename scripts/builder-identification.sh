@@ -34,12 +34,12 @@ function run_identify_builders(){
   
     #Log for builders tools.
     rm -r $BE_EXP_SRC/tmp/$casestudy/*
-
+    log=$BE_EXP_SRC/tmp/$casestudy/console.log
     popd
     pushd $BE_EXP_SRC
 
     SECONDS=0
-    cmd="java -cp $project/build/classes/:lib/korat.jar:lib/identificationBuilders.jar main.Builders $casestudy"
+    cmd="java -cp $project/build/classes/:lib/korat.jar:lib/identificationBuilders.jar main.Builders $casestudy > $log"
     
     echo ">> Executing: $cmd"
     echo "$cmd" 

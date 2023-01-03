@@ -1,9 +1,9 @@
 #!/bin/bash
 
 projectsdir=$BE_EXP_SRC
-scriptsdir=$projectsdir/process-results.sh
+scriptsdir=$projectsdir/scripts
 source $scriptsdir/common.sh
-maxheap=$BE_EXP_MAXHEAP
+maxheap=8g
 
 # Example invocation:
 #./check-inclusion.sh 8_roops results-begen/8_roops/rbt.TreeSet/korat/3/korat-tests/objects.ser results-begen/8_roops/rbt.TreeSet/beapi/graph/builders/3/beapi-tests/objects.ser properties/scope3.all.canonicalizer.properties results-begen/8_roops/rbt.TreeSet/korat/3/structures-not-in-beapi.txt

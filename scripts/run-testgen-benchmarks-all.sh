@@ -12,5 +12,5 @@ clean_results_folders
 ./run-testgen-benchmarks-3_fajita.sh
 
 
-process_results_beapi_vs_korat;
+# process_results_beapi_vs_korat;
     
