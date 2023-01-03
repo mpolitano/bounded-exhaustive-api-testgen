@@ -98,7 +98,7 @@ function process_results_beapi_vs_korat_display() {
     fi
 
     echo "$project,$casestudy,$technique,$budget,$gentime,$structures,$explored"
-    echo "$project,$casestudy,$technique,$budget,$gentime,$structures,$explored" > $tmpfile
+    echo "$project,$casestudy,$technique,$budget,$gentime,$structures,$explored" >> $tmpfile
 
 }
     
@@ -170,7 +170,7 @@ function process_results_optimizations_display() {
     tmpfilebuilders="builders.txt"
     # [[ -f $tmpfile ]] && rm $tmpfile
     [[ -f $tmpfilebuilders ]] && rm $tmpfilebuilders
-    if [[ ! -f $tmpfile ]] ; then
+    if [[ ! -e $tmpfile ]] ; then
         echo "Project,Class,Technique,Budget,Time,Structures,Explored" > $tmpfile
     fi
     echo "Project,Class,Technique,Budget,Time,Structures,Explored"
