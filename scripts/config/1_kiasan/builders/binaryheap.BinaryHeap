@@ -1,4 +1,3 @@
 binaryheap.BinaryHeap.<init>\(int\)
 binaryheap.BinaryHeap.insert\(int\)
-binaryheap.BinaryHeap.makeEmpty\(\)
 binaryheap.BinaryHeap.deleteMin\(\)

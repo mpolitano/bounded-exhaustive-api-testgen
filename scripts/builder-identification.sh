@@ -37,9 +37,9 @@ function run_identify_builders(){
 
     popd
     pushd $BE_EXP_SRC
-    rm -r $tmp/$casestudy/*
-    mkdir -f $tmp/$casestudy/
-    log=$tmp/$casestudy/console.log
+    rm -r tmp/$casestudy/*
+    mkdir -p tmp/$casestudy/
+    log=tmp/$casestudy/console.log
     log=$BE_EXP_SRC/tmp/$casestudy/console.log
     if [ -h log ] && [ ! -f log ]; then
         rm log

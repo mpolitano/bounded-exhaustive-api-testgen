@@ -94,7 +94,7 @@ public class BinaryHeap  implements java.io.Serializable{
         }
 
         //BUG FIX:this is no part of original repOK() from korat
-        //if(array!=null) {//array!=null
+        //if(array!=null) {
         //  return false;
         //}
         //if(array.length >0 && array[0]!=0)

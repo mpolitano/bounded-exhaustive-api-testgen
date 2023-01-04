@@ -1,5 +1,0 @@
-bheapkorat.BinomialHeap.<init>\(\)
-bheapkorat.BinomialHeap.extractMin\(\)
-bheapkorat.BinomialHeap.insert\(int\)
-bheapkorat.BinomialHeap.decreaseKeyValue\(int,int\)
-bheapkorat.BinomialHeap.delete\(int\)
