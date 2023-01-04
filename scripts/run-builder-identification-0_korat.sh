@@ -16,5 +16,3 @@ do
         break;
     fi
 done
-
-process_results_builders;

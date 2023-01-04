@@ -75,7 +75,7 @@ function process_results_optimizations_display() {
     explored=""
 
     gentime=$(grep "Bounded exhaustive generation time" $logfile | cut -d' ' -f5)
-    # gentime=$(echo "result = (${gentime}/1000); scale=2; result / 1" | bc -l)
+    gentime=$(echo "result = (${gentime}/1000); scale=2; result / 1" | bc -l)
     structures=$(grep "Number of builder sequences" $logfile | cut -d' ' -f5)
     explored=$(grep "Number of sequences explored" $logfile | cut -d' ' -f5)
   
@@ -91,7 +91,7 @@ function process_results_builders_display() {
     casestudy=$2
     resultsdir=../tmp/
     tmpfile="results-builders/results_builders.csv"    
-
+    mkdir -p results-builders
     echo "case study ; builders ; time ; nMethods" 
     
     if [[ ! -f $tmpfile ]] ; then
@@ -108,8 +108,8 @@ function process_results_builders_display() {
     nMethodsAll=$(cat $logFile|grep "Number of methods is:"|cut -d':' -f2)
     time=$(cat $logFile|grep "TOTAL Time"|cut -d':' -f2)
 
-    echo "$project $casestudy ; $builders ; $time ; $nMethods"
-    echo "$project $casestudy ; $builders ; $time ; $nMethods" >> $tmpfile
+    echo "$project ; $casestudy ; $builders ; $time ; $nMethods"
+    echo "$project ; $casestudy ; $builders ; $time ; $nMethods" >> $tmpfile
 
 }
 

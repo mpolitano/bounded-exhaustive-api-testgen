@@ -31,10 +31,7 @@ function run_identify_builders(){
     # mkdir -p "$BE_EXP_SRC/src/" && cp -r $BE_EXP_SRC/$project/src/main/java/* $BE_EXP_SRC/src
     mkdir -p "$BE_EXP_SRC/src/" && cp -r src/main/java/* $BE_EXP_SRC/src
     mkdir -p "$BE_EXP_SRC/build/classes" && cp -r build/classes/* $BE_EXP_SRC/build/classes
-  
     #Log for builders tools.
-
-
     popd
     pushd $BE_EXP_SRC
     rm -r tmp/$casestudy/*
@@ -51,10 +48,14 @@ function run_identify_builders(){
     echo "$cmd" 
     bash -c "$cmd"
 
+
+    cat builders.txt|sed -r 's/[)]+/\\)/g'|sed -r 's/[(]+/\\(/g' > tmpBuilders.txt  
+    mv tmpBuilders.txt builders.txt
     #Must be copy to beapi directory. Escape '('.
     cp builders.txt tmp/$casestudy/
 
     #Rm temporary folders.
+    rm tmpBuilders.txt
     rm builders.txt
     folder=${casestudy%%.*}
     rm -r $BE_EXP_SRC/$folder

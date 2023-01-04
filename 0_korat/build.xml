@@ -19,8 +19,6 @@
   <!-- The base directories for sources -->
   <property name="source.java"             value="src/main/java"/>
   <property name="test.java"               value="src/test/java"/>
-  <property name="source.resources"        value="src/main/resources"/>
-  <property name="test.resources"          value="src/test/resources"/>
   <property name="test.report.dir"         value="${build.home}/test-report"/>
   <property name="be.java"                 value="be-tests"/>
 
@@ -71,9 +69,7 @@
           description="Prepare build directory">
     <mkdir dir="${build.home}"/>
     <mkdir dir="${source.java}"/>
-    <mkdir dir="${source.resources}"/>
-    <mkdir dir="${test.java}"/>
-    <mkdir dir="${test.resources}"/>
+ -->    <mkdir dir="${test.java}"/>
     <mkdir dir="${test.report.dir}"/>
     <mkdir dir="lib"/>
     <mkdir dir="test-lib"/>
