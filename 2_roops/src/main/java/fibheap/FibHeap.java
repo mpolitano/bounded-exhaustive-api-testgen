@@ -348,6 +348,9 @@ public class FibHeap implements java.io.Serializable{
     public boolean repOK() {
     	Set allNodes = new HashSet();
     	List parent_headers_to_visit = new LinkedList();
+        //BUG FIX:this is no part of original repOK() from Roops
+        //BUG in repOK:// IF min is null, n must be 0
+        // if (min ==null) return n==0;
 
     	if (min != null) {
     	    //System.out.println(min.toString());
@@ -359,8 +362,9 @@ public class FibHeap implements java.io.Serializable{
                 //System.out.println(curr.toString());
 
     			do  {
-    				//Esto lo tuve que corregir porque sino tengo null pointer en la generación con korat
-    				//left y right no pueden ser null (es una lista circular)			
+                    //BUG FIX:this is no part of original repOK() from Roops
+                    //BUG in repOK:// left and rigth, can't be null. It is a circular list.
+                    //We have to fix it for korat to work
     				if(curr.left==null || curr.right ==null)
     					return false;
     				
@@ -368,14 +372,22 @@ public class FibHeap implements java.io.Serializable{
     					return false;
                     //System.out.println(curr.toString());
 
+                    //BUG FIX:this is no part of original repOK() from Roops
+                    //BUG in repOK:// Min node should always contain the minimum value in the heap
+                    //if (curr.key<min.key)
+                    //  return false;
+
     				if (curr.parent != null)
     					return false;
     				
-    				if (curr.child != null)
+    				if (curr.child != null){
     					parent_headers_to_visit.add(curr);
-
+                    }
+                    //BUG FIX:this is no part of original repOK() from Roops
+                    //BUG in repOK:// If a node has no child its degree should be zero
+                    //}else if(curr.degree!=0) return false;   
     				if (!allNodes.add(curr))
-    					return false;// repeated node
+    					return false;
     				
     				curr = curr.left;
     				child_cound++;
@@ -394,8 +406,9 @@ public class FibHeap implements java.io.Serializable{
     			int node_count = 0;
     			FibHeapNode curr_node = node.child;
     			do {
-    				//Esto lo tuve que corregir porque sino tengo null pointer en la generación con korat
-    				//left y right no pueden ser null (es una lista circular)			
+                    //BUG FIX:this is no part of original repOK() from Roops
+                    //BUG in repOK:// left and rigth, can't be null. It is a circular list.
+                    //We have to fix it for korat to work		
     				if(curr_node.left==null || curr_node.right ==null)
     					return false;
     				
@@ -408,6 +421,9 @@ public class FibHeap implements java.io.Serializable{
     				if (curr_node.child != null)
     					parent_headers_to_visit.add(curr_node);
 
+                    //BUG FIX:this is no part of original repOK() from Roops
+                    //BUG in repOK:// Child nodes should have smaller keys than their parents
+                    //if (curr_node.key<node.key)
     				if (curr_node.key>node.key)
     					return false;
     				
@@ -427,120 +443,13 @@ public class FibHeap implements java.io.Serializable{
 
 	}
 	
-    if (!allNodes.contains(min))
-        return false;
-	if (allNodes.size() != this.n)
-		return false;
-
-	return true;
-}
-    
-    
-    
-    
-    
-   //*************************************************************************
-   //************** From now on repOK()  *************************************
-   //*************************************************************************
-	//Fixed repOK- No used to run experiment
-	private boolean repOKFixed() {
-		Set allNodes = new HashSet();
-		List parent_headers_to_visit = new LinkedList();
-		//si min es null el numero de nodes  debe ser cero
-		if (min ==null) return n==0;
-		if (min != null) {
-			{
-				int child_cound = 0;
-				/* @ nullable */ FibHeapNode curr = new FibHeapNode();
-				curr =  min;
-	    
-				do  {
-					//left y right no pueden ser null (es una lista circular)			
-					if(curr.left==null || curr.right ==null)
-						return false;
-					
-					if (n != 0 && curr.left.right != curr)
-						return false;
-	            
-					
-					//min contine la menor de las claves
-					if (curr.key<min.key)
-						return false;
-					
-					if (curr.parent != null)
-						return false;
-					
-					if (curr.child != null) {
-						parent_headers_to_visit.add(curr);
-						//si curr no tiene child entonces su degree debe ser cero
-					}else if(curr.degree!=0) return false;
-						
-					if (!allNodes.add(curr))
-						return false;// repeated node
-					
-					curr = curr.left;
-					child_cound++;
-					
-					
-				} while (curr!=min);
-				
-				
-			}
-
-			while (!parent_headers_to_visit.isEmpty()) {
-
-				// check other levels 
-
-				FibHeapNode node = (FibHeapNode) parent_headers_to_visit.get(0);
-				parent_headers_to_visit.remove(0);
-
-				int node_count = 0;
-				FibHeapNode curr_node = node.child;
-				
-				do {
-					//left y right no pueden drt null
-					if(curr_node.left==null || curr_node.right ==null)
-						return false;
-					
-					if (curr_node.left.right != curr_node)
-						return false;
-
-			
-					if (curr_node.parent != node)
-						return false;
-
-					
-					if (curr_node.child != null)
-						parent_headers_to_visit.add(curr_node);
-					else if(curr_node.degree!=0) return false;
-					//alrevez estaba esto!: los nodes deben tener menor 
-					//clave que su adre
-					if (curr_node.key<node.key)
-						return false;
-					
-					if (!allNodes.add(curr_node))
-						return false; // repeated node
-					
-					
-					curr_node = curr_node.left;
-					node_count++;
-				} while (curr_node != node.child);
-
-				if (node_count != node.degree)
-					return false;
-
-			}
-
-		}
-		
         if (!allNodes.contains(min))
             return false;
-		if (allNodes.size() != this.n)
-			return false;
+    	if (allNodes.size() != this.n)
+    		return false;
 
-		return true;
-	}
-
+    	return true;
+    }
 	
     public String toString()
     {
