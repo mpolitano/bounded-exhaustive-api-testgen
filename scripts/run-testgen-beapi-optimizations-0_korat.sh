@@ -13,7 +13,7 @@ do
 	do
 	    for budget in $budgets
 	    do
-	        cmd="timeout $TO ./beapi-optimizations.sh 0_korat $casestudy $budget $optimization"
+	        cmd="timeout $TO ./run-testgen-beapi-optimizations.sh 0_korat $casestudy $budget $optimization"
 	        bash -c "$cmd"
 	        if [ $? -eq 124 ]; then 
 	            echo ">> Execution timed out"
@@ -24,4 +24,4 @@ do
 done
 
 
-process_results_optimizations;    
+# process_results_optimizations;    
