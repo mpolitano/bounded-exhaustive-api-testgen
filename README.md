@@ -362,11 +362,11 @@ To evaluate if `repOK`, of a single case study for a benchmark, suffer  from ove
 ./run-inclusion-korat-in-beapi.sh <benchmark> <case study> <korat scope> <beapi scope>  
 ```
 
-EXPLICAR
+In this case we will be evaluating if the valid structures (generated from `repOK`) are a strict subset of structures generated from the API,  and those API generated structures that are not valid according to repOk (if any), will be pointing out  `repOK` error, which must be manually confirmed.
 
 
 
-where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`; and `<case study>` is one of the case studies of `<benchmark>` listed in the subsection below.
+In these above scripts,  `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`; `<case study>` is one of the case studies of `<benchmark>` listed in the subsection below; `<beapi scope>` is 
 
 For example, to evaluate `repOk` for `RedBlackTree` from the `0_korat` benchmark, execute: 
 
