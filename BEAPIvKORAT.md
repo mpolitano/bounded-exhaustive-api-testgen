@@ -122,7 +122,7 @@ korat.examples.singlylinkedlist.SinglyLinkedList.add\(java.lang.Object\)
   - `DoubleLinkedList`: cdlist.LinkedList (`DLList`)
   - `NodeCachingLinkedList`: cList.NodeCachingLinkedList (`NCL`)
 
-Note: In parentheses are the short names used in **Table 1** of **Section 4.1** of the paper to identify each case study (the results for some case studies are not reported in the paper for space reasons).
+Note: In parentheses are the short names used in **Table 1** of **Section 4.1** of the paper to identify each case study. The results for some case studies are not reported in the table for space reasons; these can be found online PONER LINK CACHO.
 
 ## Running all experiments from a single benchmark (slow)
 
