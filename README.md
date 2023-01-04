@@ -295,26 +295,20 @@ For example, to identify builders methods  for `SinglyLinkedList` from the `0_ko
 
 ```
 
-
-CHEQUEAR QUE ESTO SEA ASI
-
 The screen shows a summary of the results obtained, as well as the path to the log file that builder computation throws as output. Also, the results are stored, in a more readable way, as a CSV format file (```results_builders.csv```) located in ```script/results-builders``` folder.  
 
 
 The information tabulated in the CSV file correspond to:
 
-- Case study information: **project** benchmark and **case study**
+- Case study information: **case study**
 - Identified builder methods (**builders**)
 - **Time** spent for builder identification process (In seconds)
 - Number of total public methods declared by the specified case study class
 
-GENERA UN LOG FILE COMO DIGO? AHI ESTAN LOS BUILDERS? 
-
 For the example given above, the identified builders methods are the following:
 
-
- - Parameterless SinglyLinkedList Constructor: `korat.examples.singlylinkedlist.SinglyLinkedList.<init>\(\)`
- - Method to append a given object to the list: `korat.examples.singlylinkedlist.SinglyLinkedList.add\(java.lang.Object\)`
+ - Parameterless SinglyLinkedList Constructor: `korat.examples.singlylinkedlist.SinglyLinkedList.<init>()`
+ - Method to append a given object to the list: `korat.examples.singlylinkedlist.SinglyLinkedList.add(java.lang.Object)`
 
 
 ### Running all experiments from a single benchmark

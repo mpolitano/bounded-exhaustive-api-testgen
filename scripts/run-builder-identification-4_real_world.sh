@@ -9,7 +9,7 @@ cases="java2.util2.linkedlist.LinkedList java2.util2.treemap.TreeMap java2.util2
 
 for casestudy in $cases 
 do
-    cmd="timeout $TO ./builder-identification.sh 4_real_world $casestudy"
+    cmd="timeout $TO ./run-builder-identification.sh 4_real_world $casestudy"
     bash -c "$cmd"
     if [ $? -eq 124 ]; then 
         echo ">> Execution timed out"

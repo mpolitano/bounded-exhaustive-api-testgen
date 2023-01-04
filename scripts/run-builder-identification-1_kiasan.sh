@@ -9,7 +9,7 @@ cases="redblacktree.TreeMap doublylinkedlist.DoubleLinkedList binarysearchtree.B
 
 for casestudy in $cases 
 do
-    cmd="timeout $TO ./builder-identification.sh 1_kiasan $casestudy"
+    cmd="timeout $TO ./run-builder-identification.sh 1_kiasan $casestudy"
     bash -c "$cmd"
     if [ $? -eq 124 ]; then 
         echo ">> Execution timed out"

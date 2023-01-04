@@ -9,7 +9,7 @@ cases="korat.examples.singlylinkedlist.SinglyLinkedList korat.examples.sortedlis
 
 for casestudy in $cases 
 do
-    cmd="timeout $TO ./builder-identification.sh 0_korat $casestudy"
+    cmd="timeout $TO ./run-builder-identification.sh 0_korat $casestudy"
     bash -c "$cmd"
     if [ $? -eq 124 ]; then 
         echo ">> Execution timed out"
