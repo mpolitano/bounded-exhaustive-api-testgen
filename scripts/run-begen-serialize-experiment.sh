@@ -12,9 +12,9 @@ opt2=$6
 
 projectdir=$projectsdir/$project
 if [[ $technique == "beapi"* ]]; then
-    resultsdir=$scriptsdir/results-begen-serialize/$project/$class/$technique/$opt1/$opt2/$scope/
+    resultsdir=$scriptsdir/results-begen-inclusion/$project/$class/$technique/$opt1/$opt2/$scope/
 else
-    resultsdir=$scriptsdir/results-begen-serialize/$project/$class/$technique/$scope/
+    resultsdir=$scriptsdir/results-begen-inclusion/$project/$class/$technique/$scope/
 fi
 if [[ -d $resultsdir ]]; then
     rm -rf $resultsdir

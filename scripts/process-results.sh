@@ -255,7 +255,7 @@ function process_results_builders_display() {
 function process-results-inclusion() {
     techniques=$1
 
-    resultsdir=./results-begen-serialize/
+    resultsdir=./results-begen-inclusion/
     tmpfile="$resultsdir/processresults.csv"
     # [[ -f $tmpfile ]] && rm $tmpfile
     echo "Project,Class,Technique,Budget,Other Bdgt,Structures,Other Strs,Not Included,Not Incl %" > $tmpfile
