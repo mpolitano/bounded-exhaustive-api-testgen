@@ -23,7 +23,7 @@ $BE_EXP_SRC/<folder>/build/classes
 For simplicity, we made an `ant` build file to easily compile the code and complies with the required folder structure. To compile the code run the following commands: 
 
 ```
-cd `$BE_EXP_SRC/5_github`
+cd $BE_EXP_SRC/5_github
 ant compile
 ```
 
