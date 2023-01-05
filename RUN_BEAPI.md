@@ -90,7 +90,7 @@ Builders for `BEAPI` can also be provided manually.
 To run automated builders identification first move to the scripts folder:
 
 ```
-$BE_EXP_SRC/scripts
+cd $BE_EXP_SRC/scripts
 ```
 
 To automatically identify builders for this case study, you can run the script:
