@@ -176,7 +176,8 @@ To identify builder methods for a given case study, run the following script:
 ```
 ./run-builder-identification.sh <benchmark> <case study>
 ```
-CACHO: Me falta el scope para el que quiero hacer builders identification en todos los scripts.
+
+**Note**: The script uses a fixed scope of 5 for builders identification, as this was the scope we used for this experiment in the paper.
 
 where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`, `4_real_world`; `<case study>` is one of the case studies of `<benchmark>` (see section [Available case studies](#available-case-studies)).
 
