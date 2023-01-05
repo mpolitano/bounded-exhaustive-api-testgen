@@ -147,7 +147,7 @@ public class StackAr implements java.io.Serializable
     private Object [ ] theArray;
     private int        topOfStack;
 
-    static final int DEFAULT_CAPACITY = 2;
+    static final int DEFAULT_CAPACITY = 10;
     
     public static IFinitization finStackAr(int size) {
         return finStackAr(size, size);

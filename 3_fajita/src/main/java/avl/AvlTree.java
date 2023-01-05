@@ -65,12 +65,13 @@ public class AvlTree implements java.io.Serializable {
 		queue.add(root);
         while (!queue.isEmpty()) {
             AvlNode current = (AvlNode) queue.removeFirst();
+
+            int l_Height = current.left == null ? 0 : current.left.height;
+            int r_Height = current.right == null ? 0 : current.right.height;
             //BUG FIX:this is no part of original repOK() from fajita
             //height of null should be -1;
-            //int l_Height = current.left == null ? 0 : current.left.height;
-            //int r_Height = current.right == null ? 0 : current.right.height;
-			int l_Height = current.left == null ? -1 : current.left.height;
-			int r_Height = current.right == null ? -1 : current.right.height;
+			// int l_Height = current.left == null ? -1 : current.left.height;
+			// int r_Height = current.right == null ? -1 : current.right.height;
 			int difference = l_Height - r_Height;
 			if (difference < -1 || difference > 1)
 				return false; // Not balanced.

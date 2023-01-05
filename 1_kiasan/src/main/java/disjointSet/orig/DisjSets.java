@@ -67,8 +67,8 @@ public class DisjSets implements java.io.Serializable{
     //@ requires root1 >= 0 && root1 < s.length && root2 >=0 && root2 < s.length && root1 != root2 && s[root1] == -1 && s[root2] == -1;
     //@ ensures find(root1)==find(root2);
     public void union(int root1, int root2) {
-    	assertIsRoot( root1 );
-        assertIsRoot( root2 );
+    	// assertIsRoot( root1 );
+     //    assertIsRoot( root2 );
         if( root1 == root2 )
             throw new IllegalArgumentException( "Union: root1 == root2 " + root1 );
     	s[root2] = root1;

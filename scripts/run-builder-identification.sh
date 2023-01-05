@@ -54,13 +54,13 @@ function run_identify_builders(){
     #Must be copy to beapi directory. Escape '('.
     cp builders.txt tmp/$casestudy/
 
-    #Rm temporary folders.
-    rm tmpBuilders.txt
+    # Rm temporary folders.
+    # rm tmpBuilders.txt
     rm builders.txt
     folder=${casestudy%%.*}
     rm -r $BE_EXP_SRC/$folder
     rm -r $BE_EXP_SRC/src/
-    rm -r $BE_EXP_SRC/inferFiles
+    # rm -r $BE_EXP_SRC/inferFiles
     rm -r $BE_EXP_SRC/build/
 
 

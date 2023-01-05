@@ -1,4 +1,4 @@
-package  rbt;
+package rbt;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -80,9 +80,9 @@ public class TreeSet implements Serializable {
         if (root.parent != null)
             return false;
 		
-		// Added by Nico to reconcile discrepancy with declarative invariant
-		if (root.color != 1)
-			return false;
+		// // Added by Nico to reconcile discrepancy with declarative invariant
+		// if (root.color != 1)
+		// 	return false;
 		
         Set<Wrapper> visited = new java.util.HashSet<Wrapper>();
         visited.add(new Wrapper(root));

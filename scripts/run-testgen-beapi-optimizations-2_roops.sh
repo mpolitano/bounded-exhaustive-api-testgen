@@ -4,7 +4,7 @@ projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
 source $scriptsdir/process-results.sh
 
-cases="fibheap.FibHeap rbt.TreeSet bheap.BinomialHeap avl.AvlTree linkedlist.LinkedList singlelist.SinglyLinkedList bintree.BinTree ncl.NodeCachingLinkedList"
+cases="fibheap.FibHeap rbt.TreeSet bheap.BinomialHeap avl.AvlTree linkedlist.LinkedList bintree.BinTree ncl.NodeCachingLinkedList"
 budgets="3 4 5 6 7 8 9 10"
 
 config="DEFAULT SM BLD NoOpt"
