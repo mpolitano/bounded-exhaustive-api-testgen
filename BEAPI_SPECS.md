@@ -137,8 +137,6 @@ Inspecting the source code, we know that the values of nodes inserted on the cac
 - witness structures 2:
 
 
-Estructura donde el value de header es distinto de null
-
 ```
    1 canonicalizer.DummyHeapRoot.theroot = canonicalizer.DummyHeapRoot:0->[ncl.NodeCachingLinkedList:0] ,
    2 ncl.LinkedListNode.next = ncl.LinkedListNode:0->[ncl.LinkedListNode:0] ,
@@ -155,8 +153,10 @@ Estructura donde el value de header es distinto de null
 ```
 
 
+In this case, `line 9` indicates that  `header` field of the  canonized witness `NodeCachingLinkedlist`, is `ncl.LinkedListNode:0` (`N0`). On the other hand, `line 5`, says that  `N0.value = 0`. Again, inspecting the source code, we know that `header` node is a dummy node and its value cannot be other than null, while `repOk` misses this constraint.
+  
 
-Notice that **Table 3** of **Section 4.3** of the paper reports errors found in `repOK` that are part of the case studies of each benchmark. In this table the **Error Description** column shows a brief description of the error found in `repOK`, which was manually identified. All `repOK` errors reported on the table previously mentioned, can be found in the corresponding `java` source file located at `<benchmark>/src/main/java/<case study>` for each `<benchmark>` and `<case study>`. In particular, the reported  errors in  `NodeCachingLinkeList` of `2_roops`,  are also shown as a part of motivation example section of the paper.
+Notice that **Table 3** of **Section 4.3** of the paper reports errors found in `repOK` that are part of the case studies of each benchmark. In this table the **Error Description** column shows a brief description of the error found in `repOK`, which was manually identified. All `repOK` errors reported on the table previously mentioned, can be found in the corresponding `java` source file located at `<benchmark>/src/main/java/<case study>` for each `<benchmark>` and `<case study>`. In particular, the previously analyzed errors in  `NodeCachingLinkeList` of `2_roops`,  are also shown as a part of motivation example section of the paper.
 
 
 
