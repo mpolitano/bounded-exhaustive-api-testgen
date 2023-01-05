@@ -1,7 +1,7 @@
 package com.anthonynsimon.datastructures;
 
 // Manages N stacks in an array, each with equal currentCapacity
-public final class MultiStackArray<T> {
+public final class MultiStackArray<T> implements java.io.Serializable{
 
     private int stackCount;
     private int stackCapacity;

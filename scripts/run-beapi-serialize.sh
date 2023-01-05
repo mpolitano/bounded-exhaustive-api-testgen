@@ -55,6 +55,7 @@ cmd="java -Xmx$maxheap -ea -cp $bejar:$cp randoop.main.Main gentests \
 --ignore-public-fields \
 --canonicalizer-cfg=$finitization \
 --filtering=BEALL \
+--serialize-objects=$outdir/objects.ser \
 --builder-methods=\"$buildersstr\""
 
 
