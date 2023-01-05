@@ -14,34 +14,34 @@ Follow the instructions in [INSTALL.md](INSTALL.md).
 
 The following folders contain the source code of the case studies considered in the paper:
 
-- `0_korat/src/main/java` contains the source code of the data structures implementations for the `Korat`'s benchmark.
-- `1_kiasan/src/main/java` contains the source code of the data structures implementations for the `Kiasan`'s benchmark.
-- `2_roops/src/main/java` contains the source code of the data structures implementations for the `ROOPS`' benchmark.
-- `3_fajita/src/main/java` contains the source code of the data structures implementations for the `FAJITA`'s benchmark.
-- `4_real_world/src/main/java` contains the source code of data structures implementations from the real world, drawn from the  **java.util** and **Apache Commons Collections** libraries.
+- `0_korat/src/main/java`: contains the source code of the data structures implementations for the `Korat`'s benchmark.
+- `1_kiasan/src/main/java`: contains the source code of the data structures implementations for the `Kiasan`'s benchmark.
+- `2_roops/src/main/java`: contains the source code of the data structures implementations for the `ROOPS`' benchmark.
+- `3_fajita/src/main/java`: contains the source code of the data structures implementations for the `FAJITA`'s benchmark.
+- `4_real_world/src/main/java`: contains the source code of data structures implementations from the real world, drawn from the  **java.util** and **Apache Commons Collections** libraries.
 
 Tool's binaries:
 
-- `lib` contains the binaries for the tools and libraries required to run the experiments as .jar files.
-- `lib\BEAPI.JAR` PONER EL CORRECTO CACHO binaries for the current `BEAPI` implementation. 
-- `lib\korat.jar` binaries for the last `Korat` version. 
+- `lib`: contains the binaries for the tools and libraries required to run the experiments as .jar files.
+- `lib\BEAPI.JAR`: PONER EL CORRECTO CACHO binaries for the current `BEAPI` implementation. 
+- `lib\korat.jar`: binaries for the last `Korat` version. 
 
 Scripts:
 
-- `scripts` provided scripts to facilitate the execution of `BEAPI`, and to easily reproduce the experiments in the paper.
+- `scripts`: provided scripts to facilitate the execution of `BEAPI`, and to easily reproduce the experiments in the paper.
 
 
 # Reproducing the paper's experiments 
 
-## Comparison of `BEAPI` against `Korat` in benchmarks from the literature (RQ1 in Section 4.1 of the paper)
+### Comparison of `BEAPI` against `Korat` in benchmarks from the literature (RQ1 in Section 4.1 of the paper)
 
 For instructions on reproducing this set of experiments click [here](BEAPI_vs_KORAT.md).
 
-## Assessing the impact of `BEAPI`'s optimizations (RQ2 in Section 4.2 of the paper)
+### Assessing the impact of `BEAPI`'s optimizations (RQ2 in Section 4.2 of the paper)
 
 For instructions on reproducing this set of experiments click [here](BEAPI_OPT.md).
 
-## Analysis of Specifications using `BEAPI` (RQ3 in Section 4.3 of the paper)
+### Analysis of Specifications using `BEAPI` (RQ3 in Section 4.3 of the paper)
 
 For instructions on reproducing this set of experiments click [here](BEAPI_SPECS.md).
 
