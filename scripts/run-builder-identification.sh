@@ -48,10 +48,12 @@ function run_identify_builders(){
     bash -c "$cmd"
 
 
-    cat builders.txt|sed -r 's/[)]+/\\)/g'|sed -r 's/[(]+/\\(/g' > tmpBuilders.txt  
+    cat builders.txt|sed -r 's/[)]+/\\)/g'|sed -r 's/[(]+/\\(/g' > tmpBuilders.txt 
+
     mv tmpBuilders.txt builders.txt
     #Must be copy to beapi directory. Escape '('.
-    cp builders.txt tmp/$casestudy/
+    mkdir -p $scriptsdir/results-builders/$project/$casestudy/
+    cp builders.txt $scriptsdir/results-builders/$project/$casestudy/
 
     # Rm temporary folders.
     # rm tmpBuilders.txt

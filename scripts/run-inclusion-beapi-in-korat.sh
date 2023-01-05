@@ -46,4 +46,8 @@ run_serialize korat $scopeKORAT;
 run_serialize beapi $scopeBEAPI;  
 
 run_beapi_inclusion;
+
+echo "************"
+echo "Report"
 process-results-inclusion "beapi/matching/builders"
+echo "************"

@@ -30,9 +30,13 @@ maxheap=8g
 maxBEit=$((scope + scope + scope)) # Up to XX iterations in the first stage of BE
 maxsize=$((maxBEit + maxBEit + maxBEit)) # Up to XX methods in a JUnit test
 
+pushd $projectsdir/$project
+clean_and_compile
+popd
+
 bejar="$projectsdir/lib/beapi.jar"
 cp=$projectsdir/$project/build/classes:../lib/korat.jar
-outdir=./beapi-tests
+outdir=$projectsdir/$project/beapi-tests
 
 echo ""
 echo "> Executing BE"

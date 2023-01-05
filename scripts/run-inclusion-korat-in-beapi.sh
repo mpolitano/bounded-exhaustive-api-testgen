@@ -46,4 +46,8 @@ scopeBEAPI=$4
 run_serialize korat $scopeKORAT;  
 run_serialize beapi $scopeBEAPI;  
 run_korat_inclusion;
+
+echo "************"
+echo "Report"
 process-results-inclusion "korat"
+echo "************"
