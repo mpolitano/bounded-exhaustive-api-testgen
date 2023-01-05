@@ -3,9 +3,7 @@
 
 In this section we provide a script to run beapi to generate a tests for any case study.
 To use this script, you need to create the directory in the same way as the existing benchmarks in the repository.
-We provide new data structures taken from a [repository of Github] (https://github.com/anthonynsimon/java-ds-algorithms)
-
-## Running a single experiment
+We provide new data structures taken from a [repository of Github](https://github.com/anthonynsimon/java-ds-algorithms)
 
 To generate tests using `BEAPI` with a given configuration run the following script:
 
@@ -13,7 +11,7 @@ To generate tests using `BEAPI` with a given configuration run the following scr
 ./run-beapi.sh <benchmark> <case study> <scope> <literalsFile> <configurationFile> <buildersFile>
 ```
 
-where `<benchmark>` is a folder a src code for generate tests; `<case study>` is one of the case studies inside the `<benchmark>` ; `<scope>` PABLO: Scope only use for set iterations in maxBEit  ; `<literalsFile>` is a file that contains the integers for use in the generation (see section [Literals format](#Literals-File)) ;`<configurationFile>` a file with BEAPI’s scope definition (see section [Scope definition](#scope-definition)) and `<buildersFile>` a file with methods builders for use in BEAPI (see section [builders file](#builders-definition)) 
+where `<benchmark>` is a folder a src code for generate tests; `<case study>` is one of the case studies inside the `<benchmark>` ; `<scope>` PABLO: Scope only use for set iterations in maxBEit  ; `<literalsFile>` is a file that contains the integers for use in the generation (see section [Literals file](#Literals-File)) ;`<configurationFile>` a file with BEAPI’s scope definition (see section [Scope definition](#scope-definition)) and `<buildersFile>` a file with methods builders for use in BEAPI (see section [Builders File](#builders-file)) 
 
 
 For example, to generate inputs for `MultiStackArray` from the [repository of Github] (https://github.com/anthonynsimon/java-ds-algorithms), should be cloned the repository:
@@ -64,3 +62,15 @@ BEAPI need a configuration file defining BEAPI’s scopes for a case study. The 
 max.objects=1
 omit.fields=modCount
 ```
+
+## Builders File
+
+BEAPI employs only a subset of the API routines to create test sequences. For this purpose, we need provide to BEAPI a file with the methods builders. (See last paragraph of Section 4.2)
+
+For the case MultiStackArray, the builders file contains:
+```
+com.anthonynsimon.datastructures.MultiStackArray.<init>\(int,int\)
+com.anthonynsimon.datastructures.MultiStackArray.push\(int,java.lang.Object\)
+
+```
+NOTE: Parentheses in methods must be escaped for them to work on BEAPI. Remember that this file can be generated automatically from the builder identification script. (See [here](BEAPI_OPT.md) 
