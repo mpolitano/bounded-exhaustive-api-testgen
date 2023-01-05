@@ -126,7 +126,6 @@ korat.examples.singlylinkedlist.SinglyLinkedList.add\(java.lang.Object\)
   - `TreeMap`: java2.util2.treemap.TreeMap (`TMap`)
   - `LinkedList`: java2.util2.linkedlist.LinkedList (`LList`)
   - `HashMap`: java2.util2.hashmap.HashMap (`HMap`)
-  - `Schedule`: builders.Schedule (`Schedule`)  
 
 
 Note: In parentheses are the short names used in **Table 2** of **Section 4.2** of the paper to identify each case study. The results for some case studies are not reported in the table for space reasons; these can be found online [Replication Package](https://sites.google.com/view/bounded-exhaustive-api/home).

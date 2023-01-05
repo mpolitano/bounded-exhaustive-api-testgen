@@ -1,10 +1,10 @@
-#!/bin/bash
+run-builder-identification-4_real_world.sh#!/bin/bash
 
 projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
 source $scriptsdir/process-results.sh
 
-cases="redblacktree.TreeMap doublylinkedlist.DoubleLinkedList binarysearchtree.BinarySearchTree disjointSet.orig.DisjSets disjointSet.fast.DisjSetsFast stack.list.StackLi stack.array.StackAr binaryheap.BinaryHeap"
+cases="redblacktree.TreeMap redblacktree.TreeSet doublylinkedlist.DoubleLinkedList binarysearchtree.BinarySearchTree disjointSet.orig.DisjSets disjointSet.fast.DisjSetsFast stack.list.StackLi binaryheap.BinaryHeap"
 
 
 for casestudy in $cases 
