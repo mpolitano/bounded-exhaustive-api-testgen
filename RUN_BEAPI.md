@@ -6,9 +6,21 @@ To run `BEAPI` on your case study follow the steps below.
 
 To demonstrate the use of `BEAPI` on a custom class we randomly selected a [repository of data structure implementations from Github](https://github.com/anthonynsimon/java-ds-algorithms).
 
-Make a folder in `$BE_EXP_SRC` for your project, and clone the repo in there. We already cloned the repo in folder `$BE_EXP_SRC/5_github`.
+Make a folder named `<folder>` inside `$BE_EXP_SRC` for your project, and clone the repo in there. We already cloned the repo in folder `$BE_EXP_SRC/5_github`.
 
-For simplicity, we made an `ant` build file to easily compile the code. For this, run the following commands: 
+For the provided scripts to work we require that the source code is stored in:
+
+```
+$BE_EXP_SRC/<folder>/src/main/java
+```
+
+and the classes are compiled to folder:
+
+```
+$BE_EXP_SRC/<folder>/build/classes
+```
+
+For simplicity, we made an `ant` build file to easily compile the code and complies with the required folder structure. To compile the code run the following commands: 
 
 ```
 cd `$BE_EXP_SRC/5_github`
@@ -18,7 +30,13 @@ ant compile
 We'll assume the class you want to run `BEAPI` on is:
 
 ```
-src/main/java/com/anthonynsimon/datastructures/MultiStackArray.java
+$BE_EXP_SRC/5_github/src/main/java/com/anthonynsimon/datastructures/MultiStackArray.java
+```
+
+The binary for this class will be located in:
+
+```
+$BE_EXP_SRC/5_github/build/classes/com/anthonynsimon/datastructures/MultiStackArray.class
 ```
 
 ## 2. Select (or define new) `BEAPI` configuration files
@@ -83,7 +101,7 @@ In our example:
 ./run-builder-identification.sh 5_github com.anthonynsimon.datastructures.MultiStackArray
 ```
 
-CACHO: Necesito que el script asuma que el código ya está compilado, sino cuando lo quiera usar el reviewer no le va a andar. Deberíamos crear otro script. Además necesito pasarle las configs anteriores como parámetros al script de cómputo de builders
+CACHO: Necesito pasarle las configs anteriores como parámetros al script de cómputo de builders
 
 The identified builders are saved in file `$BE_EXP_SRC/scripts/results-builders/<folder>/<case study>/builders.txt`. In our example:
 
@@ -102,7 +120,7 @@ We are ready to run `BEAPI` to generate tests for our case study. For this, run 
 ./run-beapi.sh <folder> <case study> <scope> <literals> <configuration> <builders>
 ```
 
-CACHO: Creo que le pasaria el classpath donde esta el case study en lugar de la folder. Ademas habria que ver que pasa si el case study incluye mas de una clase (Quizas no para este deadline).
+CACHO: Habria que ver que pasa si el case study incluye mas de una clase (Quizas no para este deadline).
 
 where `<folder>` is the folder within `$BE_EXP_SRC` that includes the source code of the case study; `<case study>` is one of the case studies inside the `<folder>`; `<scope>` PABLO: Scope only use for set iterations in maxBEit. CACHO: I think this should be fixed in the scripts ; `<literals>` is a literals file (see [Scope Definition for Primitive Types](#Scope-Definition-for-Primitive-Types));`<configuration>` is a configuration file (see [Scope Definition for Reference Types](#Scope-Definition-for-Reference-Types)), and `<builders>` is a file with the builders that BEAPI must use in generation (see section [3. (Optional) Run automated builders identification](#3.-(Optional)-Run-automated-builders-identification)).
 
