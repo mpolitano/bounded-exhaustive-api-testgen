@@ -35,7 +35,7 @@ Scripts:
 
 ### Comparison of `BEAPI` against `Korat` in benchmarks from the literature (RQ1 in Section 4.1 of the paper)
 
-For instructions on reproducing this set of experiments click [here](BEAPI_vs_KORAT.md).
+For instructions on reproducing this set of experiments click [here](BEAPI_v_KORAT.md).
 
 ### Assessing the impact of `BEAPI`'s optimizations (RQ2 in Section 4.2 of the paper)
 
