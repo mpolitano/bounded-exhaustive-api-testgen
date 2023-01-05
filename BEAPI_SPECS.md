@@ -100,7 +100,9 @@ As can be seen, 210 structures of `REPOKSet` are not included in `APISet`. These
 
 
 
-EStructura donde value de N0 de la cache es distinto de null
+We will take for the analysis some of these witness structures. As we mentioned these are described in plain text:
+
+- witness structures 1:
 
 ```
   1 canonicalizer.DummyHeapRoot.theroot = canonicalizer.DummyHeapRoot:0->[ncl.NodeCachingLinkedList:0] ,
@@ -116,6 +118,23 @@ EStructura donde value de N0 de la cache es distinto de null
   12 ncl.NodeCachingLinkedList.serialVersionUID = ncl.NodeCachingLinkedList:0->[1] ,
   13 ncl.NodeCachingLinkedList.size = ncl.NodeCachingLinkedList:0->[0] ,
 ```
+
+The canonized witness `NodeCachingLinkedlist`, named `ncl.NodeCachingLinkedList:0`,  has 2 nodes, named: `ncl.LinkedListNode:0` (we call it `N0` for short)  and `ncl.LinkedListNode:1` (we call it `N1` for short).  
+
+We can read `line 2` as follow:
+
+ values of `next` field for `ncl.LinkedListNode` are:
+
+- `ncl.LinkedListNode:0->[null]` which means `N0.next = null`
+- `ncl.LinkedListNode:1->[ncl.LinkedListNode:1]`  which means `N1.next = N1`
+
+ 
+For its part, `line 8`, indicates that the value for `firstCachedNode` field is `N0` (it is the only node linked to cache list, since `N0.next = null`). Furthermore, `line 5` shows values for `value` field  of each nodes: `N0.value = 0` , `N1.value = null`
+
+Inspecting the source code, we know that the values of nodes inserted on the cache list can not be other than `null`. In other words, the `NodeCachingLinkedList` API, does not allow building objects with `cache lists` whose nodes contain non-null values. This structure points out a missing constraint on `repOK`.
+  
+
+- witness structures 2:
 
 
 Estructura donde el value de header es distinto de null
