@@ -75,7 +75,7 @@ function process_results_optimizations_display() {
     explored=""
 
     gentime=$(grep "Bounded exhaustive generation time" $logfile | cut -d' ' -f5)
-    gentime=$(echo "result = (${gentime}/1000); scale=2; result / 1" | bc -l)
+    gentime=$(echo "result = (${gentime%??}/1000); scale=2; result / 1" | bc -l)
     structures=$(grep "Number of builder sequences" $logfile | cut -d' ' -f5)
     explored=$(grep "Number of sequences explored" $logfile | cut -d' ' -f5)
   
