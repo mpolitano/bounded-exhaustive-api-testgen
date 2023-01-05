@@ -497,9 +497,8 @@ public class NodeCachingLinkedList implements java.io.Serializable {
 	            if (m.previous != null)
 	              return false;
 
-	            if (m.value != null)
-	              return false;
-
+	            //if (m.value != null)
+	            //  return false;
 	            m = m.next;
 
 	            if (!visited.add(m))
