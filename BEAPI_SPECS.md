@@ -100,20 +100,44 @@ As can be seen, 210 structures of `REPOKSet` are not included in `APISet`. These
 
 
 
+EStructura donde value de N0 de la cache es distinto de null
+
+```
+  1 canonicalizer.DummyHeapRoot.theroot = canonicalizer.DummyHeapRoot:0->[ncl.NodeCachingLinkedList:0] ,
+  2 ncl.LinkedListNode.next = ncl.LinkedListNode:0->[null] , ncl.LinkedListNode:1->[ncl.LinkedListNode:1] ,
+  3 ncl.LinkedListNode.previous = ncl.LinkedListNode:0->[null] , ncl.LinkedListNode:1->[ncl.LinkedListNode:1] ,
+  4 ncl.LinkedListNode.serialVersionUID = ncl.LinkedListNode:0->[1] , ncl.LinkedListNode:1->[1] ,
+  5 ncl.LinkedListNode.value = ncl.LinkedListNode:0->[0] , ncl.LinkedListNode:1->[null] ,
+  6 ncl.NodeCachingLinkedList.DEFAULT_MAXIMUM_CACHE_SIZE = ncl.NodeCachingLinkedList:0->[20] ,
+  7 ncl.NodeCachingLinkedList.cacheSize = ncl.NodeCachingLinkedList:0->[1] ,
+  8 ncl.NodeCachingLinkedList.firstCachedNode = ncl.NodeCachingLinkedList:0->[ncl.LinkedListNode:0] ,
+  9 ncl.NodeCachingLinkedList.header = ncl.NodeCachingLinkedList:0->[ncl.LinkedListNode:1] ,
+  11 ncl.NodeCachingLinkedList.maximumCacheSize = ncl.NodeCachingLinkedList:0->[20] ,
+  12 ncl.NodeCachingLinkedList.serialVersionUID = ncl.NodeCachingLinkedList:0->[1] ,
+  13 ncl.NodeCachingLinkedList.size = ncl.NodeCachingLinkedList:0->[0] ,
+```
+
+
+Estructura donde el value de header es distinto de null
+
+```
+   1 canonicalizer.DummyHeapRoot.theroot = canonicalizer.DummyHeapRoot:0->[ncl.NodeCachingLinkedList:0] ,
+   2 ncl.LinkedListNode.next = ncl.LinkedListNode:0->[ncl.LinkedListNode:0] ,
+   3 ncl.LinkedListNode.previous = ncl.LinkedListNode:0->[ncl.LinkedListNode:0] ,
+   4 ncl.LinkedListNode.serialVersionUID = ncl.LinkedListNode:0->[1] ,
+   5 ncl.LinkedListNode.value = ncl.LinkedListNode:0->[0] ,
+   6 ncl.NodeCachingLinkedList.DEFAULT_MAXIMUM_CACHE_SIZE = ncl.NodeCachingLinkedList:0->[20] ,
+   7 ncl.NodeCachingLinkedList.cacheSize = ncl.NodeCachingLinkedList:0->[0] ,
+   8 ncl.NodeCachingLinkedList.firstCachedNode = ncl.NodeCachingLinkedList:0->[null] ,
+   9 ncl.NodeCachingLinkedList.header = ncl.NodeCachingLinkedList:0->[ncl.LinkedListNode:0] ,
+  10 ncl.NodeCachingLinkedList.maximumCacheSize = ncl.NodeCachingLinkedList:0->[20] ,
+  11 ncl.NodeCachingLinkedList.serialVersionUID = ncl.NodeCachingLinkedList:0->[1] ,
+  12 ncl.NodeCachingLinkedList.size = ncl.NodeCachingLinkedList:0->[0] ,
+```
 
 
 
-
-
-In **Table 3** of **Section 4.3** of the paper can be seen the `repOK` error (underspecification) reported for this case. By inspection of `repOk` source code (`0_korat/src/main/java/korat/examples/redblacktree/RedBlackTree.java`) you can see the reported bug.
-
-
-
-
-
-
-
-Notice that **Table 3** of **Section 4.3** of the paper reports errors found in `repOK` that are part of the case studies of each benchmark. In this table the **Error Description** column shows a brief description of the error found in `repOK`, which was manually identified. All `repOK` errors reported on the table previously mentioned, can be found in the corresponding `java` source file located at `<benchmark>/src/main/java/<case study>` for each `<benchmark>` and `<case study>`. In particular, the reported errors in roops'2 NodeCachingLinkeList it also shown as a part of motivation example section of the paper.
+Notice that **Table 3** of **Section 4.3** of the paper reports errors found in `repOK` that are part of the case studies of each benchmark. In this table the **Error Description** column shows a brief description of the error found in `repOK`, which was manually identified. All `repOK` errors reported on the table previously mentioned, can be found in the corresponding `java` source file located at `<benchmark>/src/main/java/<case study>` for each `<benchmark>` and `<case study>`. In particular, the reported  errors in  `NodeCachingLinkeList` of `2_roops`,  are also shown as a part of motivation example section of the paper.
 
 
 
