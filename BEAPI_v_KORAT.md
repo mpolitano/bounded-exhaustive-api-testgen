@@ -12,7 +12,7 @@ cd scripts
 ```
 ./run-testgen-benchmarks.sh <benchmark> <case study> <technique> <scope>
 ```
-where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita` (i.e., the name of the folder of the corresponding benchmark); `<case study>` is one of the case studies of `<benchmark>` (see below for a description of the available cases for each benchmark);  `<technique>` is either `beapi` or `korat`; and `<scope>` is the maximum number of nodes and the number of integers (from 0 to scope-1) available for generation.
+where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita` (i.e., the name of the folder of the corresponding benchmark); `<case study>` is one of the case studies for `<benchmark>` (see section [Available case studies](#Available-case-studies));  `<technique>` is either `beapi` or `korat`; and `<scope>` is the maximum number of nodes and the number of integers (from 0 to scope-1) available for generation.
 
 For example, to generate inputs for `SinglyLinkedList` from the `0_korat` benchmark using `BEAPI` with a scope of `4` execute:
 ```
@@ -135,7 +135,7 @@ To reproduce all the experiments for a specific benchrmark study with both techn
 ./run-testgen-benchmarks-3_fajita.sh
 ```
 
-Note: Running one of the above scripts might take a day or longer depending on your hardware
+Note: Running one of the above scripts might take a day or longer (more? CACHO?) depending on your hardware.
 
 ## Running all the experiments (very slow)
 
@@ -144,5 +144,5 @@ To reproduce all the experiments for this research question run:
 ./run-testgen-benchmarks-all.sh
 ```
 
-Note: Running this script might take a few days or longer depending on your hardware
+Note: Running this script might take a few days or longer (more? CACHO?) depending on your hardware.
 

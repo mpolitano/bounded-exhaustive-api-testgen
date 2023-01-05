@@ -1,6 +1,6 @@
 # Assessing the impact of `BEAPI`'s optimizations (RQ2 in Section 4.2 of the paper)
 
-In this section, we assess the impact of `BEAPI`'s optimizations in its performance. We provide four different ways to execute `BEAPI`: DEFAULT (SM/BLD in the paper) is `BEAPI` with state matching enabled (SM) and using identified builders (BLD); SM is `BEAPI` with only state matching (SM) enabled; BLD is `BEAPI` using identified builders (BLD); and NoOpt is `BEAPI` with both optimizations disabled. 
+In this experiment, we assessed the impact of `BEAPI`'s optimizations in its performance. We provide four different ways to execute `BEAPI`: DEFAULT (SM/BLD in Section 4.2 of the paper) is `BEAPI` with state matching enabled (SM) and using identified builders (BLD); SM is `BEAPI` with only state matching (SM) enabled; BLD is `BEAPI` using identified builders (BLD); and NoOpt is `BEAPI` with both optimizations disabled. 
 
 ## Running a single experiment
 
@@ -10,9 +10,9 @@ To generate inputs using `BEAPI` with a given configuration run the following sc
 ./run-testgen-beapi-optimizations.sh <benchmark> <case study> <scope> <config>
 ```
 
-where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`, `4_real_world`; `<case study>` is one of the case studies of `<benchmark>` (see below for the available cases for each benchmark); `<scope>` is the maximum number of nodes and the number of integers (from 0 to scope-1) available for generation, and `<config>` is one of the four aformentioned `BEAPI` configurations: `DEFAULT`, `SM`, `BLD`, `NoOpt`.
+where `<benchmark>` is one of `0_korat`, `1_kiasan`, `2_roops`, `3_fajita`, `4_real_world`; `<case study>` is one of the case studies for `<benchmark>` (see section [Available case studies](#Available-case-studies)); `<scope>` is the maximum number of nodes and the number of integers (from 0 to scope-1) available for generation, and `<config>` is one of the four aformentioned `BEAPI` configurations: `DEFAULT`, `SM`, `BLD`, `NoOpt`.
 
-For example, to generate inputs for `SinglyLinkedList` from the `0_korat` benchmark using `BEAPI`'s DEFAULT configuration with a scope of `4` execute: 
+For example, to generate inputs for `SinglyLinkedList` from the `0_korat` benchmark using `BEAPI`'s `DEFAULT` configuration with a scope of `4` execute: 
 ```
 ./run-testgen-beapi-optimizations.sh 0_korat korat.examples.singlylinkedlist.SinglyLinkedList 4 DEFAULT
 
@@ -27,19 +27,16 @@ The screen shows a summary of the results obtained, as well as the path to the l
 The information tabulated in the CSV file correspond to:
 
 - Case study information: **Project** benchmark and case study **Class**
-- Running **Technique** Configuration (See below for a description)
+- Running **Technique** Configuration 
+    - `beapi/matching/builders` &rarr;  `DEFAULT` configuration
+    - `beapi/matching/no-builders` &rarr;  `SM` configuration  
+    - `beapi/no-matching/builders` &rarr;  `BLD` configuration
+    - `beapi/no-matching/no-builders` &rarr;  `NoOpt` configuration 
 - **Budget** (scope) used for input generation
 - **Time** spent for input generation (In milliseconds)
 - Number of **Structures** generated
 - Number of structures visited (**Explored**) during generation
  
-Regarding **Technique Configurations**, the description corresponds to:
-
-- `beapi/matching/builders` &rarr;  `DEFAULT` configuration
-- `beapi/matching/no-builders` &rarr;  `SM` configuration  
-- `beapi/no-matching/builders` &rarr;  `BLD` configuration
-- `beapi/no-matching/no-builders` &rarr;  `NoOpt` configuration 
-
 The data stored in this CSV file corresponds to that displayed in **Table 2** of **Section 4.2** of the paper. This paper table only shows, for certain scopes (**s**), the times spent on generation for each configuration, for the case studies mentioned in the section below. It is important to note that the times in the paper table are shown in seconds, while in the CSV report they are displayed in milliseconds.  Furthermore, when the CSV report does not show data for a certain case study, it means that  the time limit has been  exceeded (timeout set to 1 hour). 
 
 Note: The precomputed builder methods used to run the experiments reported in **Table 2** of **Section 4.2** of the paper, when `DEFAULT` and `BLD` configurations are used, are stored in `scripts/config/<benchmark>/builder/<case study>` file,  for each `<benchmark>` and `<case study>`.
@@ -76,7 +73,6 @@ Note: The precomputed builder methods used to run the experiments reported in **
   - `FibHeap`: fibheap.FibHeap (`FibHeap`)
   - `BinomialHeap`: bheap.BinomialHeap (`BinHeap`)
 
-
 - `3_fajita`
   - `BinTree`: bintree1.BinTree (`BinTree`)
   - `AvlTree`: avl1.AvlTree (`AVL`)
@@ -96,21 +92,21 @@ Note: The precomputed builder methods used to run the experiments reported in **
   - `Schedule`: builders.Schedule (`Schedule`)  
 
 
-Note: The text that is inside parentheses in each case, corresponds to the short names used in **Table 2** of **Section 4.2** of the paper, to identify each case study. For space reasons, the aforementioned paper table shows only results from the `2_roops` and `4_real-world` benchmarks, while the others were included in the replication package that accompanies the paper.
+Note: In parentheses are the short names used in **Table 2** of **Section 4.2** of the paper to identify each case study. The results for some case studies are not reported in the table for space reasons; these can be found online PONER LINK CACHO.
 
 ## Running all experiments from a single benchmark (slow)
 
-To reproduce all the experiments for a specific benchmark using all of `BEAPI` configurations, for all scopes within XXX and YYY COMPLETAR! pick and run one of following commands: 
+To reproduce all the experiments for a specific benchmark using all four `BEAPI` configurations, for all scopes within XXX and YYY COMPLETAR CACHO! pick and run one of following commands: 
 
 ```
 ./run-testgen-beapi-optimizations-0_korat.sh
 ./run-testgen-beapi-optimizations-1_kiasan.sh
 ./run-testgen-beapi-optimizations-2_roops.sh
 ./run-testgen-beapi-optimizations-3_fajita.sh
-./run-testgen-beapi-optimizations-real-world.sh
+./run-testgen-beapi-optimizations-4_real_world.sh
 ```
 
-Note: Running one of the above scripts might take a day or longer depending on your hardware
+Note: Running one of the above scripts might take a day or longer (more? CACHO?) depending on your hardware.
 
 ## Running all the experiments (very slow)
 
@@ -119,7 +115,7 @@ To reproduce all the experiments for this research question run:
 ./run-testgen-beapi-optimizations-all.sh
 ```
 
-Note: Running this script might take a few days or longer depending on your hardware
+Note: Running this script might take a few days or longer (more? CACHO?) depending on your hardware.
 
 
 # Running automated builders identification (Last paragraph of Section 4.2)
