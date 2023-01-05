@@ -101,7 +101,6 @@ korat.examples.singlylinkedlist.SinglyLinkedList.add\(java.lang.Object\)
   - `BinaryHeap`: binaryheap.BinaryHeap (`BHeap`)
   - `TreeMap`: redblacktree.TreeMap (`TreeMap`)
   - `DisjSet`: disjointSet.orig.DisjSets (`DisjSet`) 
-  - `StackAr`: stack.array.StackAr (`StackAr`)
 
 - `2_roops`
 

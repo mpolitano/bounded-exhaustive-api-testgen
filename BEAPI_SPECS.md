@@ -54,6 +54,10 @@ For example, to check `BEAPI` inclusion in `Korat` for `RedBlackTree` from the `
 
 At the end of its execution the script shows a summary of the results in CSV format:
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 753f18d1fef4ca677fa19f5515789a8892e201f1
 ```
 ************
 Report
@@ -161,7 +165,6 @@ COMPLETAR INDICANDO DONDE DEJA LOS OBJETOS SERALIZADOS PARA AMBAS TECNICAS .
   - `BinaryHeap`: binaryheap.BinaryHeap (`BHeap`)
   - `TreeMap`: redblacktree.TreeMap (`TreeMap`)
   - `DisjSet`: disjointSet.orig.DisjSets (`DisjSet`) 
-  - `StackAr`: stack.array.StackAr (`StackAr`)
 
 - `2_roops`
 
