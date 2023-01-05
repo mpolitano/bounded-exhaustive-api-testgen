@@ -44,7 +44,6 @@ For example, to check `BEAPI` inclusion in `Korat` (`repOk` underspecification) 
 At the end of its execution the script shows a summary of the results in CSV format:
 
 
-CACHO: creo que acá en la ejecución falta la palabra Report
 ```
 ************
 Report
@@ -113,7 +112,6 @@ COMPLETAR INDICANDO DONDE DEJA LOS OBJETOS SERALIZADOS PARA AMBAS TECNICAS .
   - `BinaryHeap`: binaryheap.BinaryHeap (`BHeap`)
   - `TreeMap`: redblacktree.TreeMap (`TreeMap`)
   - `DisjSet`: disjointSet.orig.DisjSets (`DisjSet`) 
-  - `StackAr`: stack.array.StackAr (`StackAr`)
 
 - `2_roops`
 
