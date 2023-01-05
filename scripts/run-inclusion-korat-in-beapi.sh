@@ -9,8 +9,8 @@ source $scriptsdir/process-results.sh
 TO=60m
 
 function run_serialize() {
-for technique in $techniques; do
-	for ((budget=$scopeMin;budget<=$scopeMax;budget++)); do
+	technique=$1
+	budget=$2
 	cmd="timeout $TO ./run-begen-serialize-experiment.sh $project $casestudy $technique $budget matching builders"
 	echo "************"
 	echo ">> Executing: $cmd"
@@ -19,34 +19,31 @@ for technique in $techniques; do
 		echo ">> Execution timed out"
 	break;
 	fi
-	done
-done
 }
 
 function run_korat_inclusion() {
 # Check inclusion
-for ((budget=$scopeMin;budget<=$scopeMax;budget++)); do
-	koratdir=results-begen-inclusion/$project/$casestudy/korat/$budget
+	koratdir=results-begen-inclusion/$project/$casestudy/korat/$scopeKORAT
 	koratstrs=$koratdir/korat-tests/objects.ser
-	for ((inclbudget=$budget;inclbudget<=$scopeMax;inclbudget++)); do
-		bestrs=results-begen-inclusion/$project/$casestudy/beapi/matching/builders/$inclbudget/beapi-tests/objects.ser
-		config=properties/scope$budget.all.canonicalizer.properties
-		reslog=$koratdir/inclusion-results-$inclbudget.txt
-		diff=$koratdir/structures-not-included-$inclbudget.txt
-		echo "************"
-		cmd="./check-inclusion.sh $project $koratstrs $bestrs $config $diff > $reslog"
-		echo ">> Executing: $cmd"
-		bash -c "$cmd"
-	done
-done
+	bestrs=results-begen-inclusion/$project/$casestudy/beapi/matching/builders/$scopeBEAPI/beapi-tests/objects.ser
+	config=properties/scope$scopeKORAT.all.canonicalizer.properties
+	reslog=$koratdir/inclusion-results-$scopeBEAPI.txt
+	diff=$koratdir/structures-not-included-$scopeBEAPI.txt
+	echo "************"
+	cmd="./check-inclusion.sh $project $koratstrs $bestrs $config $diff > $reslog"
+	echo ">> Executing: $cmd"
+	bash -c "$cmd"
+
 }
+
+
 
 ######korat###############
 project="$1"
 casestudy="$2"
-techniques="korat beapi"
-scopeMin=$3
-scopeMax=$4
-run_serialize;  
+scopeKORAT=$3
+scopeBEAPI=$4
+run_serialize korat $scopeKORAT;  
+run_serialize beapi $scopeBEAPI;  
 run_korat_inclusion;
 process-results-inclusion "korat"
