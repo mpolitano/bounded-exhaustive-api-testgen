@@ -28,7 +28,6 @@ function run_identify_builders(){
     pushd $BE_EXP_SRC/$project
     ant
     #For Infer.
-    # mkdir -p "$BE_EXP_SRC/src/" && cp -r $BE_EXP_SRC/$project/src/main/java/* $BE_EXP_SRC/src
     mkdir -p "$BE_EXP_SRC/src/" && cp -r src/main/java/* $BE_EXP_SRC/src
     mkdir -p "$BE_EXP_SRC/build/classes" && cp -r build/classes/* $BE_EXP_SRC/build/classes
     #Log for builders tools.

@@ -92,10 +92,10 @@ function process_results_builders_display() {
     resultsdir=../tmp/
     tmpfile="results-builders/results_builders.csv"    
     mkdir -p results-builders
-    echo "case study ; builders ; time ; nMethods" 
+    echo "Project; Class; Builders ; Time ; nMethods" 
     
     if [[ ! -f $tmpfile ]] ; then
-        echo "case study ; builders ; time ; nMethods" > $tmpfile
+            echo "Project; Class; Builders ; Time ; nMethods"  > $tmpfile
     fi
     testline=""
     currdir=$resultsdir/$casestudy

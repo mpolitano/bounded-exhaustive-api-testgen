@@ -122,38 +122,38 @@ korat.examples.singlylinkedlist.SinglyLinkedList.add\(java.lang.Object\)
   - `DoubleLinkedList`: cdlist.LinkedList (`DLList`)
   - `NodeCachingLinkedList`: cList.NodeCachingLinkedList (`NCL`)
 
-Note: In parentheses are the short names used in **Table 1** of **Section 4.1** of the paper to identify each case study. The results for some case studies are not reported in the table for space reasons; these can be found online PONER LINK CACHO.
+Note: In parentheses are the short names used in **Table 1** of **Section 4.1** of the paper to identify each case study. The results for some case studies are not reported in the table for space reasons; these can be found online [Replication Package](https://sites.google.com/view/bounded-exhaustive-api/home).
 
 ## Running all experiments from a single benchmark (slow)
 
-To reproduce all the experiments for a specific benchrmark study with both techniques (korat and beapi) and for all scopes within XXX and YYY COMPLETAR CACHO! pick and run one of following commands: 
+To reproduce all the experiments for a specific benchrmark study with both techniques (korat and beapi) and for all scopes within 3 and *maxScope* pick and run one of following commands: 
 
 ```
-./run-testgen-benchmarks-0_korat.sh
-./run-testgen-benchmarks-1_kiasan.sh
-./run-testgen-benchmarks-2_roops.sh
-./run-testgen-benchmarks-3_fajita.sh
+./run-testgen-benchmarks-0_korat.sh <maxScope>
+./run-testgen-benchmarks-1_kiasan.sh <maxScope>
+./run-testgen-benchmarks-2_roops.sh <maxScope>
+./run-testgen-benchmarks-3_fajita.sh <maxScope>
 ```
 
-The results of executing these scripts are saved in file (CACHO ESTO ESTA BIEN?): 
+The results of executing these scripts are saved in file: 
 
 ```
 results-begen/results_testgen_benchmarks.csv
 ```
 
-Note: Running one of the above scripts might take a day or longer (more? CACHO?) depending on your hardware.
+Note: Running one of the above scripts might take a day depending on your hardware.
 
 ## Running all the experiments (very slow)
 
 To reproduce all the experiments for this research question run:
 ```
-./run-testgen-benchmarks-all.sh
+./run-testgen-benchmarks-all.sh <maxScope>
 ```
 
-The results of executing this script are saved in file (CACHO ESTO ESTA BIEN?): 
+The results of executing this script are saved in file: 
 ```
 results-begen/results_testgen_benchmarks.csv
 ```
 
-Note: Running this script might take a few days or longer (more? CACHO?) depending on your hardware.
+Note: Running this script might take a few days depending on your hardware.
 

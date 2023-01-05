@@ -30,11 +30,8 @@ At the end of its execution the script shows a summary of the results in CSV for
 ************
 Report
 Project,Class,Technique,Budget,Time,Structures,Explored
-(standard_in) 1: parse error
-(standard_in) 1: parse error
-0_korat,korat.examples.singlylinkedlist.SinglyLinkedList,beapi/matching/builders,4,,85,345
+0_korat,korat.examples.singlylinkedlist.SinglyLinkedList,beapi/matching/builders,4,.22,85,345
 ************
-CACHO: Error en scripts, fixear el resultado cuando esté fixeado el script.
 ```
 
 where:
@@ -102,7 +99,6 @@ korat.examples.singlylinkedlist.SinglyLinkedList.add\(java.lang.Object\)
   - `BinaryHeap`: binaryheap.BinaryHeap (`BHeap`)
   - `TreeMap`: redblacktree.TreeMap (`TreeMap`)
   - `DisjSet`: disjointSet.orig.DisjSets (`DisjSet`) 
-  - `StackAr`: stack.array.StackAr (`StackAr`)
 
 - `2_roops`
 
@@ -133,30 +129,30 @@ korat.examples.singlylinkedlist.SinglyLinkedList.add\(java.lang.Object\)
   - `Schedule`: builders.Schedule (`Schedule`)  
 
 
-Note: In parentheses are the short names used in **Table 2** of **Section 4.2** of the paper to identify each case study. The results for some case studies are not reported in the table for space reasons; these can be found online PONER LINK CACHO.
+Note: In parentheses are the short names used in **Table 2** of **Section 4.2** of the paper to identify each case study. The results for some case studies are not reported in the table for space reasons; these can be found online [Replication Package](https://sites.google.com/view/bounded-exhaustive-api/home).
 
 ## Running all experiments from a single benchmark (slow)
 
-To reproduce all the experiments for a specific benchmark using all four `BEAPI` configurations, for all scopes within XXX and YYY COMPLETAR CACHO! pick and run one of following commands: 
+To reproduce all the experiments for a specific benchmark using all four `BEAPI` configurations, for all scopes within 3 and *maxScope* pick and run one of following commands: 
 
 ```
-./run-testgen-beapi-optimizations-0_korat.sh
-./run-testgen-beapi-optimizations-1_kiasan.sh
-./run-testgen-beapi-optimizations-2_roops.sh
-./run-testgen-beapi-optimizations-3_fajita.sh
-./run-testgen-beapi-optimizations-4_real_world.sh
+./run-testgen-beapi-optimizations-0_korat.sh <maxScope>
+./run-testgen-beapi-optimizations-1_kiasan.sh <maxScope>
+./run-testgen-beapi-optimizations-2_roops.sh <maxScope>
+./run-testgen-beapi-optimizations-3_fajita.sh <maxScope>
+./run-testgen-beapi-optimizations-4_real_world.sh <maxScope>
 ```
 
-Note: Running one of the above scripts might take a day or longer (more? CACHO?) depending on your hardware.
+Note: Running one of the above scripts might take a few day depending on your hardware.
 
 ## Running all the experiments (very slow)
 
 To reproduce all the experiments for this research question run:
 ```
-./run-testgen-beapi-optimizations-all.sh
+./run-testgen-beapi-optimizations-all.sh <maxScope>
 ```
 
-Note: Running this script might take a few days or longer (more? CACHO?) depending on your hardware.
+Note: Running this script might take a few days depending on your hardware.
 
 
 # Running automated builders identification (Last paragraph of Section 4.2)
@@ -196,10 +192,9 @@ At the end of its execution the script shows a summary of the results in CSV for
 ```
 ************
 Report
-case study ; builders ; time ; nMethods
-0_korat ; korat.examples.singlylinkedlist.SinglyLinkedList ; [] ;  1s ; 1
+Project; Class; Builders ; Time ; nMethods
+0_korat ; korat.examples.singlylinkedlist.SinglyLinkedList ; [korat.examples.singlylinkedlist.SinglyLinkedList.<init>(), korat.examples.singlylinkedlist.SinglyLinkedList.add(java.lang.Object)] ;  8s ; 5
 ************
-CACHO agregar datos posta del ejemplo este. En el encabezado del CSV falta Project 
 ```
 
 where:
@@ -212,7 +207,7 @@ where:
 - **time**: the time spent for builders identification in seconds.
 - **nMethods**: Number public methods in the API of the case study.
 
-The results of the (successive) executions CACHO ESTO ESTA BIEN? of the script are saved in file: 
+The results of the (successive) executions of the script are saved in file: 
 
 ```
 results-builders/results_builders.csv
@@ -231,13 +226,11 @@ To identify builders for all case studies for a specific benchmark, pick and run
 ./run-builder-identification-4_real_world.sh
 ```
 
-The results of executing these scripts are saved in file (CACHO ESTO ESTA BIEN?): 
+The results of executing these scripts are saved in file: 
 
 ```
 results-builders/results_builders.csv
 ```
-
-Note: Running one of the above scripts might take a day or longer (more? CACHO?) depending on your hardware.
 
 ## Running all the experiments 
 
@@ -247,10 +240,8 @@ To identify builders for all [available case studies](#available-case-studies) r
 ./run-builder-identification-all.sh
 ```
 
-The results of executing this script are saved in file (CACHO ESTO ESTA BIEN?): 
+The results of executing this script are saved in file: 
 
 ```
 results-builders/results_builders.csv
 ```
-
-Note: Running this script might take a few days or longer (more? CACHO?) depending on your hardware.
