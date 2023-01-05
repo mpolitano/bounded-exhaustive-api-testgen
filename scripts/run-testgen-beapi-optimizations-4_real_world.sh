@@ -5,14 +5,14 @@ scriptsdir=$projectsdir/scripts
 source $scriptsdir/process-results.sh
 
 cases="java2.util2.linkedlist.LinkedList java2.util2.treemap.TreeMap java2.util2.treeset.TreeSet java2.util2.hashmap.HashMap builders.Schedule org.apache.commons.collections4.list.NodeCachingLinkedList"
-budgets="3 4 5 6 7 8 9 10"
+budgetMax="$1"
 
 config="DEFAULT SM BLD NoOpt"
 for optimization in $config 
 do
 	for casestudy in $cases 
 	do
-	    for budget in $budgets
+	    for budget in $(seq 3 $budgetMax)
 	    do
 	        cmd="timeout $TO ./run-testgen-beapi-optimizations.sh 4_real_world $casestudy $budget $optimization"
 	        bash -c "$cmd"
@@ -23,6 +23,3 @@ do
 	    done
 	done
 done
-
-
-# process_results_optimizations;    

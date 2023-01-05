@@ -5,14 +5,14 @@ scriptsdir=$projectsdir/scripts
 source $scriptsdir/process-results.sh
 
 cases="redblacktree.TreeMap redblacktree.TreeSet doublylinkedlist.DoubleLinkedList binarysearchtree.BinarySearchTree disjointSet.orig.DisjSets disjointSet.fast.DisjSetsFast stack.list.StackLi stack.array.StackAr binaryheap.BinaryHeap"
-budgets="3 4 5 6 7 8 9 10"
+budgetMax="$1"
 
 config="DEFAULT SM BLD NoOpt"
 for optimization in $config 
 do
 	for casestudy in $cases 
 	do
-	    for budget in $budgets
+	    for budget in $(seq 3 $budgetMax)
 	    do
 	        cmd="timeout $TO ./run-testgen-beapi-optimizations.sh 1_kiasan $casestudy $budget $optimization"
 	        bash -c "$cmd"
@@ -23,7 +23,3 @@ do
 	    done
 	done
 done
-
-
-
-# process_results_optimizations;    

@@ -6,14 +6,14 @@ source $scriptsdir/process-results.sh
 
 cases="korat.examples.singlylinkedlist.SinglyLinkedList korat.examples.sortedlist.SortedList korat.examples.binheap.BinomialHeap korat.examples.redblacktree.RedBlackTree korat.examples.doublylinkedlist.DoublyLinkedList korat.examples.searchtree.SearchTree korat.examples.fibheap.FibonacciHeap"
 techniques="beapi korat"
-budgets="3 4 5 6 7 8 9 10"
+budgetMax="$1"
 
 
 for casestudy in $cases 
 do
     for technique in $techniques 
     do
-        for budget in $budgets
+        for budget in $(seq 3 $budgetMax)
         do
             cmd="timeout $TO ./run-testgen-benchmarks.sh 0_korat $casestudy $technique $budget"
             bash -c "$cmd"
@@ -24,7 +24,4 @@ do
         done
     done
 done
-
-
-# process_results_beapi_vs_korat;
     

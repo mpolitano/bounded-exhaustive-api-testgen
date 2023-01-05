@@ -69,7 +69,7 @@
           description="Prepare build directory">
     <mkdir dir="${build.home}"/>
     <mkdir dir="${source.java}"/>
- -->    <mkdir dir="${test.java}"/>
+    <mkdir dir="${test.java}"/>
     <mkdir dir="${test.report.dir}"/>
     <mkdir dir="lib"/>
     <mkdir dir="test-lib"/>
@@ -93,7 +93,6 @@
     </javac>
     <copy todir="${build.classes}">
         <fileset dir="${source.java}" excludes="**/*.java"/>
-        <fileset dir="${source.resources}" includes="**"/>
     </copy>
   </target>
 <!-- ====================================================================== -->
@@ -117,7 +116,6 @@
     </javac>
     <copy todir="${build.tests}">
         <fileset dir="${test.java}" excludes="**/*.java"/>
-        <fileset dir="${test.resources}"/>
     </copy>
   </target>
   

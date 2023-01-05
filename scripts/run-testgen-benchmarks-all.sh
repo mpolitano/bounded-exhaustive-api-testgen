@@ -6,11 +6,8 @@ source $scriptsdir/process-results.sh
 
 clean_results_folders
 
-./run-testgen-benchmarks-0_korat.sh
-./run-testgen-benchmarks-1_kiasan.sh
-./run-testgen-benchmarks-2_roops.sh
-./run-testgen-benchmarks-3_fajita.sh
-
-
-# process_results_beapi_vs_korat;
+./run-testgen-benchmarks-0_korat.sh $budgetMax
+./run-testgen-benchmarks-1_kiasan.sh $budgetMax
+./run-testgen-benchmarks-2_roops.sh $budgetMax
+./run-testgen-benchmarks-3_fajita.sh $budgetMax
     

@@ -6,14 +6,14 @@ source $scriptsdir/process-results.sh
 
 cases="redblacktree.TreeMap doublylinkedlist.DoubleLinkedList binarysearchtree.BinarySearchTree disjointSet.orig.DisjSets disjointSet.fast.DisjSetsFast stack.list.StackLi stack.array.StackAr binaryheap.BinaryHeap"
 techniques="beapi korat"
-budgets="3 4 5 6 7 8 9 10"
+budgetMax="$1"
 
 
 for casestudy in $cases 
 do
     for technique in $techniques 
     do
-        for budget in $budgets
+        for budget in $(seq 3 $budgetMax)
         do
             cmd="timeout $TO ./run-testgen-benchmarks.sh 1_kiasan $casestudy $technique $budget"
             bash -c "$cmd"
@@ -24,7 +24,4 @@ do
         done
     done
 done
-
-
-# process_results_beapi_vs_korat;
     

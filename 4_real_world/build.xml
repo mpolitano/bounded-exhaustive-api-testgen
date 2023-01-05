@@ -139,7 +139,6 @@
     </javac>
     <copy todir="${build.tests}">
         <fileset dir="${test.java}" excludes="**/*.java"/>
-        <fileset dir="${test.resources}"/>
     </copy>
   </target>
   
