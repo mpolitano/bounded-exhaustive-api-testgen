@@ -96,7 +96,11 @@ where:
 
 
 
-As can be seen, 210 structures of `REPOKSet` are not included in `APISet`. These 210 structures are pointing out a mismatching between `repOK` and the `API`. Even more, all these structures were identified and saved in a file for further analysis. 
+As can be seen, 210 structures of `REPOKSet` are not included in `APISet`. These 210 structures are pointing out a mismatching between `repOK` and the `API`. Even more, all these structures were identified and, stored in plain text in `results-begen-inclusion/2_roops/ncl.NodeCachingLinkedList/korat/3/structures-not-included-3.txt`, for further analysis. 
+
+
+
+
 
 
 
@@ -105,12 +109,11 @@ In **Table 3** of **Section 4.3** of the paper can be seen the `repOK` error (un
 
 
 
-A log of the output of running inclusion is saved in several files:
 
 
 
 
-Notice that **Table 3** of **Section 4.3** of the paper reports only the errors found in `repOK` that are part of the case studies of each benchmark. In this table the **Error Description** column shows a brief description of the error found in `repOK`, which was manually identified. All `repOK` errors reported on table previously mentioned, can be found in the corresponding `java` source file located at `<benchmark>/src/main/java/<case study>` for each `<benchmark>` and `<case study>`.
+Notice that **Table 3** of **Section 4.3** of the paper reports errors found in `repOK` that are part of the case studies of each benchmark. In this table the **Error Description** column shows a brief description of the error found in `repOK`, which was manually identified. All `repOK` errors reported on the table previously mentioned, can be found in the corresponding `java` source file located at `<benchmark>/src/main/java/<case study>` for each `<benchmark>` and `<case study>`. In particular, the reported errors in roops'2 NodeCachingLinkeList it also shown as a part of motivation example section of the paper.
 
 
 
