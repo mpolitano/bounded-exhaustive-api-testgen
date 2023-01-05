@@ -159,12 +159,7 @@ In this case, `line 9` indicates that  `header` field of the  canonized witness 
 Notice that **Table 3** of **Section 4.3** of the paper reports errors found in `repOK` that are part of the case studies of each benchmark. In this table the **Error Description** column shows a brief description of the error found in `repOK`, which was manually identified. All `repOK` errors reported on the table previously mentioned, can be found in the corresponding `java` source file located at `<benchmark>/src/main/java/<case study>` for each `<benchmark>` and `<case study>`. In particular, the previously analyzed errors in  `NodeCachingLinkeList` of `2_roops`,  are also shown as a part of motivation example section of the paper.
 
 
-
-
-
-COMPLETAR INDICANDO DONDE DEJA LOS OBJETOS SERALIZADOS PARA AMBAS TECNICAS . 
-
-
+Note: The serialized objects of both techniques (`BEAPI` and `Korat`) to be able to perform the inclusion are stored in `scripts/results-begen-inclusion/<benchmark>/<case study>/beapi/matching/builders/3/beapi-tests/objects.ser` and `scripts/results-begen-inclusion/<benchmark>/t<case study>/korat/3/korat-tests/objects.ser`.
 
 ## Available case studies
 
