@@ -36,6 +36,6 @@ sudo chown $USER:$USER $BE_EXP_SRC
 
 ```
 
-Note: To configurate `java 8` in your system you can run `sudo update-alternatives --config javac` and choose  option 3 (`/usr/lib/jvm/java-8-openjdk-amd64/bin/javac`),  then run  
+Note: To configure `java 8` in your system you can run `sudo update-alternatives --config javac` and choose  option 3 (`/usr/lib/jvm/java-8-openjdk-amd64/bin/javac`),  then run  
 `sudo update-alternatives --config java` and choose, one more time, option 3 (`/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java`).
 
