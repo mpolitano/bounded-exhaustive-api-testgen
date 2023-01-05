@@ -14,7 +14,7 @@ To generate tests using `BEAPI` with a given configuration run the following scr
 where `<benchmark>` is a folder a src code for generate tests; `<case study>` is one of the case studies inside the `<benchmark>` ; `<scope>` PABLO: Scope only use for set iterations in maxBEit  ; `<literalsFile>` is a file that contains the integers for use in the generation (see section [Literals file](#Literals-File)) ;`<configurationFile>` a file with BEAPI’s scope definition (see section [Scope definition](#scope-definition)) and `<buildersFile>` a file with methods builders for use in BEAPI (see section [Builders File](#builders-file)) 
 
 
-For example, to generate inputs for `MultiStackArray` from the [repository of Github] (https://github.com/anthonynsimon/java-ds-algorithms), should be cloned the repository:
+For example, to generate inputs for `MultiStackArray` from the [repository of Github](https://github.com/anthonynsimon/java-ds-algorithms), should be cloned the repository:
 ```
 git clone https://github.com/anthonynsimon/java-ds-algorithms
 ```
