@@ -44,25 +44,25 @@ Notice the relationship between the output of the script and the data presented 
 A log of the output of the selected tool is saved to file:
 
 ```
-results-begen/<benchmark>/<case study>/<technique>/<scope>/log.txt
+$BE_EXP_SRC/scrips/results-begen/<benchmark>/<case study>/<technique>/<scope>/log.txt
 ```
 
 For the execution above, the log for `BEAPI` is in file:
 
 ```
-results-begen/0_korat/korat.examples.singlylinkedlist.SinglyLinkedList/beapi/matching/builders/4/log.txt
+$BE_EXP_SRC/scrips/results-begen/0_korat/korat.examples.singlylinkedlist.SinglyLinkedList/beapi/matching/builders/4/log.txt
 ```  
 
 The results of the (successive) executions of the script are saved in file: 
 
 ```
-results-begen/results_testgen_benchmarks.csv
+$BE_EXP_SRC/scrips/results-begen/results_testgen_benchmarks.csv
 ```
 
 For example, after three executions of the script we get can something like this:
 
 ```
-% cat results-begen/results_testgen_benchmarks.csv
+% cat $BE_EXP_SRC/scrips/results-begen/results_testgen_benchmarks.csv
 
 Project,Class,Technique,Budget,Time,Structures,Explored
 0_korat,korat.examples.singlylinkedlist.SinglyLinkedList,beapi,4,.22,85,345
@@ -73,7 +73,7 @@ Project,Class,Technique,Budget,Time,Structures,Explored
 **Note**: The precomputed builder methods used to run `BEAPI` in this experiment are stored in plain text in `config/<benchmark>/builders/<case study>` file. For example:
 
 ```
-% cat config/0_korat/builders/korat.examples.singlylinkedlist.SinglyLinkedList 
+% cat $BE_EXP_SRC/scrips/config/0_korat/builders/korat.examples.singlylinkedlist.SinglyLinkedList 
 
 korat.examples.singlylinkedlist.SinglyLinkedList.<init>\(\)
 korat.examples.singlylinkedlist.SinglyLinkedList.add\(java.lang.Object\)
@@ -137,7 +137,7 @@ To reproduce all the experiments for a specific benchrmark study with both techn
 The results of executing these scripts are saved in file: 
 
 ```
-results-begen/results_testgen_benchmarks.csv
+$BE_EXP_SRC/scrips/results-begen/results_testgen_benchmarks.csv
 ```
 
 Note: Running one of the above scripts might take a day depending on your hardware.
@@ -151,7 +151,7 @@ To reproduce all the experiments for this research question run:
 
 The results of executing this script are saved in file: 
 ```
-results-begen/results_testgen_benchmarks.csv
+$BE_EXP_SRC/scrips/results-begen/results_testgen_benchmarks.csv
 ```
 
 Note: Running this script might take a few days depending on your hardware.
