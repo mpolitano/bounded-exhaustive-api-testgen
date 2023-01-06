@@ -65,7 +65,7 @@ $BE_EXP_SRC/scripts/results-optimizations/0_korat/korat.examples.singlylinkedlis
 The results of the (successive) executions of the script are saved in file: 
 
 ```
-results-optimizations/results_optimizations.csv
+$BE_EXP_SRC/scripts/	results-optimizations/results_optimizations.csv
 ```
 
 **Note**: The precomputed builder methods used to run the `BEAPI` configurations that require them (`DEFAULT` and `BLD`) in this experiment are stored in plain text in `$BE_EXP_SRC/scripts/config/<benchmark>/builders/<case study>` file. For example:
