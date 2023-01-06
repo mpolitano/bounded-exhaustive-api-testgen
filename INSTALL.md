@@ -2,7 +2,7 @@
 
 - Java 1.8
 - Ant
-- Infer
+- [Infer](https://fbinfer.com/)
 
 # Installation
 
