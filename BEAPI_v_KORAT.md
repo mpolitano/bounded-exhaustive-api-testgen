@@ -125,7 +125,7 @@ Note: In parentheses are the short names used in **Table 1** of **Section 4.1** 
 
 ## Running all experiments from a single benchmark (slow)
 
-To reproduce all the experiments for a specific benchrmark study with both techniques (korat and beapi) and for all scopes within 3 and *maxScope* pick and run one of following commands: 
+To reproduce all the experiments for a specific benchrmark study with both techniques (`Korat` and `beapi`) and for all scopes within 3 and *maxScope* pick and run one of following commands: 
 
 ```
 ./run-testgen-benchmarks-0_korat.sh <maxScope>
