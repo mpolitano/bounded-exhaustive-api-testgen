@@ -19,7 +19,7 @@ The following folders contain the source code of the case studies considered in 
 - `2_roops/src/main/java`: contains the source code of the data structures implementations for the `ROOPS`' benchmark.
 - `3_fajita/src/main/java`: contains the source code of the data structures implementations for the `FAJITA`'s benchmark.
 - `4_real_world/src/main/java`: contains the source code of data structures implementations from the real world, drawn from the  **java.util** and **Apache Commons Collections** libraries.
-- `5_github/src/main/java`: contains the source code of data structures implementations from the a [Github repository](https://github.com/anthonynsimon/java-ds-algorithms).
+- `5_github/src/main/java`: contains the source code of data structures implementations from the  [Github repository](https://github.com/anthonynsimon/java-ds-algorithms).
 
 
 Tool's binaries:
