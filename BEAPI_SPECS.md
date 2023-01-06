@@ -33,7 +33,7 @@ $BE_EXP_SRC/scripts/results-begen-inclusion/<benchmark>/<case study>/beapi/match
 
 Objects serialized by `Korat` (`REPOKStrs`) are stored in:
 ```
-$BE_EXP_SRC/scripts/results-begen-inclusion/<benchmark>/<case study>/korat/<scope>/korat-tests/objects.ser` 
+$BE_EXP_SRC/scripts/results-begen-inclusion/<benchmark>/<case study>/korat/<scope>/korat-tests/objects.ser
 ```
 
 Structures in `APIStrs` not included in `REPOKStrs` are canonicalized and stored in plain text in file:
