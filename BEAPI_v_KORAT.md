@@ -59,7 +59,7 @@ The results of the (successive) executions of the script are saved in file:
 $BE_EXP_SRC/scripts/results-begen/results_testgen_benchmarks.csv
 ```
 
-For example, after three executions of the script we get can something like this:
+For example, after three executions of the script we get something like this:
 
 ```
 % cat $BE_EXP_SRC/scripts/results-begen/results_testgen_benchmarks.csv
