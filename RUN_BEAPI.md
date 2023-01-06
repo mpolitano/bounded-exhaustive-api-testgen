@@ -60,7 +60,7 @@ int:2
 END CLASSLITERALS
 ```
 
-The format of the literals file is inherited from [Randoop](https://randoop.github.io/randoop/). In the example above, we specify the range of integers that BEAPI will use. One could also specify domains for other primitive types like floats, doubles or strings if needed.
+The format of the literals file is inherited from [Randoop](https://randoop.github.io/randoop/). In the example above, we specify the range of integers that `BEAPI` will use. One could also specify domains for other primitive types like floats, doubles or strings if needed.
 
 ### Scope Definition for Reference Types
 
