@@ -167,7 +167,7 @@ Recall that the goal of this paper is to assess the impact of using builder rout
 Don't forget to move to the scripts folder.
 
 ```
-cd scripts
+cd $BE_EXP_SRC/scripts
 ```
 
 To identify builder methods for a given case study, run the following script:
