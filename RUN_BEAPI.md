@@ -124,7 +124,7 @@ We are ready to run `BEAPI` to generate a JUnit bounded exhaustive test suite fo
 ./run-beapi.sh <folder> <case study> <literals> <configuration> <builders>
 ```
 
-where `<folder>` is the folder within `$BE_EXP_SRC` that includes the source code of the case study; `<case study>` is one of the case studies inside `<folder>` ; `<literals>` is a literals file (see [Scope Definition for Primitive Types](#Scope-Definition-for-Primitive-Types));`<configuration>` is a configuration file (see [Scope Definition for Reference Types](#Scope-Definition-for-Reference-Types)), and `<builders>` is a file with the builders that BEAPI must use in generation (see section [3. (Optional) Run automated builders identification](#3.-(Optional)-Run-automated-builders-identification)).
+where `<folder>` is the folder within `$BE_EXP_SRC` that includes the source code of the case study; `<case study>` is one of the case studies inside `<folder>` ; `<literals>` is a literals file (see [Scope Definition for Primitive Types](#Scope-Definition-for-Primitive-Types));`<configuration>` is a configuration file (see [Scope Definition for Reference Types](#Scope-Definition-for-Reference-Types)), and `<builders>` is a file with the builders that `BEAPI` must use in generation (see section [3. (Optional) Run automated builders identification](#3.-(Optional)-Run-automated-builders-identification)).
 
 **Note**: This script runs `BEAPI` with all optimizations enabled, that is, the `DEFAULT` configuration described in [BEAPI_OPT.md](BEAPI_OPT.md)).
 
