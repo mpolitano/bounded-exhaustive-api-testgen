@@ -7,7 +7,7 @@ In this experiment, we assessed the impact of `BEAPI`'s optimizations in its per
 First, move to the scripts folder.
 
 ```
-cd scripts
+cd $BE_EXP_SRC/scripts
 ```
 
 To generate inputs using `BEAPI` with a given configuration run the following script:
