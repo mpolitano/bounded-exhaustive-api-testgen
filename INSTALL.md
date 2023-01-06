@@ -6,11 +6,10 @@
 
 # Installation
 
-- Clone the repository to your computer:
+- Unzip the repository from zenodo
 ```
-git clone https://github.com/mpolitano/bounded-exhaustive-api-testgen.git
+unzip beapi-artifact.zip 
 ```
-CAMBIAR A ZENODO ZIP 
 
 - Move to the folder that containts the local copy of the repository, and set environment variable BE_EXP_SRC to this folder:
 ```
