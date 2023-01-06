@@ -32,7 +32,12 @@ function run_identify_builders(){
     mkdir -p "$BE_EXP_SRC/build/classes" && cp -r build/classes/* $BE_EXP_SRC/build/classes
     #Log for builders tools.
     popd
+
     pushd $BE_EXP_SRC
+    #Set scope 5
+    cp $scriptsdir/literals/literals5.txt resources/literals.txt
+    cp $scriptsdir/properties/scope5.all.canonicalizer.properties resources/scope.canonicalizer.properties
+
     rm -r tmp/$casestudy/*
     mkdir -p tmp/$casestudy/
     log=tmp/$casestudy/console.log

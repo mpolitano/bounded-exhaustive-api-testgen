@@ -6,7 +6,8 @@ source $scriptsdir/process-results.sh
 
 projects="$1"
 casestudy="$2"
-scope=$3
+literals=$3
+finitization=$4
 
 TO=60m
 function run_identification(){
@@ -15,7 +16,7 @@ function run_identification(){
         for case in $casestudy 
         do
             echo "************"
-            run_identify_builders $project $case $scope
+            run_identify_builders $project $case $scope $literals $finitization
             echo "************"
 
         done
@@ -25,7 +26,8 @@ function run_identification(){
 function run_identify_builders(){
     project=$1
     casestudy=$2
-    scope=$3
+    literals=$3
+    finitization=$4
     pushd $BE_EXP_SRC/$project
     ant
     #For Infer.
@@ -33,6 +35,8 @@ function run_identify_builders(){
     mkdir -p "$BE_EXP_SRC/build/classes" && cp -r build/classes/* $BE_EXP_SRC/build/classes
     #Log for builders tools.
     popd
+    cp $literals $BE_EXP_SRC/resources/literals.txt
+    cp $finitization $BE_EXP_SRC/resources/scope.canonicalizer.properties
     pushd $BE_EXP_SRC
     rm -r tmp/$casestudy/*
     mkdir -p tmp/$casestudy/
@@ -43,8 +47,7 @@ function run_identify_builders(){
     fi
     SECONDS=0
 
-    cp $scriptsdir/literals/literals$scope.txt resources/literals.txt
-    cp $scriptsdir/properties/scope$scope.all.canonicalizer.properties resources/scope.canonicalizer.properties
+ 
 
     cmd="java -cp $project/build/classes/:lib/korat.jar:lib/identificationBuilders.jar main.Builders $casestudy > $log"
     
@@ -65,7 +68,7 @@ function run_identify_builders(){
     folder=${casestudy%%.*}
     rm -r $BE_EXP_SRC/$folder
     rm -r $BE_EXP_SRC/src/
-    # rm -r $BE_EXP_SRC/inferFiles
+    rm -r $BE_EXP_SRC/inferFiles
     rm -r $BE_EXP_SRC/build/
 
 
