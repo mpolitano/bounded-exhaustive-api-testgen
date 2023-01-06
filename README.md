@@ -29,7 +29,7 @@ Tool's binaries:
 - `lib\korat.jar`: binaries for the last `Korat` version.
 - `lib\alloy4viz.jar ; lib\commons-cli-1.0.jar ; lib\javassist.jar `: binaries needed for run `Korat`. 
 - `lib\buildersBE.jar ; identificationBuilders.jar`: binaries for the identification builders tool. 
-- `lib\structures-inclusion.jar`: binaries for check inclusion objects between Korat and Beapi. 
+- `lib\structures-inclusion.jar`: binaries for check inclusion objects between `Korat` and `BEAPI`. 
 
 
 Scripts:
