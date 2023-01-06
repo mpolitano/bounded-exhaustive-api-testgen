@@ -5,7 +5,7 @@
 To easily run either `BEAPI` or `Korat` in benchmarks from the literature we provide `run-testgen-benchmarks.sh` in the `scripts` folder. First, move to the scripts folder.
 
 ```
-cd scripts
+cd $BE_EXP_SRC/scripts
 ```
 
 `run-testgen-benchmarks.sh` takes the following arguments:
