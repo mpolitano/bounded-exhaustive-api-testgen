@@ -1,4 +1,4 @@
-run-builder-identification-4_real_world.sh#!/bin/bash
+#!/bin/bash
 
 projectsdir=$BE_EXP_SRC
 scriptsdir=$projectsdir/scripts
