@@ -19,16 +19,26 @@ The following folders contain the source code of the case studies considered in 
 - `2_roops/src/main/java`: contains the source code of the data structures implementations for the `ROOPS`' benchmark.
 - `3_fajita/src/main/java`: contains the source code of the data structures implementations for the `FAJITA`'s benchmark.
 - `4_real_world/src/main/java`: contains the source code of data structures implementations from the real world, drawn from the  **java.util** and **Apache Commons Collections** libraries.
+- `5_github/src/main/java`: contains the source code of data structures implementations from the a [Github repository](https://github.com/anthonynsimon/java-ds-algorithms).
+
 
 Tool's binaries:
 
 - `lib`: contains the binaries for the tools and libraries required to run the experiments as .jar files.
-- `lib\BEAPI.JAR`: PONER EL CORRECTO CACHO binaries for the current `BEAPI` implementation. 
-- `lib\korat.jar`: binaries for the last `Korat` version. 
+- `lib\beapi.jar `:binaries for the current `BEAPI` implementation. 
+- `lib\korat.jar`: binaries for the last `Korat` version.
+- `lib\alloy4viz.jar ; lib\commons-cli-1.0.jar ; lib\javassist.jar `: binaries needed for run `Korat`. 
+- `lib\buildersBE.jar ; identificationBuilders.jar`: binaries for the identification builders tool. 
+- `lib\structures-inclusion.jar`: binaries for check inclusion objects between Korat and Beapi. 
+
 
 Scripts:
 
 - `scripts`: provided scripts to facilitate the execution of `BEAPI`, and to easily reproduce the experiments in the paper.
+
+Configuration files for external tool:
+
+- `resources`: Configuration files for run the identificationBuilders tools.
 
 
 # Reproducing the paper's experiments 

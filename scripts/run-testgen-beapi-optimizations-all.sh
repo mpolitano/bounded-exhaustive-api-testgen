@@ -5,7 +5,6 @@ scriptsdir=$projectsdir/scripts
 source $scriptsdir/scripts.sh
 budgetMax="$1"
 
-clean_results_folders
 
 ./run-testgen-beapi-optimizations-0_korat.sh $budgetMax
 ./run-testgen-beapi-optimizations-1_kiasan.sh $budgetMax
