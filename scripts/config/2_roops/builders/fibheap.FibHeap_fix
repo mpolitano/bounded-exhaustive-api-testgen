@@ -1,0 +1,3 @@
+fibheap.FibHeap_fix.<init>\(\)
+fibheap.FibHeap_fix.insert\(int\)
+fibheap.FibHeap_fix.removeMin\(\)
