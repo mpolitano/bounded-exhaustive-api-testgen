@@ -385,7 +385,7 @@ public class FibHeap_fix implements java.io.Serializable{
                     }
                     //BUG FIX:this is no part of original repOK() from Roops
                     //BUG in repOK:// If a node has no child its degree should be zero
-                    else if(curr.degree!=0) return false;   
+                else if(curr.degree!=0) return false;   
     				if (!allNodes.add(curr))
     					return false;
     				

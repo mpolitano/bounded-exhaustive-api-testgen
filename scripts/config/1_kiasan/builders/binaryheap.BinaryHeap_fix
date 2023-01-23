@@ -1,0 +1,3 @@
+binaryheap.BinaryHeap_fix.<init>\(int\)
+binaryheap.BinaryHeap_fix.insert\(int\)
+binaryheap.BinaryHeap_fix.deleteMin\(\)

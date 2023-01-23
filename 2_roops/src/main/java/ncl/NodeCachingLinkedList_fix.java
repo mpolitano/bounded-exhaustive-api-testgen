@@ -439,11 +439,11 @@ public class NodeCachingLinkedList_fix implements java.io.Serializable {
 	        if (this.header.next == null)
 	          return false;
 
-		// BUG FIX:this is no part of original repOK() from roops
-		if (this.header.value != null)
+			// BUG FIX:this is no part of original repOK() from roops
+			if (this.header.value != null)
                  return false;
-	        // if (this.header.previous == null)
-	        //   return false;
+	        if (this.header.previous == null)
+	          return false;
 
 	        if (this.cacheSize > this.maximumCacheSize)
 	          return false;
@@ -472,6 +472,10 @@ public class NodeCachingLinkedList_fix implements java.io.Serializable {
 
 	            if (n.next.previous != n)
 	              return false;
+	          // value only of header is null.
+	          	if (n != this.header) //restore original version
+		          	if (n.value == null)
+		              	return false;
 
 	            if (n != null) {
 	                n = n.next;
