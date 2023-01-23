@@ -1,0 +1,4 @@
+ncl.NodeCachingLinkedList_fix.<init>\(\)
+ncl.NodeCachingLinkedList_fix.addLast\(java.lang.Object\)
+ncl.NodeCachingLinkedList_fix.removeIndex\(int\)
+#ncl.NodeCachingLinkedList_fix.setMaximumCacheSize\(int\)

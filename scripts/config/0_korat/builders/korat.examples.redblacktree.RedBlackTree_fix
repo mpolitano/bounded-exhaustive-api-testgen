@@ -1,0 +1,3 @@
+korat.examples.redblacktree.RedBlackTree_fix.<init>\(\)
+korat.examples.redblacktree.RedBlackTree_fix.add\(int\)
+korat.examples.redblacktree.RedBlackTree_fix.remove\(int\)
