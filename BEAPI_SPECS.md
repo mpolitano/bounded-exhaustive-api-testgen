@@ -159,7 +159,7 @@ In this case, `line 9` indicates that the `header` field of the list points to `
 ## Available case studies
 
 - `0_korat`
-  - `DoublyLinkedList`: korat.examples.doublylinkedlist.DoublyLinkedList (`DDList`)
+  - `DoublyLinkedList`: korat.examples.doublylinkedlist.DoublyLinkedList (`DLList`)
   - `FibonacciHeap`: korat.examples.fibheap.FibonacciHeap (`FibHeap`)
   -	`BinomialHeap`: korat.examples.binheap.BinomialHeap (`BinHeap`)
   - `SearchTree`:korat.examples.searchtree.SearchTree (`BST`)
@@ -169,7 +169,7 @@ In this case, `line 9` indicates that the `header` field of the list points to `
 
 - `1_kiasan`
   - `BinarySearchTree`: binarysearchtree.BinarySearchTree (`BST`)
-  - `DoubleLinkedList`: doublylinkedlist.DoubleLinkedList (`DDL`)
+  - `DoubleLinkedList`: doublylinkedlist.DoubleLinkedList (`DLL`)
   - `TreeSet`: redblacktree.TreeSet(`RBT`) UBICAR LOS FUENTES DONDE CORRESPONDE con el nombre correcto
   - `DisjSetsFast`: disjointSet.fast.DisjSetsFast (`DisjSetFast`)
   - `StackLi`: stack.list.StackLi (`StackList`)
